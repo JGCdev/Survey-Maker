@@ -4,7 +4,6 @@
     </div>
     <div class="survey-actions">
         <button>Resetear campos</button>
-        <button>Guardar</button>
     </div>
     <form class="survey-form">
         <div class="survey-header">
@@ -17,6 +16,10 @@
                     <option>Custom option 1</option>
                     <option>Custom option 2</option>
                 </select>
+                <div class="controls">
+                    <button class="round-btn"><fa name="trash"></fa></button>
+                    <button class="round-btn"><fa name="edit"></fa></button>
+                </div>
             </div>
             <div class="form-group">
                 <h3>Pregunta número 2</h3>
@@ -24,6 +27,10 @@
                     <option>Custom option 1</option>
                     <option>Custom option 2</option>
                 </select>
+                <div class="controls">
+                    <button class="round-btn"><fa name="trash"></fa></button>
+                    <button class="round-btn"><fa name="edit"></fa></button>
+                </div>
             </div>
             <div class="form-group">
                 <h3>Pregunta número 3</h3>
@@ -31,6 +38,13 @@
                     <option>Custom option 1</option>
                     <option>Custom option 2</option>
                 </select>
+                <div class="controls">
+                    <button class="round-btn"><fa name="trash"></fa></button>
+                    <button class="round-btn"><fa name="edit"></fa></button>
+                </div>
+            </div>
+            <div class="add-fields">
+                <button class="round-btn" type="button" (click)="openNewFieldsMenu()"><fa name="plus"></fa></button>
             </div>
         </div>
         

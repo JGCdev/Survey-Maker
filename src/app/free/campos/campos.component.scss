@@ -29,8 +29,10 @@
         }
        
         .form-fields{
-            padding:20px 0px;
             .form-group{
+                margin: 10px;
+                padding: 10px;
+                position:relative;
                 h3{
                     margin-bottom:15px;
                     text-transform: uppercase;
@@ -42,7 +44,32 @@
                     border: 1px solid #60cdcb;
                     background:#f2fffe;
                 }
+                .controls{
+                    display: none;
+                    position: absolute;
+                    top: 19px;
+                    right: 37px;
+                }
             }
+            .form-group:hover {
+                border: 1px solid #60cdcb;
+                .controls{
+                    display:block;
+                }
+
+            }
+            .round-btn{
+                background: #60cdcb;
+                color:white;
+                border:none;
+                border-radius:100%;
+                width: 40px;
+                height: 40px;
+                font-size:20px;
+                margin: 2.5px;
+                cursor:pointer;
+            }
+           
         }
         .input-btn{
             text-transform:uppercase;
