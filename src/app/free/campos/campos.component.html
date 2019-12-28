@@ -1,31 +1,43 @@
 <div class="content-form-wrapper">
     <div class="survey-stats">
-        <span>Encuesta número: 2340876</span>
+        <span>Encuesta: 2340876</span>
+    </div>
+    <div class="survey-actions">
+        <button>Resetear campos</button>
+        <button>Guardar</button>
     </div>
     <form class="survey-form">
         <div class="survey-header">
             <h1>Mi Encuesta Personalizada</h1>
         </div>
-        <div class="form-group">
-            <h3>Pregunta número 1</h3>
-            <select>
-                <option>Custom option 1</option>
-                <option>Custom option 2</option>
-            </select>
+        <div class="form-fields">
+            <div class="form-group">
+                <h3>Pregunta número 1</h3>
+                <select>
+                    <option>Custom option 1</option>
+                    <option>Custom option 2</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <h3>Pregunta número 2</h3>
+                <select>
+                    <option>Custom option 1</option>
+                    <option>Custom option 2</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <h3>Pregunta número 3</h3>
+                <select>
+                    <option>Custom option 1</option>
+                    <option>Custom option 2</option>
+                </select>
+            </div>
         </div>
-        <div class="form-group">
-            <h3>Pregunta número 2</h3>
-            <select>
-                <option>Custom option 1</option>
-                <option>Custom option 2</option>
-            </select>
-        </div>
-        <div class="form-group">
-            <h3>Pregunta número 3</h3>
-            <select>
-                <option>Custom option 1</option>
-                <option>Custom option 2</option>
-            </select>
-        </div>
+        
+        <input class="input-btn" type="submit" value="Enviar resultados" [disabled]="true"> 
     </form>
+    <div class="message-url">
+        <p>Comparte tu encuesta: <a href="#">https://suerveymaker.com/encuestas/234543738</a></p>
+        <p>Administra tu encuesta: <a href="#">https://suerveymaker.com/encuestas/admin/234543738</a></p>
+    </div>
 </div>
