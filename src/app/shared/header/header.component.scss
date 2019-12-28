@@ -29,15 +29,21 @@
         .main-menu{
             display: flex;
             font-weight:bold;
+            .router-link-active{
+                text-decoration: underline;
+            }
             a{
                 text-decoration: none;
+                color:white;
+            }
+            a:hover{
+                text-decoration: underline;
             }
             ul{
                 display: flex;
                 align-items: center;
                 li{
                     display:inline;
-                    color:white;
                     padding:10px;
                 }
             }
