@@ -7,13 +7,14 @@ import { CamposComponent } from './campos/campos.component';
 import { AjustesComponent } from './ajustes/ajustes.component';
 import { CompartirComponent } from './compartir/compartir.component';
 import { AngularFontAwesomeModule } from 'angular-font-awesome';
-
+import { FormsModule } from '@angular/forms';
 @NgModule({
   declarations: [FreeComponent, CamposComponent, AjustesComponent, CompartirComponent],
   imports: [
     CommonModule,
     FreeRoutingModule,
-    AngularFontAwesomeModule
+    AngularFontAwesomeModule,
+    FormsModule
   ]
 })
 export class FreeModule { }

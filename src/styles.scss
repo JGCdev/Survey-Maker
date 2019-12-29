@@ -12,8 +12,7 @@ ul{
 
 .content-wrapper{
     display:flex;
-    height: calc(100% - 48px);
-
+    min-height: 95%;
     .sidebar{
         min-width: 200px;
         background:#b5eae6;
