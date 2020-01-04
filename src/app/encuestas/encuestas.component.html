@@ -2,7 +2,9 @@
 
     <div class="content">
         <div class="content-form-wrapper">
+            <h1>2- Configura los campos</h1>
             <div class="survey-actions">
+                <button class="action-btn" (click)="return()" type="button"><fa name="arrow-left"></fa> Volver atrás</button>
                 <button class="action-btn" (click)="resetSurvey()" type="button"><fa name="refresh"></fa> Resetear campos</button>
             </div>
             <form class="survey-form">
@@ -18,7 +20,7 @@
                 </div>
         
                 <div class="form-fields">
-                    <div class="form-group" *ngFor="let field of encuesta.fields">
+                    <div class="form-group" *ngFor="let field of encuesta.fields" >
                         <h3>{{field.question}}</h3>
                         <select *ngIf="field.type===1">
                             <option *ngFor="let item of field.answers">{{item}}</option>
@@ -97,18 +99,7 @@
                             </div>
                         </div>
                     </div>
-                    <!-- Save overlay menu -->
-                    <div class="overlay-box">
-                        <div class="fields-menu-container" *ngIf="saveOverlayMenu">
-                            <div class="fields-menu">
-                                <h4>¿Estás seguro de querer publicar tu encuesta? <br>No podrás volver atrás después de publicar.</h4>
-                                <button class="action-btn" type="button" (click)="openSaveOverlayMenu()"><fa name="arrow-left"></fa> Volver</button>
-                                <button class="action-btn" type="button" (click)="saveSurvey()"><fa name="check"></fa> Publicar</button>
-                               
-                                <button class="round-btn overlay-btn" type="button" (click)="openSaveOverlayMenu()"><fa name="close"></fa></button>
-                            </div>
-                        </div>
-                    </div>
+
                 </div>
                 <div class="button-edit-container">
                     <input class="input-btn" type="submit" value="{{encuesta.buttonText}}" [disabled]="true"> 
@@ -119,7 +110,7 @@
         
             </form>
             <div class="message-url">
-                <button class="action-btn big-btn" (click)="openSaveOverlayMenu()"><fa name="save"></fa> Publicar</button>
+                <button class="action-btn big-btn" (click)="saveSurvey()"><fa name="save"></fa> Ajustar y publicar</button>
             </div>
         </div>
     </div>

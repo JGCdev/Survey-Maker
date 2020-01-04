@@ -9,8 +9,9 @@ import { FormsModule } from '@angular/forms';
 import { VotarComponent } from './votar/votar.component';
 import { SharedModule } from '../shared/shared.module';
 import { PlantillaComponent } from './plantilla/plantilla.component';
+import { AjustesComponent } from './ajustes/ajustes.component';
 @NgModule({
-  declarations: [EncuestasComponent,  EncuestaCreadaComponent, VotarComponent, PlantillaComponent],
+  declarations: [EncuestasComponent,  EncuestaCreadaComponent, VotarComponent, PlantillaComponent, AjustesComponent],
   imports: [
     CommonModule,
     EncuestasRoutingModule,

@@ -21,7 +21,9 @@
                 .form-group{
               
                     border: 0px solid #b5eae6;
-                  
+                    h3{
+                        margin-bottom:10px;
+                    }
                 }
     
                 .form-group:hover {
@@ -51,8 +53,8 @@
 }
 
 
-.plantillas-container{
-    width: 500px;
+.ajustes-container{
+    width: 80%;
     border: 2px solid
     #60cdcb;
     height: auto;
@@ -61,17 +63,18 @@
     background-color: #b5eae6;
     flex-direction: column;
     padding:20px;
+    margin-top: 15px;
         .fila{
             display: flex;
             flex-direction: row;
             flex-wrap: wrap;
             width: 100%;
-            .plantilla{
+            .columna{
                 display: flex;
                 flex-direction: column;
                 flex-basis: 100%;
                 flex: 1;
-                .plantilla-wrapper{
+                .columna-wrapper{
                     display: flex;
                     flex-direction: column;
                     padding: 10px 20px;
@@ -81,6 +84,12 @@
                     }
                     h3{
                         margin:0;
+                    }
+                    h4{
+                        margin-bottom:0;
+                    }
+                    select{
+                        width:100px;
                     }
                     img{
                         max-width:200px;
@@ -95,4 +104,8 @@
 
     
     
+}
+
+.big-btn{
+    width:300px;
 }

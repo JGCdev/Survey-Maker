@@ -5,11 +5,13 @@ import { EncuestasComponent } from './encuestas.component';
 import { EncuestaCreadaComponent } from './encuesta-creada/encuesta-creada.component';
 import { VotarComponent } from './votar/votar.component';
 import { PlantillaComponent } from './plantilla/plantilla.component';
+import { AjustesComponent } from './ajustes/ajustes.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'crear-encuesta/plantilla', pathMatch: 'full'},
   { path: 'crear-encuesta/plantilla', component: PlantillaComponent},
   { path: 'crear-encuesta/campos', component: EncuestasComponent},
+  { path: 'crear-encuesta/ajustes', component: AjustesComponent},
   { path: 'encuesta-creada', component: EncuestaCreadaComponent},
   { path: ':id', component: VotarComponent}
 ];
