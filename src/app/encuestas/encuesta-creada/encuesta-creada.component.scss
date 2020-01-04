@@ -1,0 +1,24 @@
+.content{
+    width: 500px;
+    margin: 0 auto;
+    background-color:#b5eae6;
+    border-radius: 2.5px;
+    border: 2px solid #60cdcb;
+    margin-top:35px;
+    padding-bottom: 10px;
+    .content-header{
+        padding: 5px;
+        text-align: center;
+        h1{
+            margin:0;
+            color:white;
+        }
+        background-color:#60cdcb;
+    }
+    .content-body{
+        padding: 0px 20px;
+        a{
+            display:block;
+        }
+    }
+}

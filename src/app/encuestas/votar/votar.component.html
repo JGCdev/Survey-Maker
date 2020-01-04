@@ -1,0 +1,42 @@
+
+<div class="content-wrapper">
+    <div class="content">
+        <div class="content-form-wrapper">
+            <form class="survey-form" >
+        
+                <!-- Title -->
+                <div class="survey-header">
+                    <div class="header-wrapper">
+                        <h1>{{encuesta.title}}</h1>
+                    </div>
+                </div>
+        
+                <div class="form-fields">
+                    <div class="form-group" *ngFor="let field of encuesta.fields">
+                        <h3>{{field.question}}</h3>
+                        <select *ngIf="field.type===1">
+                            <option *ngFor="let item of field.answers">{{item}}</option>
+                        </select>
+        
+                        <ul *ngIf="field.type===2">
+                            <li *ngFor="let item of field.answers">
+                                    <span>{{item}}
+                                    <input type="radio"></span>
+                            </li>
+                        </ul>
+        
+                        <input *ngIf="field.type===3" type="text">
+        
+                        <textarea *ngIf="field.type===4"></textarea>
+                    </div>
+                  
+                </div>
+                  
+            </form>
+            <div class="message-url">
+                <button class="action-btn big-btn" (click)="openSaveOverlayMenu()"><fa name="save"></fa> {{encuesta.buttonText}}</button>
+            </div>
+        </div>
+    </div>
+</div>
+
