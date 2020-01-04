@@ -1,0 +1,98 @@
+
+.content{
+    padding-top:10px;
+    .content-form-wrapper{
+        color:#333;
+        .survey-form{
+            .survey-header{
+    
+                .header-wrapper{
+                    border: 0px solid #60cdcb;
+                }
+            }
+            .survey-header:hover{
+                .header-wrapper{
+                    border: 0px solid #b5eae6;
+                }
+            }
+    
+            .form-fields{
+    
+                .form-group{
+              
+                    border: 0px solid #b5eae6;
+                  
+                }
+    
+                .form-group:hover {
+                    border: 0px solid #60cdcb;
+                  
+                }
+               
+               
+            }
+    
+            .button-edit-container{
+                margin: 20px 10px 0px 10px;
+                padding: 7px 0px;
+                position: relative;
+                border: 0px solid #b5eae6;
+            
+            }
+            .button-edit-container:hover{
+                border: 0px solid #60cdcb;
+            }
+    
+        
+        }
+        
+              
+        }
+}
+
+
+.plantillas-container{
+    width: 500px;
+    border: 2px solid
+    #60cdcb;
+    height: auto;
+    margin: 0 auto;
+    display: flex;
+    background-color: #b5eae6;
+    flex-direction: column;
+    padding:20px;
+        .fila{
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            width: 100%;
+            .plantilla{
+                display: flex;
+                flex-direction: column;
+                flex-basis: 100%;
+                flex: 1;
+                .plantilla-wrapper{
+                    display: flex;
+                    flex-direction: column;
+                    padding: 10px 20px;
+                    align-items: center;
+                    h2{
+                        margin:0;
+                    }
+                    h3{
+                        margin:0;
+                    }
+                    img{
+                        max-width:200px;
+                    }
+                    .action-btn{
+                        margin-top:8px;
+                        width:50%;
+                    }
+                }
+            }
+        }
+
+    
+    
+}

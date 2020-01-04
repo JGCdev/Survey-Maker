@@ -1,0 +1,50 @@
+
+.content{
+    padding-top:50px;
+    .content-form-wrapper{
+        .survey-form{
+            .survey-header{
+    
+                .header-wrapper{
+                    border: 0px solid #60cdcb;
+                }
+            }
+            .survey-header:hover{
+                .header-wrapper{
+                    border: 0px solid #b5eae6;
+                }
+            }
+    
+            .form-fields{
+    
+                .form-group{
+              
+                    border: 0px solid #b5eae6;
+                  
+                }
+    
+                .form-group:hover {
+                    border: 0px solid #60cdcb;
+                  
+                }
+               
+               
+            }
+    
+            .button-edit-container{
+                margin: 20px 10px 0px 10px;
+                padding: 7px 0px;
+                position: relative;
+                border: 0px solid #b5eae6;
+            
+            }
+            .button-edit-container:hover{
+                border: 0px solid #60cdcb;
+            }
+    
+        
+        }
+        
+              
+        }
+}
