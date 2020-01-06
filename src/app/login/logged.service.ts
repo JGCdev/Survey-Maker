@@ -12,12 +12,16 @@ export class LoggedService {
   constructor() { }
 
   isLogged(): boolean {
-    return this.loggedIn || localStorage.getItem('user') !== 'null';
+    return this.loggedIn || (localStorage.getItem('user') !== null && localStorage.getItem('user') !== 'null');
   }
 
   setLoggedUser(su: SocialUser) {
     this.user = su;
     localStorage.setItem('user', JSON.stringify(this.user));
+  }
+
+  getUser() {
+    return this.user;
   }
 
   setLogged(value) {

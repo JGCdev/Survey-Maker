@@ -22,21 +22,21 @@
                         
                                 <div class="form-fields">
                                     <div class="form-group" *ngFor="let field of encuesta.fields">
-                                        <h3>{{field.question}}</h3>
-                                        <select *ngIf="field.type===1">
-                                            <option *ngFor="let item of field.answers">{{item}}</option>
+                                        <h3>{{field.texto}}</h3>
+                                        <select *ngIf="field.tipo===1">
+                                            <option *ngFor="let item of field.respuestas">{{item}}</option>
                                         </select>
                         
-                                        <ul *ngIf="field.type===2">
-                                            <li *ngFor="let item of field.answers">
+                                        <ul *ngIf="field.tipo===2">
+                                            <li *ngFor="let item of field.respuestas">
                                                     <span>{{item}}
                                                     <input type="radio"></span>
                                             </li>
                                         </ul>
                         
-                                        <input *ngIf="field.type===3" type="text">
+                                        <input *ngIf="field.tipo===3" type="text">
                         
-                                        <textarea *ngIf="field.type===4"></textarea>
+                                        <textarea *ngIf="field.tipo===4"></textarea>
                         
                                     </div>
                                 </div>
@@ -50,27 +50,27 @@
                     <div class="columna">
                         <div class="columna-wrapper">
                             <h2>Ajustes</h2>
-                            <form>
+                            <form [formGroup]="configForm">
                                 <h4>¿Mostrar resultados al votar?</h4>
-                                <select>
-                                    <option>
+                                <select id="opt1" formControlName="option1">
+                                    <option value="0">
                                         Sí
                                     </option>
-                                    <option>
+                                    <option value="1">
                                         No
                                     </option>
                                 </select>
                                 <h4>¿Mostrar nombre en lista de resultados?</h4>
-                                <select>
-                                    <option>
+                                <select id="opt2" formControlName="option2">
+                                    <option value="0">
                                         Sí
                                     </option>
-                                    <option>
+                                    <option value="1">
                                         No
                                     </option>
                                 </select>
                                 <h4>Número máximo de participantes:</h4>
-                                <input type="number">
+                                <input type="number" id="opt3" formControlName="option3">
                             </form>
                            
                         </div>

@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { AuthService, SocialLoginModule } from 'angularx-social-login';
+import { AuthService, SocialLoginModule, SocialUser } from 'angularx-social-login';
 import { Router } from '@angular/router';
 import { LoggedService } from 'src/app/login/logged.service';
 
@@ -11,15 +11,16 @@ import { LoggedService } from 'src/app/login/logged.service';
 })
 export class MiCuentaComponent implements OnInit {
 
+  user: SocialUser;
+
   constructor(private authService: AuthService, private router: Router, private logged: LoggedService) { }
 
   ngOnInit() {
-    // Subscribir a este evento en un componente padre para actualizar en todo momento el estado
     this.authService.authState.subscribe((user) => {
-      console.log(user);
-      this.logged.setLoggedUser(user);
-      if (user === null) {
-        this.logged.setLogged(false);
+      if (user !== null) {
+        this.user = user;
+      } else {
+        this.router.navigate(['login']);
       }
     });
   }

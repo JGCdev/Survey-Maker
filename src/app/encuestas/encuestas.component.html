@@ -2,7 +2,18 @@
 
     <div class="content">
         <div class="content-form-wrapper">
-            <h1>2- Configura los campos</h1>
+            <div class="paginator">
+                <div class="item tachado">
+                    <h4>1 Plantilla</h4>
+                </div>
+                <div class="item">
+                    <h4>2 Campos</h4>
+                </div>
+                <div class="item">
+                    <h4>3 Publicar</h4>
+                </div>
+            </div>
+            <h1>Configura los campos</h1>
             <div class="survey-actions">
                 <button class="action-btn" (click)="return()" type="button"><fa name="arrow-left"></fa> Volver atrás</button>
                 <button class="action-btn" (click)="resetSurvey()" type="button"><fa name="refresh"></fa> Resetear campos</button>
@@ -21,21 +32,21 @@
         
                 <div class="form-fields">
                     <div class="form-group" *ngFor="let field of encuesta.fields" >
-                        <h3>{{field.question}}</h3>
-                        <select *ngIf="field.type===1">
-                            <option *ngFor="let item of field.answers">{{item}}</option>
+                        <h3>{{field.texto}}</h3>
+                        <select *ngIf="field.tipo===1">
+                            <option *ngFor="let item of field.respuestas">{{item}}</option>
                         </select>
         
-                        <ul *ngIf="field.type===2">
-                            <li *ngFor="let item of field.answers">
+                        <ul *ngIf="field.tipo===2">
+                            <li *ngFor="let item of field.respuestas">
                                     <span>{{item}}
                                     <input type="radio"></span>
                             </li>
                         </ul>
         
-                        <input *ngIf="field.type===3" type="text">
+                        <input *ngIf="field.tipo===3" type="text">
         
-                        <textarea *ngIf="field.type===4"></textarea>
+                        <textarea *ngIf="field.tipo===4"></textarea>
         
                         <div class="controls">
                             <button class="round-btn" (click)="deleteField(field.id)" type="button"><fa name="trash"></fa></button>
@@ -72,11 +83,11 @@
                             <div class="fields-menu">
                                 <form (submit)="saveMenuForm()">
                                     <h2>Nuevo título</h2>
-                                    <input type="text" value="{{editField.question}}" name="title" [(ngModel)]="editField.question">
-                                    <div *ngIf="editField.type === 1 || editField.type === 2">
+                                    <input type="text" value="{{editField.texto}}" name="title" [(ngModel)]="editField.texto">
+                                    <div *ngIf="editField.tipo === 1 || editField.tipo === 2">
                                         <h2>Posibles respuestas</h2>
-                                        <div *ngFor="let answer of editField.answers; let i = index; trackBy: trackByFn" class="controls-overlay-container">
-                                            <input  type="text"  name="answer{{i}}" [(ngModel)]="editField.answers[i]">
+                                        <div *ngFor="let answer of editField.respuestas; let i = index; trackBy: trackByFn" class="controls-overlay-container">
+                                            <input  type="text"  name="answer{{i}}" [(ngModel)]="editField.respuestas[i]">
                                             <button class="close-input-btn" type="button" (click)="deleteFieldFromEditField(i)"><fa name="trash"></fa></button>
                                         </div>
                                         <button class="add-btn-mini" (click)="addFieldsToEditField()" type="button"><fa name="plus"></fa></button>

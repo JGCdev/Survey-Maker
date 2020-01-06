@@ -1,3 +1,53 @@
-Bienvenido:
-Encuestas activas:
-<button (click)="signOut()">Cerrar sesión</button>
+
+<div class="content-wrapper">
+    <div class="content">
+        <div class="content-form-wrapper" *ngIf="user">
+            <img src="{{user.photoUrl}}">
+            <h1>Bienvenido {{user.name}}</h1>
+
+            <div class="ajustes-container">
+                <div class="fila">
+                    <div class="columna">
+                        <div class="columna-wrapper">
+                            <h2>Encuestas Activas:</h2>
+                            <div class="encuestas-resumen">
+                                <table class="enc-table">
+                                    <tr class="tr-header">
+                                        <th>ID</th>
+                                        <th>Título</th>
+                                        <th>Votos</th>
+                                    </tr>
+                                    <tr>
+                                        <td>1245</td>
+                                        <td>Cena de navidad</td>
+                                        <td>43</td>
+                                    </tr>
+                                    <tr>
+                                        <td>2245</td>
+                                        <td>Colores favoritos</td>
+                                        <td>49</td>
+                                    </tr>
+                                    <tr>
+                                        <td>3245</td>
+                                        <td>Menú comedor</td>
+                                        <td>19</td>
+                                    </tr>
+                                  </table> 
+                            </div>
+                        </div>
+                    </div>
+                    <div class="columna">
+                        <div class="columna-wrapper">
+                            <h2>Perfil:</h2>
+                            <h4>Email</h4>
+                            <span>{{user.email}}</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="message-url">
+                <button class="action-btn big-btn" (click)="signOut()"><fa name="power-off"></fa> Cerrar sesión</button>
+            </div>
+        </div>
+    </div>
+</div>

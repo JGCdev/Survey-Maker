@@ -3,6 +3,7 @@ import { Field } from '../interfaces/field';
 import { Router } from '@angular/router';
 import { Encuesta } from '../interfaces/encuesta';
 import { EncuestasService } from './encuestas.service';
+import { LoggedService } from '../login/logged.service';
 
 @Component({
   selector: 'app-encuestas',
@@ -20,18 +21,22 @@ export class EncuestasComponent implements OnInit {
   lastIdField = 4;
 
   encuesta: Encuesta = {
+    id: 1,
+    config: [1, 1, 0],
     title: 'Mi Encuesta Personalizada',
     buttonText: 'Enviar resultados',
-    fields: [
-    ],
-    url: null,
-    autor: ''
+    autor: '',
+    creationDate: null,
+    votosTotales: 0,
+    fields: []
   };
 
-  constructor(private router: Router, private es: EncuestasService) { }
+  constructor(private router: Router, private es: EncuestasService, private ls: LoggedService) { }
 
   ngOnInit() {
     if (this.es.getPlantilla() !== undefined) {
+      console.log(this.ls.user);
+      this.encuesta.autor = this.ls.user.email;
       this.encuesta.fields = this.es.getPlantilla();
     } else {
       this.router.navigate(['encuestas']);
@@ -49,14 +54,13 @@ export class EncuestasComponent implements OnInit {
   }
 
   openEditFieldMenu(id?: number) {
-    if (id) {
+    if (id !== null) {
       this.encuesta.fields.forEach(element => {
         if (element.id === id) {
           this.editField = element;
         }
       });
     }
-
     this.editFieldMenu === false ? this.editFieldMenu = true : this.editFieldMenu = false;
   }
 
@@ -70,9 +74,12 @@ export class EncuestasComponent implements OnInit {
   addField(num) {
     const field =  {
       id: this.lastIdField + 1,
-      type: num,
-      question: 'Personaliza tu enunciado',
-      answers: ['Answer 1', 'Answer 2']
+      tipo: num,
+      texto: 'Personaliza tu enunciado',
+      respuestas: ['Answer 1', 'Answer 2'],
+      votos: [],
+      resTotales: 0,
+      porcentajes: []
     };
     this.encuesta.fields.push(field);
     this.addFieldsMenu = false;
@@ -94,11 +101,11 @@ export class EncuestasComponent implements OnInit {
 
   addFieldsToEditField() {
     const answer = 'New answer';
-    this.editField.answers.push(answer);
+    this.editField.respuestas.push(answer);
   }
 
   deleteFieldFromEditField(indice) {
-    this.editField.answers = this.editField.answers.splice(indice - 1, 1);
+    this.editField.respuestas = this.editField.respuestas.splice(indice - 1, 1);
   }
 
   trackByFn(index) {

@@ -17,13 +17,6 @@ export class AccesoComponent implements OnInit {
 
   ngOnInit() {
     this.returnUrl = this.route.snapshot.queryParams.returnUrl || 'mi-cuenta';
-    this.authService.authState.subscribe((user) => {
-      console.log(user);
-      this.logged.setLoggedUser(user);
-      if (user === null) {
-        this.logged.setLogged(false);
-      }
-    });
   }
 
   signInWithGoogle(): void {
