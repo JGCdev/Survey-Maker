@@ -1,13 +1,13 @@
 <div class="content-wrapper">
     <div class="content">
         <div class="content-form-wrapper">
-            <h2>{{resServer.titulo}}</h2>
-            <h5>Total votos: {{resServer.votosTotales}}</h5>
-            <h5>Fecha de creación: {{resServer.fCreacion}}</h5>
+            <h2>{{stats.titulo}}</h2>
+            <h5>Total votos: {{stats.votosTotales}}</h5>
+            <h5>Fecha de creación: {{stats.creationDate | date}}</h5>
             <div class="respuestas-container">
                 <div class="row">
 
-                    <div class="section-container" *ngFor="let pregunta of resServer.preguntas; let i = index;">
+                    <div class="section-container" *ngFor="let pregunta of stats.fields; let i = index;">
                         <div class="section">
                             <h3>{{i+1}} - {{pregunta.texto}}</h3>
                         </div>

@@ -15,7 +15,7 @@ const routes: Routes = [
   { path: 'crear-encuesta/campos', component: EncuestasComponent},
   { path: 'crear-encuesta/ajustes', component: AjustesComponent},
   { path: 'encuesta-creada', component: EncuestaCreadaComponent},
-  { path: 'seguimiento', component: StatsComponent},
+  { path: 'seguimiento/:id', component: StatsComponent},
   { path: ':id', component: VotarComponent}
 ];
 

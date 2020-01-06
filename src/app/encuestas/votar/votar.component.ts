@@ -18,11 +18,12 @@ export class VotarComponent implements OnInit {
   ngOnInit() {
     this.id = this.route.snapshot.paramMap.get('id');
     this.encuesta = this.es.getEncuestaById(this.id);
+    console.log(this.encuesta);
   }
 
   votar() {
     // logica
-    this.router.navigate(['/encuestas/seguimiento']);
+    this.router.navigate(['/encuestas/seguimiento/' + this.id]);
   }
 
 }

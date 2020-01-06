@@ -13,21 +13,21 @@
         
                 <div class="form-fields">
                     <div class="form-group" *ngFor="let field of encuesta.fields">
-                        <h3>{{field.question}}</h3>
-                        <select *ngIf="field.type===1">
-                            <option *ngFor="let item of field.answers">{{item}}</option>
+                        <h3>{{field.texto}}</h3>
+                        <select *ngIf="field.tipo===0">
+                            <option *ngFor="let item of field.respuestas">{{item}}</option>
                         </select>
         
-                        <ul *ngIf="field.type===2">
-                            <li *ngFor="let item of field.answers">
+                        <ul *ngIf="field.tipo===1">
+                            <li *ngFor="let item of field.respuestas; let i = index;">
                                     <span>{{item}}
                                     <input type="radio"></span>
                             </li>
                         </ul>
         
-                        <input *ngIf="field.type===3" type="text">
+                        <input *ngIf="field.tipo===2" type="text">
         
-                        <textarea *ngIf="field.type===4"></textarea>
+                        <textarea *ngIf="field.tipo===3"></textarea>
                     </div>
                   
                 </div>

@@ -1,10 +1,12 @@
 import { Field } from './field';
 
 export interface Encuesta {
+    id: number;
     title: string;
     buttonText: string;
-    fields: Array<Field>;
-    url: string;
     autor: string;
     creationDate: Date;
+    config: Array<number>;
+    fields: Array<Field>;
+    votosTotales: number;
 }
