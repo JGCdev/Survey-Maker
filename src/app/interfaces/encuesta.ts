@@ -6,4 +6,5 @@ export interface Encuesta {
     fields: Array<Field>;
     url: string;
     autor: string;
+    creationDate: Date;
 }

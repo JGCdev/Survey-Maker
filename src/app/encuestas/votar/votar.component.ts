@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Encuesta } from 'src/app/interfaces/encuesta';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { EncuestasService } from '../encuestas.service';
 
 @Component({
@@ -13,11 +13,16 @@ export class VotarComponent implements OnInit {
   encuesta: Encuesta;
   private id: string;
 
-  constructor(private route: ActivatedRoute, private es: EncuestasService) { }
+  constructor(private route: ActivatedRoute, private es: EncuestasService, private router: Router) { }
 
   ngOnInit() {
     this.id = this.route.snapshot.paramMap.get('id');
     this.encuesta = this.es.getEncuestaById(this.id);
+  }
+
+  votar() {
+    // logica
+    this.router.navigate(['/encuestas/seguimiento']);
   }
 
 }

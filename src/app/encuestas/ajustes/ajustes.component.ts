@@ -25,6 +25,7 @@ export class AjustesComponent implements OnInit {
   }
 
   saveSurvey() {
+    console.log(this.encuesta);
     this.es.generateUrl(this.encuesta);
     this.router.navigate(['encuestas/encuesta-creada']);
   }

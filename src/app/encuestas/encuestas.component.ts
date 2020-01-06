@@ -3,6 +3,7 @@ import { Field } from '../interfaces/field';
 import { Router } from '@angular/router';
 import { Encuesta } from '../interfaces/encuesta';
 import { EncuestasService } from './encuestas.service';
+import { LoggedService } from '../login/logged.service';
 
 @Component({
   selector: 'app-encuestas',
@@ -25,13 +26,16 @@ export class EncuestasComponent implements OnInit {
     fields: [
     ],
     url: null,
-    autor: ''
+    autor: '',
+    creationDate: null
   };
 
-  constructor(private router: Router, private es: EncuestasService) { }
+  constructor(private router: Router, private es: EncuestasService, private ls: LoggedService) { }
 
   ngOnInit() {
     if (this.es.getPlantilla() !== undefined) {
+      console.log(this.ls.user);
+      this.encuesta.autor = this.ls.user.email;
       this.encuesta.fields = this.es.getPlantilla();
     } else {
       this.router.navigate(['encuestas']);

@@ -1,0 +1,89 @@
+.content{
+    margin-top:10px;
+
+    h5{
+        display:inline;
+        margin: 10px;
+    }
+    .respuestas-container{
+        width: 80%;
+        margin: 0 auto;
+        display: flex;
+        flex-direction: column;
+    
+        .row{
+            margin-bottom: 27px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+    
+            .section-container{
+                width: 500px;
+                border: 2px solid
+                #60cdcb;
+                margin: 10px;
+                
+                .text-result{
+                    text-align:left;
+                    font-size:13px;
+                    margin-bottom: 10px;
+                    margin: 0px 20px;
+                    .multiples{
+                        border: 1px solid#60cdcb;
+                        margin-bottom: 10px;
+                        h4{
+                            margin:0;
+                        }
+                        .q-content{
+                            margin: 0 20px;
+                            text-align:center;
+                            position: relative;
+                            margin:0px;
+                            width:100%;
+                        }
+                    }
+                    .resp {
+                        border: 1px solid#60cdcb;
+                        margin-bottom: 10px;
+                        .content-text{
+                            margin:0px 10px;
+                        }
+                    }
+        
+                    .title{
+                        padding:0 10px;
+                        background-color:#60cdcb;
+                    }
+                    .q-content{
+                        width: 95%;
+                        .percent{
+                            background-color:rgba(96,205,203, 0.7);
+                            position: relative;
+                            height:30px;
+                        }
+                        span{
+                            position: absolute;
+                            top: 5px;
+                            left: 48.5%;
+                            width: 25px;
+                        }
+                    }
+                }
+            }
+    
+            .section{
+                background:#60cdcb;
+                margin: 0;
+                margin-bottom: 0px;
+                padding: 10px 0px;
+                margin-bottom: 10px;
+                h3{
+                    margin: 0;
+                    color:white;
+                }
+            }
+
+        }
+    }
+    
+}

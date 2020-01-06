@@ -27,7 +27,8 @@ export class EncuestasService {
       },
     ],
     url: null,
-    autor: ''
+    autor: '',
+    creationDate: null
   };
 
   constructor() { }
@@ -45,7 +46,7 @@ export class EncuestasService {
     return this.encuesta;
   }
   generateUrl(encuesta) {
-    this.encuesta.url = 'http://localhostblabla.com/'
+    this.encuesta.url = 'http://localhostblabla.com/';
   }
   getEncuestaById(id) {
     return this.encuestaAux;
