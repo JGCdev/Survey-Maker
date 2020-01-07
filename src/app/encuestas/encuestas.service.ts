@@ -110,11 +110,13 @@ export class EncuestasService {
     return this.encuesta;
   }
   getEncuestaById(id) {
-    return this.encuestaAux;
+    return this.http.get('http://localhost:3000/' + services.GET_ENCUESTA_BY_ID + id);
   }
 
   // Continuar con esta llamada
   crearEncuesta(encuesta: Encuesta) {
-    this.http.post('http://localhost:3000' + services.CREAR_ENCUESTA, encuesta);
+    console.log(encuesta);
+    console.log('http://localhost:3000' + services.CREAR_ENCUESTA);
+    return this.http.post('http://localhost:3000/' + services.CREAR_ENCUESTA, encuesta);
   }
 }

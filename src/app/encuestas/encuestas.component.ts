@@ -26,7 +26,7 @@ export class EncuestasComponent implements OnInit {
     title: 'Mi Encuesta Personalizada',
     buttonText: 'Enviar resultados',
     autor: '',
-    creationDate: null,
+    creationDate: new Date('2015-03-25'),
     votosTotales: 0,
     fields: []
   };

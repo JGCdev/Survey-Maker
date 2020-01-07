@@ -11,7 +11,7 @@ import { SharedModule } from '../shared/shared.module';
 import { PlantillaComponent } from './plantilla/plantilla.component';
 import { AjustesComponent } from './ajustes/ajustes.component';
 import { StatsComponent } from './stats/stats.component';
-import {HttpClientModule} from '@angular/common/http';
+
 @NgModule({
   declarations: [EncuestasComponent,  EncuestaCreadaComponent, VotarComponent, PlantillaComponent, AjustesComponent, StatsComponent],
   imports: [
@@ -19,8 +19,7 @@ import {HttpClientModule} from '@angular/common/http';
     EncuestasRoutingModule,
     FormsModule,
     SharedModule,
-    ReactiveFormsModule,
-    HttpClientModule
+    ReactiveFormsModule
   ]
 })
 export class EncuestasModule { }

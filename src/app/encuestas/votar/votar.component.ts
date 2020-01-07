@@ -17,8 +17,10 @@ export class VotarComponent implements OnInit {
 
   ngOnInit() {
     this.id = this.route.snapshot.paramMap.get('id');
-    this.encuesta = this.es.getEncuestaById(this.id);
-    console.log(this.encuesta);
+    this.es.getEncuestaById(this.id).subscribe( (res: any) => {
+      console.log('Encuesta recibida', res);
+      this.encuesta = res;
+    });
   }
 
   votar() {
