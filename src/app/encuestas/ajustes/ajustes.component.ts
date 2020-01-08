@@ -43,10 +43,16 @@ export class AjustesComponent implements OnInit {
       this.encuesta.config[1] = this.configForm.get('option2').value;
       this.encuesta.config[2] = this.configForm.get('option3').value;
       console.log('Guardar encuesta en BD:', this.encuesta);
-      this.es.crearEncuesta(this.encuesta).subscribe( (res: any) => {
-        console.log(res);
-        console.log('Id generado: ', res._id);
-      });
+      this.es.crearEncuesta(this.encuesta).subscribe(
+        (res: any) => {
+          console.log(res);
+          console.log('Id generado: ', res._id);
+          this.router.navigate(['encuestas/encuesta-creada']);
+        },
+        (err) => {
+
+        }
+      );
       // this.router.navigate(['encuestas/encuesta-creada']);
     } else {
       console.log('formulario invalido');

@@ -112,6 +112,9 @@ export class EncuestasService {
   getEncuestaById(id) {
     return this.http.get('http://localhost:3000/' + services.GET_ENCUESTA_BY_ID + id);
   }
+  getEncuestasByEmail(email) {
+    return this.http.get('http://localhost:3000/' + services.GET_ENCUESTA_BY_EMAIL + email);
+  }
 
   // Continuar con esta llamada
   crearEncuesta(encuesta: Encuesta) {

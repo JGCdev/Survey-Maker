@@ -1,6 +1,10 @@
 <div class="content-wrapper">
     <div class="content">
-        <div class="content-form-wrapper">
+        <div class="content-form-wrapper" *ngIf="!stats">
+            <h3>Error al recuperar la encuesta</h3>
+            <p>Por favor, revisa la URL o comprueba que no haya expirado.</p>
+        </div>
+        <div class="content-form-wrapper" *ngIf="stats">
             <h2>{{stats.titulo}}</h2>
             <h5>Total votos: {{stats.votosTotales}}</h5>
             <h5>Fecha de creación: {{stats.creationDate | date}}</h5>
