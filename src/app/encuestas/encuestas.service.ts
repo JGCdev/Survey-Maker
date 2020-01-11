@@ -11,7 +11,40 @@ export class EncuestasService {
 
   plantilla: Array<Field>;
   encuesta: Encuesta;
-  encuestaAux: Encuesta = {
+
+  constructor(private http: HttpClient) { }
+
+  setPlantilla(item) {
+    this.plantilla = item;
+  }
+  getPlantilla() {
+    return this.plantilla;
+  }
+  setEncuesta(item) {
+    this.encuesta = item;
+    // Seteamos plantilla para poder recuperar formulario
+    this.plantilla = item.fields;
+  }
+  getEncuesta() {
+    return this.encuesta;
+  }
+  getEncuestaById(id) {
+    return this.http.get('http://localhost:3000/' + services.GET_ENCUESTA_BY_ID + id);
+  }
+  getEncuestasByEmail(email) {
+    return this.http.get('http://localhost:3000/' + services.GET_ENCUESTA_BY_EMAIL + email);
+  }
+  updateEncuesta(encuesta: Encuesta) {
+    return this.http.put('http://localhost:3000/' + services.GET_ENCUESTA_BY_ID + encuesta._id, encuesta);
+  }
+
+  crearEncuesta(encuesta: Encuesta) {
+    return this.http.post('http://localhost:3000/' + services.CREAR_ENCUESTA, encuesta);
+  }
+
+
+  /* Ejemplo encuesta
+    encuestaAux: Encuesta = {
     id: 1,
     config: [],
     title: 'Mi Encuesta Personalizada',
@@ -25,18 +58,18 @@ export class EncuestasService {
         tipo: 0,
         texto: 'Plato principal',
         respuestas: ['Solomillo', 'Rodaballo'],
-        votos: [14, 20],
+        votos: [],
         resTotales: 34,
-        porcentajes: [41, 59]
+        porcentajes: []
       },
       {
         id: 1,
         tipo: 1,
         texto: 'Alérico a alguno de los elementos',
         respuestas: ['Gluten', 'Lactosa', 'Otros'],
-        votos: [2, 1, 0],
+        votos: [],
         resTotales: 3,
-        porcentajes: [67, 33, 0]
+        porcentajes: []
       },
       {
         id: 2,
@@ -92,34 +125,6 @@ export class EncuestasService {
       }
     ]
   };
+  */
 
-  constructor(private http: HttpClient) { }
-
-  setPlantilla(item) {
-    this.plantilla = item;
-  }
-  getPlantilla() {
-    return this.plantilla;
-  }
-  setEncuesta(item) {
-    this.encuesta = item;
-    // Seteamos plantilla para poder recuperar formulario
-    this.plantilla = item.fields;
-  }
-  getEncuesta() {
-    return this.encuesta;
-  }
-  getEncuestaById(id) {
-    return this.http.get('http://localhost:3000/' + services.GET_ENCUESTA_BY_ID + id);
-  }
-  getEncuestasByEmail(email) {
-    return this.http.get('http://localhost:3000/' + services.GET_ENCUESTA_BY_EMAIL + email);
-  }
-
-  // Continuar con esta llamada
-  crearEncuesta(encuesta: Encuesta) {
-    console.log(encuesta);
-    console.log('http://localhost:3000' + services.CREAR_ENCUESTA);
-    return this.http.post('http://localhost:3000/' + services.CREAR_ENCUESTA, encuesta);
-  }
 }

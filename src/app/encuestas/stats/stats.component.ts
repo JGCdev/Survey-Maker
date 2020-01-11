@@ -10,9 +10,9 @@ import { Encuesta } from 'src/app/interfaces/encuesta';
 })
 export class StatsComponent implements OnInit {
 
-
   stats: Encuesta;
   id: string;
+
   constructor(private es: EncuestasService, private route: ActivatedRoute) { }
 
   ngOnInit() {

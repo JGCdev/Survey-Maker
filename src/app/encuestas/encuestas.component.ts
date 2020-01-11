@@ -21,7 +21,7 @@ export class EncuestasComponent implements OnInit {
   lastIdField = 4;
 
   encuesta: Encuesta = {
-    id: 1,
+    _id: null,
     config: [1, 1, 0],
     title: 'Mi Encuesta Personalizada',
     buttonText: 'Enviar resultados',
@@ -72,7 +72,7 @@ export class EncuestasComponent implements OnInit {
   }
 
   addField(num) {
-    const field =  {
+    const field: Field =  {
       id: this.lastIdField + 1,
       tipo: num,
       texto: 'Personaliza tu enunciado',
@@ -81,6 +81,9 @@ export class EncuestasComponent implements OnInit {
       resTotales: 0,
       porcentajes: []
     };
+    if (num === 3 || num === 4) {
+      field.respuestas = [];
+    }
     this.encuesta.fields.push(field);
     this.addFieldsMenu = false;
     this.lastIdField++;

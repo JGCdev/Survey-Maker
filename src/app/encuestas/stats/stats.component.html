@@ -15,42 +15,42 @@
                         <div class="section">
                             <h3>{{i+1}} - {{pregunta.texto}}</h3>
                         </div>
-                        <article *ngIf="pregunta.tipo === 0" class="text-result">
+                        <article *ngIf="pregunta.tipo === 1" class="text-result">
                             <div class="multiples" *ngFor="let respuesta of pregunta.respuestas; let i = index;">
                                 <div class="title">
                                     <h4>{{respuesta}} - Votos: {{pregunta.votos[i]}}</h4>
                                 </div>
                                 <div class="q-content">
                                     <div class="percent" [style.width.%]="pregunta.porcentajes[i]"></div>
-                                    <span>{{pregunta.porcentajes[i]}}%</span>
-                                </div>
-                            </div>
-                        </article>
-                        <article *ngIf="pregunta.tipo === 1" class="text-result">
-                            <div class="multiples" *ngFor="let respuesta of pregunta.respuestas; let i = index;">
-                                <div class="title">
-                                    {{respuesta}} - Votos: {{pregunta.votos[i]}}
-                                </div>
-                                <div class="q-content">
-                                    <div class="percent" [style.width.%]="pregunta.porcentajes[i]"></div>
-                                    <span>{{pregunta.porcentajes[i]}}%</span>
+                                    <span>{{pregunta.votos[i] / stats.votosTotales * 100 | number: '1.0-0'}}%</span>
                                 </div>
                             </div>
                         </article>
                         <article *ngIf="pregunta.tipo === 2" class="text-result">
-                            <div class="resp" *ngFor="let respuesta of pregunta.respuestas; let i = index;">
+                            <div class="multiples" *ngFor="let respuesta of pregunta.respuestas; let i = index;">
                                 <div class="title">
-                                    {{respuesta.usuario}}
+                                    <h4>{{respuesta}} - Votos: {{pregunta.votos[i]}}</h4>
                                 </div>
-                                <div class="content-text">
-                                    {{respuesta.respuesta}}
+                                <div class="q-content">
+                                    <div class="percent" [style.width.%]="pregunta.porcentajes[i]"></div>
+                                    <span>{{pregunta.votos[i] / stats.votosTotales * 100 | number: '1.0-0'}}%</span>
                                 </div>
                             </div>
                         </article>
                         <article *ngIf="pregunta.tipo === 3" class="text-result">
                             <div class="resp" *ngFor="let respuesta of pregunta.respuestas; let i = index;">
                                 <div class="title">
-                                    {{respuesta.usuario}}
+                                    {{respuesta.autor}}
+                                </div>
+                                <div class="content-text">
+                                    {{respuesta.respuesta}}
+                                </div>
+                            </div>
+                        </article>
+                        <article *ngIf="pregunta.tipo === 4" class="text-result">
+                            <div class="resp" *ngFor="let respuesta of pregunta.respuestas; let i = index;">
+                                <div class="title">
+                                    {{respuesta.autor}}
                                 </div>
                                 <div class="content-text">
                                     {{respuesta.respuesta}}

@@ -42,18 +42,25 @@ export class AjustesComponent implements OnInit {
       this.encuesta.config[0] = this.configForm.get('option1').value;
       this.encuesta.config[1] = this.configForm.get('option2').value;
       this.encuesta.config[2] = this.configForm.get('option3').value;
+      console.log('encuesta antes de foreach', this.encuesta);
+      this.encuesta.fields.forEach(elem => {
+        const ceros = elem.respuestas.length;
+        for (let i = 0; i < ceros; i++) {
+          elem.votos.push(0);
+        }
+      });
       console.log('Guardar encuesta en BD:', this.encuesta);
       this.es.crearEncuesta(this.encuesta).subscribe(
         (res: any) => {
           console.log(res);
           console.log('Id generado: ', res._id);
-          this.router.navigate(['encuestas/encuesta-creada']);
+          this.router.navigate(['encuestas/encuesta-creada/' + res._id]);
         },
         (err) => {
 
         }
       );
-      // this.router.navigate(['encuestas/encuesta-creada']);
+
     } else {
       console.log('formulario invalido');
     }

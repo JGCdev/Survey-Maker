@@ -24,14 +24,14 @@
         
                         <ul *ngIf="field.tipo===2">
                             <li *ngFor="let item of field.respuestas; let i = index;">
-                                    <span>{{item}}
-                                    <input type="radio" formControlName="radio{{field.id}}" value="{{i}}"></span>
+                                <span>{{item}}
+                                <input type="checkbox" formControlName="checkbox{{i}}" value="false"></span>
                             </li>
                         </ul>
         
-                        <input *ngIf="field.tipo===3" type="text">
+                        <input *ngIf="field.tipo===3" formControlName="text{{field.id}}" type="text">
         
-                        <textarea *ngIf="field.tipo===4"></textarea>
+                        <textarea *ngIf="field.tipo===4" formControlName="textarea{{field.id}}"></textarea>
                     </div>
                   
                 </div>
