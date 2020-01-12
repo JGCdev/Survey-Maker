@@ -17,8 +17,7 @@ export class StatsComponent implements OnInit {
 
   ngOnInit() {
     this.id = this.route.snapshot.paramMap.get('id');
-    this.es.getEncuestaById(this.id).subscribe( (res: any) => {
-      console.log('Encuesta recibida', res);
+    this.es.getEncuestaById(this.id).subscribe( (res: Encuesta) => {
       this.stats = res;
     });
   }

@@ -29,17 +29,19 @@ export class EncuestasService {
     return this.encuesta;
   }
   getEncuestaById(id) {
-    return this.http.get('http://localhost:3000/' + services.GET_ENCUESTA_BY_ID + id);
+    return this.http.get('http://localhost:3000/' + services.ENCUESTAS + id);
   }
   getEncuestasByEmail(email) {
     return this.http.get('http://localhost:3000/' + services.GET_ENCUESTA_BY_EMAIL + email);
   }
   updateEncuesta(encuesta: Encuesta) {
-    return this.http.put('http://localhost:3000/' + services.GET_ENCUESTA_BY_ID + encuesta._id, encuesta);
+    return this.http.put('http://localhost:3000/' + services.ENCUESTAS + encuesta._id, encuesta);
   }
-
+  deleteEncuesta(id: string) {
+    return this.http.delete('http://localhost:3000/' + services.ENCUESTAS + id);
+  }
   crearEncuesta(encuesta: Encuesta) {
-    return this.http.post('http://localhost:3000/' + services.CREAR_ENCUESTA, encuesta);
+    return this.http.post('http://localhost:3000/' + services.ENCUESTAS, encuesta);
   }
 
 

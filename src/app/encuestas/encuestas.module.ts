@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 import { EncuestasRoutingModule } from './encuestas-routing.module';
-import { EncuestasComponent } from './encuestas.component';
+import { CamposComponent } from './campos/campos.component';
 import {EncuestaCreadaComponent  } from './encuesta-creada/encuesta-creada.component';
 
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
@@ -13,7 +13,7 @@ import { AjustesComponent } from './ajustes/ajustes.component';
 import { StatsComponent } from './stats/stats.component';
 
 @NgModule({
-  declarations: [EncuestasComponent,  EncuestaCreadaComponent, VotarComponent, PlantillaComponent, AjustesComponent, StatsComponent],
+  declarations: [CamposComponent,  EncuestaCreadaComponent, VotarComponent, PlantillaComponent, AjustesComponent, StatsComponent],
   imports: [
     CommonModule,
     EncuestasRoutingModule,

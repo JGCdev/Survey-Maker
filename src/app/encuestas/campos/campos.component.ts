@@ -1,16 +1,16 @@
 import { Component, OnInit } from '@angular/core';
-import { Field } from '../interfaces/field';
+import { Field } from '../../interfaces/field';
 import { Router } from '@angular/router';
-import { Encuesta } from '../interfaces/encuesta';
-import { EncuestasService } from './encuestas.service';
-import { LoggedService } from '../login/logged.service';
+import { Encuesta } from '../../interfaces/encuesta';
+import { EncuestasService } from '../encuestas.service';
+import { LoggedService } from '../../login/logged.service';
 
 @Component({
   selector: 'app-encuestas',
-  templateUrl: './encuestas.component.html',
-  styleUrls: ['./encuestas.component.scss']
+  templateUrl: './campos.component.html',
+  styleUrls: ['./campos.component.scss']
 })
-export class EncuestasComponent implements OnInit {
+export class CamposComponent implements OnInit {
 
   addFieldsMenu = false;
   editTitleMenu = false;
@@ -19,6 +19,8 @@ export class EncuestasComponent implements OnInit {
 
   editField: Field;
   lastIdField = 4;
+
+  error: string;
 
   encuesta: Encuesta = {
     _id: null,
@@ -94,8 +96,12 @@ export class EncuestasComponent implements OnInit {
   }
 
   saveSurvey() {
-    this.es.setEncuesta(this.encuesta);
-    this.router.navigate(['encuestas/crear-encuesta/ajustes']);
+    if (this.encuesta.fields.length > 0) {
+      this.es.setEncuesta(this.encuesta);
+      this.router.navigate(['encuestas/crear-encuesta/ajustes']);
+    } else {
+      this.error = 'Debes añadir al menos un campo a tu encuesta';
+    }
   }
 
   saveMenuForm() {

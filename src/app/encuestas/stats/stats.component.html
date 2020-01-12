@@ -6,10 +6,11 @@
         </div>
         <div class="content-form-wrapper" *ngIf="stats">
             <h2>{{stats.titulo}}</h2>
-            <h5>Total votos: {{stats.votosTotales}}</h5>
+            <h5>Votos totales: {{stats.votosTotales}}</h5>
             <h5>Fecha de creación: {{stats.creationDate | date}}</h5>
             <div class="respuestas-container">
-                <div class="row">
+                <p *ngIf="stats.votosTotales === 0">Aún no hay ningún voto para la encuesta</p>
+                <div class="row" *ngIf="stats.votosTotales > 0">
 
                     <div class="section-container" *ngFor="let pregunta of stats.fields; let i = index;">
                         <div class="section">
@@ -21,7 +22,7 @@
                                     <h4>{{respuesta}} - Votos: {{pregunta.votos[i]}}</h4>
                                 </div>
                                 <div class="q-content">
-                                    <div class="percent" [style.width.%]="pregunta.porcentajes[i]"></div>
+                                    <div class="percent" [style.width.%]="pregunta.votos[i] / stats.votosTotales * 100"></div>
                                     <span>{{pregunta.votos[i] / stats.votosTotales * 100 | number: '1.0-0'}}%</span>
                                 </div>
                             </div>
@@ -32,7 +33,7 @@
                                     <h4>{{respuesta}} - Votos: {{pregunta.votos[i]}}</h4>
                                 </div>
                                 <div class="q-content">
-                                    <div class="percent" [style.width.%]="pregunta.porcentajes[i]"></div>
+                                    <div class="percent" [style.width.%]="pregunta.votos[i] / stats.votosTotales * 100"></div>
                                     <span>{{pregunta.votos[i] / stats.votosTotales * 100 | number: '1.0-0'}}%</span>
                                 </div>
                             </div>

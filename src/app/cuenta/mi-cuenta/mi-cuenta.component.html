@@ -10,8 +10,7 @@
                     <div class="columna">
                         <div class="columna-wrapper">
                             <h2>Encuestas Activas: <span *ngIf="encuestas">{{encuestas.length}}</span></h2>
-                            <p *ngIf="!encuestas">No existen encuestas</p>
-                            <div class="encuestas-resumen" *ngIf="encuestas">
+                            <div class="encuestas-resumen" *ngIf="encuestas && encuestas.length > 0">
                                 <table class="enc-table">
                                     <tr class="tr-header">
                                         <th>Acciones</th>
@@ -20,9 +19,9 @@
                                     </tr>
                                     <tr *ngFor="let encuesta of encuestas">
                                         <td>
-                                            <a href="http://localhost:4200/encuestas/seguimiento/{{encuesta._id}}">Ver</a>
-                                            -
-                                            <a href="http://localhost:4200/encuestas/{{encuesta._id}}">Votar</a>
+                                            <button title="Ver" class="actionbtn" [routerLink]="['/encuestas/seguimiento/' + encuesta._id]"><fa name="eye"></fa></button>
+                                            <button title="Votar" class="actionbtn" [routerLink]="['/encuestas/' + encuesta._id]"><fa name="arrow-up"></fa></button>
+                                            <button title="Eliminar" class="actionbtn" (click)="eliminarEncuesta(encuesta._id)"><fa name="trash"></fa></button>
                                         </td>
                                         <td>{{encuesta.title}}</td>
                                         <td>{{encuesta.votosTotales}}</td>

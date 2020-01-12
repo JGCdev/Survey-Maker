@@ -1,5 +1,4 @@
 export const services = {
-    CREAR_ENCUESTA: 'api/encuestas/',
-    GET_ENCUESTA_BY_ID: 'api/encuestas/',
+    ENCUESTAS: 'api/encuestas/',
     GET_ENCUESTA_BY_EMAIL: 'api/usuario/encuestas/'
 }

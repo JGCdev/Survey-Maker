@@ -18,6 +18,7 @@
                 <button class="action-btn" (click)="return()" type="button"><fa name="arrow-left"></fa> Volver atrás</button>
                 <button class="action-btn" (click)="resetSurvey()" type="button"><fa name="refresh"></fa> Resetear campos</button>
             </div>
+            <p *ngIf="error">*{{error}}</p>
             <form class="survey-form">
         
                 <!-- Title -->
