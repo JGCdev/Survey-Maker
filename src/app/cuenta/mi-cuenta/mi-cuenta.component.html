@@ -1,4 +1,3 @@
-
 <div class="content-wrapper">
     <div class="content">
         <div class="content-form-wrapper" *ngIf="user">
@@ -10,7 +9,7 @@
                     <div class="columna">
                         <div class="columna-wrapper">
                             <h2>Encuestas Activas: <span *ngIf="encuestas">{{encuestas.length}}</span></h2>
-                            <div class="encuestas-resumen" *ngIf="encuestas && encuestas.length > 0">
+                            <div *ngIf="encuestas && encuestas.length > 0">
                                 <table class="enc-table">
                                     <tr class="tr-header">
                                         <th>Acciones</th>

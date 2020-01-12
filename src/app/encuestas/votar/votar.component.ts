@@ -12,14 +12,17 @@ import { LoggedService } from '../../login/logged.service';
 })
 export class VotarComponent implements OnInit {
 
-
   encuesta: Encuesta;
   private id: string;
   form: FormGroup;
   user: SocialUser;
 
-  constructor(private route: ActivatedRoute, private es: EncuestasService, private router: Router, private formBuilder: FormBuilder,
-              private ls: LoggedService ) {
+  constructor(private route: ActivatedRoute,
+              private es: EncuestasService,
+              private router: Router,
+              private formBuilder: FormBuilder,
+              private ls: LoggedService
+  ) {
     this.form = this.formBuilder.group({});
   }
 
@@ -69,14 +72,14 @@ export class VotarComponent implements OnInit {
 
       if (element.tipo === 1) {
         const resp: number = this.form.get('select' + element.id).value;
-        console.log('resp', resp);
+        // console.log('resp', resp);
         element.votos[resp] !== undefined ? element.votos[resp]++ : element.votos[resp] = 1;
-        console.log(element.votos[resp]);
+        // console.log(element.votos[resp]);
       }
       if (element.tipo === 2) {
         element.respuestas.forEach( (ele, ind) => {
           const resp: boolean = this.form.get('checkbox' + ind).value;
-          console.log('resp' + ind, resp);
+          // console.log('resp' + ind, resp);
           if (resp === true) {
             element.votos[ind]++;
           }
@@ -89,7 +92,7 @@ export class VotarComponent implements OnInit {
           respuesta: resp
         };
         element.respuestas.push(obj);
-        console.log('resp', resp);
+        // console.log('resp', resp);
       }
       if (element.tipo === 4) {
         const resp: number = this.form.get('textarea' + element.id).value;
@@ -98,7 +101,7 @@ export class VotarComponent implements OnInit {
           respuesta: resp
         };
         element.respuestas.push(obj);
-        console.log('resp', resp);
+        // console.log('resp', resp);
       }
     });
     this.encuesta.votosTotales++;

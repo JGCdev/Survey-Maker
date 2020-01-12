@@ -20,9 +20,9 @@ export class AjustesComponent implements OnInit {
       option2: new FormControl(''),
       option3: new FormControl('', [Validators.min(0)]),
     });
-    this.configForm.controls['option1'].setValue(0);
-    this.configForm.controls['option2'].setValue(0);
-    this.configForm.controls['option3'].setValue(30);
+    this.configForm.controls.option1.setValue(0);
+    this.configForm.controls.option2.setValue(0);
+    this.configForm.controls.option3.setValue(30);
   }
 
   ngOnInit() {
@@ -42,7 +42,6 @@ export class AjustesComponent implements OnInit {
       this.encuesta.config[0] = this.configForm.get('option1').value;
       this.encuesta.config[1] = this.configForm.get('option2').value;
       this.encuesta.config[2] = this.configForm.get('option3').value;
-      console.log('encuesta antes de foreach', this.encuesta);
       this.encuesta.fields.forEach(elem => {
         const ceros = elem.respuestas.length;
         for (let i = 0; i < ceros; i++) {
@@ -52,7 +51,6 @@ export class AjustesComponent implements OnInit {
       console.log('Guardar encuesta en BD:', this.encuesta);
       this.es.crearEncuesta(this.encuesta).subscribe(
         (res: any) => {
-          console.log(res);
           console.log('Id generado: ', res._id);
           this.router.navigate(['encuestas/encuesta-creada/' + res._id]);
         },
@@ -60,7 +58,6 @@ export class AjustesComponent implements OnInit {
 
         }
       );
-
     } else {
       console.log('formulario invalido');
     }
