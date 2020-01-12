@@ -9,28 +9,22 @@
                 <div class="fila">
                     <div class="columna">
                         <div class="columna-wrapper">
-                            <h2>Encuestas Activas:</h2>
-                            <div class="encuestas-resumen">
+                            <h2>Encuestas Activas: <span *ngIf="encuestas">{{encuestas.length}}</span></h2>
+                            <div class="encuestas-resumen" *ngIf="encuestas && encuestas.length > 0">
                                 <table class="enc-table">
                                     <tr class="tr-header">
-                                        <th>ID</th>
+                                        <th>Acciones</th>
                                         <th>Título</th>
                                         <th>Votos</th>
                                     </tr>
-                                    <tr>
-                                        <td>1245</td>
-                                        <td>Cena de navidad</td>
-                                        <td>43</td>
-                                    </tr>
-                                    <tr>
-                                        <td>2245</td>
-                                        <td>Colores favoritos</td>
-                                        <td>49</td>
-                                    </tr>
-                                    <tr>
-                                        <td>3245</td>
-                                        <td>Menú comedor</td>
-                                        <td>19</td>
+                                    <tr *ngFor="let encuesta of encuestas">
+                                        <td>
+                                            <button title="Ver" class="actionbtn" [routerLink]="['/encuestas/seguimiento/' + encuesta._id]"><fa name="eye"></fa></button>
+                                            <button title="Votar" class="actionbtn" [routerLink]="['/encuestas/' + encuesta._id]"><fa name="arrow-up"></fa></button>
+                                            <button title="Eliminar" class="actionbtn" (click)="eliminarEncuesta(encuesta._id)"><fa name="trash"></fa></button>
+                                        </td>
+                                        <td>{{encuesta.title}}</td>
+                                        <td>{{encuesta.votosTotales}}</td>
                                     </tr>
                                   </table> 
                             </div>

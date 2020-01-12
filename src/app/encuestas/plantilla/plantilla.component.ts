@@ -16,7 +16,7 @@ export class PlantillaComponent implements OnInit {
         tipo: 1,
         texto: 'Selección única',
         respuestas: ['Opción 1', 'Opción 2'],
-        votos: [14, 20],
+        votos: [],
         resTotales: 34,
         porcentajes: [41, 59]
       },
@@ -27,7 +27,7 @@ export class PlantillaComponent implements OnInit {
         tipo: 2,
         texto: 'Opción de selección múltiple',
         respuestas: ['Opción 1', 'Opción 2', 'Opción 3'],
-        votos: [2, 1, 0],
+        votos: [],
         resTotales: 3,
         porcentajes: [67, 33, 0]
       }
@@ -38,7 +38,7 @@ export class PlantillaComponent implements OnInit {
         tipo: 1,
         texto: 'Plato principal',
         respuestas: ['Solomillo', 'Rodaballo'],
-        votos: [14, 20],
+        votos: [],
         resTotales: 34,
         porcentajes: [41, 59]
       },
@@ -47,7 +47,7 @@ export class PlantillaComponent implements OnInit {
         tipo: 2,
         texto: 'Alérico a alguno de los elementos',
         respuestas: ['Gluten', 'Lactosa', 'Otros'],
-        votos: [2, 1, 0],
+        votos: [],
         resTotales: 3,
         porcentajes: [67, 33, 0]
       },
@@ -58,24 +58,7 @@ export class PlantillaComponent implements OnInit {
         votos: [],
         resTotales: 4,
         porcentajes: [],
-        respuestas: [
-          {
-            usuario: 'jgimenez@gmail.com',
-            respuesta: 'Mi presupeusta Jesús'
-          },
-          {
-            usuario: 'jorge@gmail.com',
-            respuesta: 'Mi presupeusta Jesús'
-          },
-          {
-            usuario: 'pedro@gmail.com',
-            respuesta: 'Mi presupeusta Jesús'
-          },
-          {
-            usuario: 'luis@gmail.com',
-            respuesta: 'Mi presupeusta Jesús'
-          }
-        ]
+        respuestas: []
       },
       {
         id: 3,
@@ -84,24 +67,7 @@ export class PlantillaComponent implements OnInit {
         votos: [],
         resTotales: 4,
         porcentajes: [],
-        respuestas: [
-          {
-            usuario: 'jgimenez@gmail.com',
-            respuesta: 'Este es un texto de campo largo, textarea. Comprobar como colocar con los demás.'
-          },
-          {
-            usuario: 'jorge@gmail.com',
-            respuesta: 'Este es un texto de campo largo, textarea. Comprobar como colocar con los demás.'
-          },
-          {
-            usuario: 'pedro@gmail.com',
-            respuesta: 'Este es un texto de campo largo, textarea. Comprobar como colocar con los demás.'
-          },
-          {
-            usuario: 'luis@gmail.com',
-            respuesta: 'Este es un texto de campo largo, textarea. Comprobar como colocar con los demás.'
-          }
-        ]
+        respuestas: []
       }
     ],
   ];

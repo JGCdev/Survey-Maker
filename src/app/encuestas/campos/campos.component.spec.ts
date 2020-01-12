@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { EncuestasComponent } from './encuestas.component';
+import { CamposComponent } from './campos.component';
 
 describe('FreeComponent', () => {
-  let component: EncuestasComponent;
-  let fixture: ComponentFixture<EncuestasComponent>;
+  let component: CamposComponent;
+  let fixture: ComponentFixture<CamposComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ EncuestasComponent ]
+      declarations: [ CamposComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(EncuestasComponent);
+    fixture = TestBed.createComponent(CamposComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

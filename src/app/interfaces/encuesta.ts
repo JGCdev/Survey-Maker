@@ -1,7 +1,7 @@
 import { Field } from './field';
 
 export interface Encuesta {
-    id: number;
+    _id: number;
     title: string;
     buttonText: string;
     autor: string;

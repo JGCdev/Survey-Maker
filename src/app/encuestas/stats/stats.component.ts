@@ -10,14 +10,16 @@ import { Encuesta } from 'src/app/interfaces/encuesta';
 })
 export class StatsComponent implements OnInit {
 
-
   stats: Encuesta;
   id: string;
+
   constructor(private es: EncuestasService, private route: ActivatedRoute) { }
 
   ngOnInit() {
     this.id = this.route.snapshot.paramMap.get('id');
-    this.stats = this.es.getEncuestaById(this.id);
+    this.es.getEncuestaById(this.id).subscribe( (res: Encuesta) => {
+      this.stats = res;
+    });
   }
 
 }

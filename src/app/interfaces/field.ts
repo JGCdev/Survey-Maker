@@ -3,7 +3,7 @@ export interface Field {
         tipo: number;
         texto: string;
         respuestas: Array<any>;
-        votos: Array<number>;
+        votos: Array<any>;
         resTotales: number;
         porcentajes: Array<number>;
 }

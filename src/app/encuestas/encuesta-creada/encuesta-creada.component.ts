@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { EncuestasService } from '../encuestas.service';
 import { Encuesta } from 'src/app/interfaces/encuesta';
-import { Router } from '@angular/router';
+import { Router, ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-encuesta-creada',
@@ -10,15 +10,13 @@ import { Router } from '@angular/router';
 })
 export class EncuestaCreadaComponent implements OnInit {
 
+  id: string;
   encuesta: Encuesta;
-  constructor(private es: EncuestasService, private router: Router) { }
+
+  constructor(private es: EncuestasService, private route: ActivatedRoute, private router: Router) { }
 
   ngOnInit() {
-    if (this.es.getEncuesta() !== undefined) {
-      this.encuesta = this.es.getEncuesta();
-    } else {
-      this.router.navigate(['encuestas']);
-    }
+    this.id = this.route.snapshot.paramMap.get('id');
   }
 
 }
