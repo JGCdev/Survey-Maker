@@ -58,24 +58,7 @@ export class PlantillaComponent implements OnInit {
         votos: [],
         resTotales: 4,
         porcentajes: [],
-        respuestas: [
-          {
-            usuario: 'jgimenez@gmail.com',
-            respuesta: 'Mi presupeusta Jesús'
-          },
-          {
-            usuario: 'jorge@gmail.com',
-            respuesta: 'Mi presupeusta Jesús'
-          },
-          {
-            usuario: 'pedro@gmail.com',
-            respuesta: 'Mi presupeusta Jesús'
-          },
-          {
-            usuario: 'luis@gmail.com',
-            respuesta: 'Mi presupeusta Jesús'
-          }
-        ]
+        respuestas: []
       },
       {
         id: 3,
@@ -84,24 +67,7 @@ export class PlantillaComponent implements OnInit {
         votos: [],
         resTotales: 4,
         porcentajes: [],
-        respuestas: [
-          {
-            usuario: 'jgimenez@gmail.com',
-            respuesta: 'Este es un texto de campo largo, textarea. Comprobar como colocar con los demás.'
-          },
-          {
-            usuario: 'jorge@gmail.com',
-            respuesta: 'Este es un texto de campo largo, textarea. Comprobar como colocar con los demás.'
-          },
-          {
-            usuario: 'pedro@gmail.com',
-            respuesta: 'Este es un texto de campo largo, textarea. Comprobar como colocar con los demás.'
-          },
-          {
-            usuario: 'luis@gmail.com',
-            respuesta: 'Este es un texto de campo largo, textarea. Comprobar como colocar con los demás.'
-          }
-        ]
+        respuestas: []
       }
     ],
   ];

@@ -29,16 +29,6 @@ export class VotarComponent implements OnInit {
       (res: any) => {
         console.log('Encuesta recibida', res);
         this.encuesta = res;
-
-        this.form = this.formBuilder.group({
-            myOptionsArray: this.formBuilder.array([
-                this.formBuilder.group({
-                    id: 1,
-                    name: 'Option 1',
-                    selected: false
-                })
-            ])
-        });
         this.encuesta.fields.forEach( (elem, index) => {
           if (elem.tipo === 1) {
             const control = this.formBuilder.control('select' + index);
@@ -55,10 +45,14 @@ export class VotarComponent implements OnInit {
           if (elem.tipo === 3) {
             const control = this.formBuilder.control('text' + index);
             this.form.addControl('text' + elem.id, control );
+            const valueToPatch = {['text' + elem.id]: ''};
+            this.form.patchValue(valueToPatch);
           }
           if (elem.tipo === 4) {
             const control = this.formBuilder.control('textarea' + index);
             this.form.addControl('textarea' + elem.id, control );
+            const valueToPatch = {['textarea' + elem.id]: ''};
+            this.form.patchValue(valueToPatch);
           }
         });
       },
