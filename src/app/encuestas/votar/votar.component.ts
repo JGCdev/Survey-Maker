@@ -71,15 +71,20 @@ export class VotarComponent implements OnInit {
     this.encuesta.fields.forEach((element, index) => {
 
       if (element.tipo === 1) {
-        const resp: number = this.form.get('select' + element.id).value;
-        // console.log('resp', resp);
+        const resp: string = this.form.get('select' + element.id).value;
+        console.log('resp', resp);
+        // Utilizar si queremos validar campos
+        // if (resp !== 'select' + element.id) {
+        //   console.log('esta seteado');
+        // } else {
+        //   console.log('no se ha respondido nada, mandar mensaje de rellenar en caso que sea obligatorio');
+        // }
         element.votos[resp] !== undefined ? element.votos[resp]++ : element.votos[resp] = 1;
-        // console.log(element.votos[resp]);
       }
       if (element.tipo === 2) {
         element.respuestas.forEach( (ele, ind) => {
           const resp: boolean = this.form.get('checkbox' + ind).value;
-          // console.log('resp' + ind, resp);
+          console.log('resp' + ind, resp);
           if (resp === true) {
             element.votos[ind]++;
           }
@@ -92,7 +97,7 @@ export class VotarComponent implements OnInit {
           respuesta: resp
         };
         element.respuestas.push(obj);
-        // console.log('resp', resp);
+        console.log('resp', resp);
       }
       if (element.tipo === 4) {
         const resp: number = this.form.get('textarea' + element.id).value;
@@ -101,13 +106,15 @@ export class VotarComponent implements OnInit {
           respuesta: resp
         };
         element.respuestas.push(obj);
-        // console.log('resp', resp);
+        console.log('resp', resp);
       }
     });
     this.encuesta.votosTotales++;
     console.log(this.encuesta);
     this.es.updateEncuesta(this.encuesta).subscribe( res => {
-      console.log(res);
+      if (res !== null) {
+        this.router.navigate(['/encuestas/seguimiento/' + this.id] , { queryParams: { success: '1' } });
+      }
     });
   }
 

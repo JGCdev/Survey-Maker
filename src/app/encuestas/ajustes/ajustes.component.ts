@@ -20,9 +20,9 @@ export class AjustesComponent implements OnInit {
       option2: new FormControl(''),
       option3: new FormControl('', [Validators.min(0)]),
     });
-    this.configForm.controls.option1.setValue(0);
-    this.configForm.controls.option2.setValue(0);
-    this.configForm.controls.option3.setValue(30);
+    this.configForm.controls.option1.setValue('0');
+    this.configForm.controls.option2.setValue('0');
+    this.configForm.controls.option3.setValue('30');
   }
 
   ngOnInit() {

@@ -2,7 +2,7 @@
 <div class="content-wrapper">
     <div class="content">
         <div class="content-form-wrapper">
-            <h1>3- Configura tu encuesta y publica</h1>
+            <h1>3- Ajusta y publica</h1>
             <div class="survey-actions">
                 <button class="action-btn" (click)="return()" type="button"><fa name="arrow-left"></fa> Volver atrás</button>
             </div>
@@ -51,7 +51,7 @@
                         <div class="columna-wrapper">
                             <h2>Ajustes</h2>
                             <form [formGroup]="configForm">
-                                <h4>¿Mostrar resultados al votar?</h4>
+                                <h4>¿Mostrar resultados después de votar?</h4>
                                 <select id="opt1" formControlName="option1">
                                     <option value="0">
                                         Sí
@@ -60,7 +60,7 @@
                                         No
                                     </option>
                                 </select>
-                                <h4>¿Mostrar nombre en lista de resultados?</h4>
+                                <h4>¿Respuestas anónimas?</h4>
                                 <select id="opt2" formControlName="option2">
                                     <option value="0">
                                         Sí

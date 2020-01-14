@@ -12,13 +12,21 @@ export class StatsComponent implements OnInit {
 
   stats: Encuesta;
   id: string;
+  text: string;
 
-  constructor(private es: EncuestasService, private route: ActivatedRoute) { }
+  constructor(private es: EncuestasService, private route: ActivatedRoute) { 
+    this.route.queryParams.subscribe(params => {
+      if (params.success) {
+        this.text = '¡Has votado correctamente!';
+      }
+    });
+  }
 
   ngOnInit() {
     this.id = this.route.snapshot.paramMap.get('id');
     this.es.getEncuestaById(this.id).subscribe( (res: Encuesta) => {
       this.stats = res;
+      console.log(this.stats);
     });
   }
 
