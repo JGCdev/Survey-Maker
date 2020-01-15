@@ -1,3 +1,4 @@
 export const offlineServices = {
-    ENCUESTA: '/encuestas/',
-}
+    GET_USER_ENCUESTAS: '/assets/offline/userEncuestas.json',
+};
+

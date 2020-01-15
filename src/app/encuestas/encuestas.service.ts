@@ -3,7 +3,8 @@ import { Field } from '../interfaces/field';
 import { Encuesta } from '../interfaces/encuesta';
 import { HttpClient } from '@angular/common/http';
 import { services } from '../../environments/services';
-
+import {environment} from '../../environments/environment';
+import { offlineServices } from '../../environments/offline.services';
 @Injectable({
   providedIn: 'root'
 })
@@ -32,7 +33,11 @@ export class EncuestasService {
     return this.http.get('http://localhost:3000/' + services.ENCUESTAS + id);
   }
   getEncuestasByEmail(email) {
-    return this.http.get('http://localhost:3000/' + services.GET_ENCUESTA_BY_EMAIL + email);
+    if (environment.production) {
+      return this.http.get('http://localhost:3000/' + services.GET_ENCUESTA_BY_EMAIL + email);
+    } else {
+      return this.http.get(offlineServices.GET_USER_ENCUESTAS);
+    }
   }
   updateEncuesta(encuesta: Encuesta) {
     return this.http.put('http://localhost:3000/' + services.ENCUESTAS + encuesta._id, encuesta);

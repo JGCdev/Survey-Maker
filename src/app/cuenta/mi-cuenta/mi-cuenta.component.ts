@@ -5,6 +5,7 @@ import { LoggedService } from 'src/app/login/logged.service';
 import { EncuestasService } from 'src/app/encuestas/encuestas.service';
 import { Encuesta } from 'src/app/interfaces/encuesta';
 
+
 @Component({
   selector: 'app-mi-cuenta',
   templateUrl: './mi-cuenta.component.html',
