@@ -1,4 +1,3 @@
-
 .content{
     padding-top:10px;
     .content-form-wrapper{
@@ -8,8 +7,10 @@
             margin-top: 5px;
         }
         h4{
-            margin-top:10px;
             display:inline;
+        }
+        .big-btn{
+            width:300px;
         }
         .enc-table{
             width: 100%;
@@ -46,9 +47,7 @@
                 .form-group:hover {
                     border: 0px solid #60cdcb;
                   
-                }
-               
-               
+                } 
             }
     
             .button-edit-container{
@@ -62,78 +61,69 @@
                 border: 0px solid #60cdcb;
             }
     
-        
         }
         
-              
-        }
-}
-
-
-.ajustes-container{
-    width: 80%;
-    border: 2px solid
-    #60cdcb;
-    height: auto;
-    margin: 0 auto;
-    display: flex;
-    background-color: #b5eae6;
-    flex-direction: column;
-    padding:20px;
-    margin-top: 15px;
-        .fila{
+        .ajustes-container{
+            width: 80%;
+            border: 2px solid
+            #60cdcb;
+            height: auto;
+            margin: 0 auto;
             display: flex;
-            flex-direction: row;
-            flex-wrap: wrap;
-            width: 100%;
-            .columna{
-                display: flex;
-                flex-direction: column;
-                flex-basis: 100%;
-                flex: 1;
-                .columna-wrapper{
+            background-color: #b5eae6;
+            flex-direction: column;
+            padding:20px;
+            margin-top: 15px;
+                .fila{
                     display: flex;
-                    flex-direction: column;
-                    padding: 10px 20px;
-                    align-items: center;
-                    h2{
-                        margin:0;
+                    flex-direction: row;
+                    flex-wrap: wrap;
+                    width: 100%;
+                    .columna{
+                        display: flex;
+                        flex-direction: column;
+                        flex-basis: 100%;
+                        flex: 1;
+                        .columna-wrapper{
+                            display: flex;
+                            flex-direction: column;
+                            padding: 10px 20px;
+                            align-items: center;
+                            h2{
+                                margin:0;
+                            }
+                            h3{
+                                margin:0;
+                            }
+                            h4{
+                                margin-bottom:0;
+                            }
+                            select{
+                                width:100px;
+                            }
+                            img{
+                                max-width:200px;
+                            }
+                            .actionbtn{
+                                background-color:#60cdcb;
+                                color:white;
+                                padding: 5px 10px;
+                                border-radius: 20px;
+                                border: none;
+                                font-weight: bold;
+                                margin: 5px;
+                                font-family: "Titillium Web", sans-serif;
+                                cursor:pointer;
+                            }
+                        }
                     }
-                    h3{
-                        margin:0;
-                    }
-                    h4{
-                        margin-bottom:0;
-                    }
-                    select{
-                        width:100px;
-                    }
-                    img{
-                        max-width:200px;
-                    }
-                    .action-btn{
-                        margin-top:8px;
-                        width:50%;
-                    }
-                }
-            }
+                } 
         }
-
-    
-    
+              
+    }
 }
 
-.big-btn{
-    width:300px;
-}
-.actionbtn{
-    background-color:#60cdcb;
-    color:white;
-    padding: 5px 10px;
-    border-radius: 20px;
-    border: none;
-    font-weight: bold;
-    margin: 5px;
-    font-family: "Titillium Web", sans-serif;
-    cursor:pointer;
-}
+
+
+
+

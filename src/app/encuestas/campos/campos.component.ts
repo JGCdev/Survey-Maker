@@ -36,12 +36,11 @@ export class CamposComponent implements OnInit {
   constructor(private router: Router, private es: EncuestasService, private ls: LoggedService) { }
 
   ngOnInit() {
-    if (this.es.getPlantilla() !== undefined) {
-      console.log(this.ls.user);
-      this.encuesta.autor = this.ls.user.email;
-      this.encuesta.fields = this.es.getPlantilla();
+    if (this.es.getPlantilla() !== undefined && this.ls.user !== null ) {
+        this.encuesta.autor = this.ls.user.email;
+        this.encuesta.fields = this.es.getPlantilla();
     } else {
-      this.router.navigate(['encuestas']);
+      this.ls.user === null ? this.router.navigate(['login']) : this.router.navigate(['encuestas']);
     }
   }
 

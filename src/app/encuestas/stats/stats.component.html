@@ -5,7 +5,8 @@
             <p>Por favor, revisa la URL o comprueba que no haya expirado.</p>
         </div>
         <div class="content-form-wrapper" *ngIf="stats">
-            <h2>{{stats.titulo}}</h2>
+            <h3 *ngIf="text!==null">{{text}}</h3>
+            <h2>{{stats.title}}</h2>
             <h5>Votos totales: {{stats.votosTotales}}</h5>
             <h5>Fecha de creación: {{stats.creationDate | date}}</h5>
             <div class="respuestas-container">
@@ -41,7 +42,7 @@
                         <article *ngIf="pregunta.tipo === 3" class="text-result">
                             <div class="resp" *ngFor="let respuesta of pregunta.respuestas; let i = index;">
                                 <div class="title">
-                                    {{respuesta.autor}}
+                                    <fa name="user" ></fa> {{respuesta.autor}}
                                 </div>
                                 <div class="content-text">
                                     {{respuesta.respuesta}}
