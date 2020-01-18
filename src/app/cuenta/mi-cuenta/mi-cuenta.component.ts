@@ -5,7 +5,6 @@ import { LoggedService } from 'src/app/login/logged.service';
 import { EncuestasService } from 'src/app/encuestas/encuestas.service';
 import { Encuesta } from 'src/app/interfaces/encuesta';
 
-
 @Component({
   selector: 'app-mi-cuenta',
   templateUrl: './mi-cuenta.component.html',
@@ -16,6 +15,8 @@ export class MiCuentaComponent implements OnInit {
 
   user: SocialUser;
   encuestas: Array<Encuesta>;
+  saveOverlayMenu = false;
+  encuestaBorrarId: string;
   constructor(private authService: AuthService, private router: Router, private logged: LoggedService, private es: EncuestasService) { }
 
   ngOnInit() {
@@ -46,13 +47,21 @@ export class MiCuentaComponent implements OnInit {
     );
   }
 
-  eliminarEncuesta(id) {
-    this.es.deleteEncuesta(id).subscribe( (res) => {
+  eliminarEncuesta() {
+    this.es.deleteEncuesta(this.encuestaBorrarId).subscribe( (res) => {
       this.obtenerEncuestas();
+      this.saveOverlayMenu = false;
     },
     (err) => {
       console.log(err);
     });
+  }
+
+  openSaveOverlayMenu(enc?: string) {
+    if (enc) {
+      this.encuestaBorrarId = enc;
+    }
+    this.saveOverlayMenu === false ? this.saveOverlayMenu = true : this.saveOverlayMenu = false;
   }
 
 }

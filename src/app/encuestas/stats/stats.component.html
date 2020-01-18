@@ -41,7 +41,7 @@
                         </article>
                         <article *ngIf="pregunta.tipo === 3" class="text-result">
                             <div class="resp" *ngFor="let respuesta of pregunta.respuestas; let i = index;">
-                                <div class="title">
+                                <div class="title" *ngIf="stats.config[1] === '0'">
                                     <fa name="user" ></fa> {{respuesta.autor}}
                                 </div>
                                 <div class="content-text">
@@ -51,8 +51,8 @@
                         </article>
                         <article *ngIf="pregunta.tipo === 4" class="text-result">
                             <div class="resp" *ngFor="let respuesta of pregunta.respuestas; let i = index;">
-                                <div class="title">
-                                    {{respuesta.autor}}
+                                <div class="title" *ngIf="stats.config[1] === '0'">
+                                    <fa name="user" ></fa> {{respuesta.autor}}
                                 </div>
                                 <div class="content-text">
                                     {{respuesta.respuesta}}

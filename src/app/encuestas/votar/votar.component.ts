@@ -2,9 +2,10 @@ import { Component, OnInit } from '@angular/core';
 import { Encuesta } from 'src/app/interfaces/encuesta';
 import { ActivatedRoute, Router } from '@angular/router';
 import { EncuestasService } from '../encuestas.service';
-import { FormGroup, FormBuilder, FormControl, Validators } from '@angular/forms';
+import { FormGroup, FormBuilder } from '@angular/forms';
 import { SocialUser } from 'angularx-social-login';
 import { LoggedService } from '../../login/logged.service';
+
 @Component({
   selector: 'app-votar',
   templateUrl: './votar.component.html',
@@ -16,6 +17,7 @@ export class VotarComponent implements OnInit {
   private id: string;
   form: FormGroup;
   user: SocialUser;
+  voted: boolean;
 
   constructor(private route: ActivatedRoute,
               private es: EncuestasService,
@@ -24,6 +26,7 @@ export class VotarComponent implements OnInit {
               private ls: LoggedService
   ) {
     this.form = this.formBuilder.group({});
+    this.user = JSON.parse(localStorage.getItem('user'));
   }
 
   ngOnInit() {
@@ -31,38 +34,47 @@ export class VotarComponent implements OnInit {
     this.es.getEncuestaById(this.id).subscribe(
       (res: any) => {
         console.log('Encuesta recibida', res);
-        this.encuesta = res;
-        this.encuesta.fields.forEach( (elem, index) => {
-          if (elem.tipo === 1) {
-            const control = this.formBuilder.control('select' + index);
-            this.form.addControl('select' + elem.id, control );
-          }
-          if (elem.tipo === 2) {
-            elem.respuestas.forEach( (el, ind) => {
-              const control = this.formBuilder.control('checkbox' + ind);
-              this.form.addControl('checkbox' + ind, control );
-              const valueToPatch = {['checkbox' + ind]: false};
-              this.form.patchValue(valueToPatch);
-            });
-          }
-          if (elem.tipo === 3) {
-            const control = this.formBuilder.control('text' + index);
-            this.form.addControl('text' + elem.id, control );
-            const valueToPatch = {['text' + elem.id]: ''};
-            this.form.patchValue(valueToPatch);
-          }
-          if (elem.tipo === 4) {
-            const control = this.formBuilder.control('textarea' + index);
-            this.form.addControl('textarea' + elem.id, control );
-            const valueToPatch = {['textarea' + elem.id]: ''};
-            this.form.patchValue(valueToPatch);
-          }
-        });
+        if (res.votosUsers.includes(this.user.email)) {
+          console.log('ya has votado');
+          this.voted = true;
+        } else {
+          this.encuesta = res;
+          this.construirEncuesta();
+        }
       },
       (err) => {
         console.log('error', err);
       }
     );
+  }
+
+  construirEncuesta() {
+    this.encuesta.fields.forEach( (elem, index) => {
+      if (elem.tipo === 1) {
+        const control = this.formBuilder.control('select' + index);
+        this.form.addControl('select' + elem.id, control );
+      }
+      if (elem.tipo === 2) {
+        elem.respuestas.forEach( (el, ind) => {
+          const control = this.formBuilder.control('checkbox' + ind);
+          this.form.addControl('checkbox' + ind, control );
+          const valueToPatch = {['checkbox' + ind]: false};
+          this.form.patchValue(valueToPatch);
+        });
+      }
+      if (elem.tipo === 3) {
+        const control = this.formBuilder.control('text' + index);
+        this.form.addControl('text' + elem.id, control );
+        const valueToPatch = {['text' + elem.id]: ''};
+        this.form.patchValue(valueToPatch);
+      }
+      if (elem.tipo === 4) {
+        const control = this.formBuilder.control('textarea' + index);
+        this.form.addControl('textarea' + elem.id, control );
+        const valueToPatch = {['textarea' + elem.id]: ''};
+        this.form.patchValue(valueToPatch);
+      }
+    });
   }
 
 
@@ -110,6 +122,7 @@ export class VotarComponent implements OnInit {
       }
     });
     this.encuesta.votosTotales++;
+    this.encuesta.votosUsers.push(this.user.email);
     console.log(this.encuesta);
     this.es.updateEncuesta(this.encuesta).subscribe( res => {
       if (res !== null) {
