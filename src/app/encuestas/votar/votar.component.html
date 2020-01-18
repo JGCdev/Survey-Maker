@@ -1,10 +1,11 @@
 
 <div class="content-wrapper">
     <div class="content">
-        <div class="content-form-wrapper" *ngIf="!encuesta">
+        <div class="content-form-wrapper" *ngIf="!encuesta && voted === false">
             <h3>Error al recuperar la encuesta</h3>
             <p>Por favor, revisa la URL o comprueba que no haya expirado.</p>
         </div>
+        <div class="content-form-wrapper" *ngIf="voted">Ya has votado en esta encuesta</div>
         <div class="content-form-wrapper"  *ngIf="encuesta">
             <form class="survey-form" (ngSubmit)="onSubmit()" [formGroup]="form">
         

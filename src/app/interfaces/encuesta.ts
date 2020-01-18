@@ -9,4 +9,5 @@ export interface Encuesta {
     config: Array<number>;
     fields: Array<Field>;
     votosTotales: number;
+    votosUsers: Array<string>;
 }

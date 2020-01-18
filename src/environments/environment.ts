@@ -4,10 +4,9 @@
 
 
 export const environment = {
-  production: false,
+  production: true,
   apiEndpoint :          'http://localhost:8080/api/encuestas/',
   clientEndpoint:        'http://localhost:4200/',
-  analyticsUA:           'UA-76107626-25',
   appSecret :            'L|f3|sT00s|-|0RT',
   sessionTime :          1800000, // 30 minutes * 60000 //time in milliseconds
   nameStorage:           'surveymaker',

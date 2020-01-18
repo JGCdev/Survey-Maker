@@ -30,7 +30,8 @@ export class CamposComponent implements OnInit {
     autor: '',
     creationDate: new Date('2015-03-25'),
     votosTotales: 0,
-    fields: []
+    fields: [],
+    votosUsers: []
   };
 
   constructor(private router: Router, private es: EncuestasService, private ls: LoggedService) { }
