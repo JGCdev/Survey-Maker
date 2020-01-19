@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Field } from '../interfaces/field';
 import { Encuesta } from '../interfaces/encuesta';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { services } from '../../environments/services';
 import {environment} from '../../environments/environment';
 
@@ -9,7 +9,11 @@ import {environment} from '../../environments/environment';
   providedIn: 'root'
 })
 export class EncuestasService {
-
+  httpOptions = {
+    headers: new HttpHeaders({
+      'Content-Type':  'application/json'
+    })
+  };
   plantilla: Array<Field>;
   encuesta: Encuesta;
 
@@ -42,7 +46,7 @@ export class EncuestasService {
     return this.http.delete(environment.apiEndpoint + services.ENCUESTAS + id);
   }
   crearEncuesta(encuesta: Encuesta) {
-    return this.http.post(environment.apiEndpoint + services.ENCUESTAS, encuesta);
+    return this.http.post(environment.apiEndpoint + services.ENCUESTAS, encuesta, this.httpOptions);
   }
 
 
