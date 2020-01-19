@@ -25,19 +25,19 @@
                     <div class="form-group" *ngFor="let field of encuesta.fields" >
                         <h3>{{field.texto}}</h3>
                         <select *ngIf="field.tipo===1">
-                            <option *ngFor="let item of field.respuestas">{{item}}</option>
+                            <option *ngFor="let item of field.respuestas" disabled>{{item}}</option>
                         </select>
         
                         <ul *ngIf="field.tipo===2">
-                            <li *ngFor="let item of field.respuestas">
+                            <li *ngFor="let item of field.respuestas"> 
                                     <span>{{item}}
-                                    <input type="radio"></span>
+                                    <input type="checkbox" disabled></span>
                             </li>
                         </ul>
         
-                        <input *ngIf="field.tipo===3" type="text">
+                        <input *ngIf="field.tipo===3" type="text" disabled>
         
-                        <textarea *ngIf="field.tipo===4"></textarea>
+                        <textarea *ngIf="field.tipo===4" disabled></textarea>
         
                         <div class="controls">
                             <button class="round-btn" (click)="deleteField(field.id)" type="button"><fa name="trash"></fa></button>

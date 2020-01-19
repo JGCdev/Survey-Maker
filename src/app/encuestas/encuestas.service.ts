@@ -1,15 +1,19 @@
 import { Injectable } from '@angular/core';
 import { Field } from '../interfaces/field';
 import { Encuesta } from '../interfaces/encuesta';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { services } from '../../environments/services';
 import {environment} from '../../environments/environment';
-import { offlineServices } from '../../environments/offline.services';
+
 @Injectable({
   providedIn: 'root'
 })
 export class EncuestasService {
-
+  httpOptions = {
+    headers: new HttpHeaders({
+      'Content-Type':  'application/json'
+    })
+  };
   plantilla: Array<Field>;
   encuesta: Encuesta;
 
@@ -30,23 +34,19 @@ export class EncuestasService {
     return this.encuesta;
   }
   getEncuestaById(id) {
-    return this.http.get('http://localhost:3000/' + services.ENCUESTAS + id);
+    return this.http.get(environment.apiEndpoint + services.ENCUESTAS + id);
   }
   getEncuestasByEmail(email) {
-    if (environment.production) {
-      return this.http.get('http://localhost:3000/' + services.GET_ENCUESTA_BY_EMAIL + email);
-    } else {
-      return this.http.get(offlineServices.GET_USER_ENCUESTAS);
-    }
+    return this.http.get(environment.apiEndpoint + services.GET_ENCUESTA_BY_EMAIL + email);
   }
   updateEncuesta(encuesta: Encuesta) {
-    return this.http.put('http://localhost:3000/' + services.ENCUESTAS + encuesta._id, encuesta);
+    return this.http.put(environment.apiEndpoint + services.ENCUESTAS + encuesta._id, encuesta);
   }
   deleteEncuesta(id: string) {
-    return this.http.delete('http://localhost:3000/' + services.ENCUESTAS + id);
+    return this.http.delete(environment.apiEndpoint + services.ENCUESTAS + id);
   }
   crearEncuesta(encuesta: Encuesta) {
-    return this.http.post('http://localhost:3000/' + services.ENCUESTAS, encuesta);
+    return this.http.post(environment.apiEndpoint + services.ENCUESTAS, encuesta, this.httpOptions);
   }
 
 

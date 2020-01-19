@@ -6,7 +6,7 @@ export interface Encuesta {
     buttonText: string;
     autor: string;
     creationDate: Date;
-    config: Array<number>;
+    config: Array<string>;
     fields: Array<Field>;
     votosTotales: number;
     votosUsers: Array<string>;
