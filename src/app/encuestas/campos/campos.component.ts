@@ -24,7 +24,7 @@ export class CamposComponent implements OnInit {
 
   encuesta: Encuesta = {
     _id: null,
-    config: [1, 1, 0],
+    config: ['1', '1', '0'],
     title: 'Mi Encuesta Personalizada',
     buttonText: 'Enviar resultados',
     autor: '',
@@ -114,7 +114,7 @@ export class CamposComponent implements OnInit {
   }
 
   deleteFieldFromEditField(indice) {
-    this.editField.respuestas = this.editField.respuestas.splice(indice - 1, 1);
+    this.editField.respuestas.splice(indice, 1);
   }
 
   trackByFn(index) {
