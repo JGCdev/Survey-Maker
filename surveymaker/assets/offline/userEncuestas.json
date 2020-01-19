@@ -1,0 +1,460 @@
+
+[ 
+    {
+          "config":[
+             0,
+             0,
+             30
+          ],
+          "fields":[
+             {
+                "id":0,
+                "tipo":1,
+                "texto":"Selección única",
+                "respuestas":[
+                   "Opción 1",
+                   "Opción 2"
+                ],
+                "votos":[
+                   1,
+                   0
+                ],
+                "resTotales":34,
+                "porcentajes":[
+                   41,
+                   59
+                ]
+             },
+             {
+                "id":5,
+                "tipo":2,
+                "texto":"Personaliza tu enunciado",
+                "respuestas":[
+                   "Answer 1",
+                   "Answer 2"
+                ],
+                "votos":[
+                   1,
+                   0
+                ],
+                "resTotales":0,
+                "porcentajes":[
+ 
+                ]
+             },
+             {
+                "id":6,
+                "tipo":3,
+                "texto":"Personaliza tu enunciado",
+                "respuestas":[
+                   {
+                      "autor":"jegico93@gmail.com",
+                      "respuesta":"jopjpojk"
+                   }
+                ],
+                "votos":[
+ 
+                ],
+                "resTotales":0,
+                "porcentajes":[
+ 
+                ]
+             }
+          ],
+          "_id":"5e1af65277dac315bc6c4423",
+          "title":"Mi Encuesta Personalizada",
+          "buttonText":"Enviar resultados",
+          "autor":"jegico93@gmail.com",
+          "creationDate":"2015-03-25T00:00:00.000Z",
+          "votosTotales":1,
+          "__v":1
+       },
+       {
+          "config":[
+             0,
+             0,
+             30
+          ],
+          "fields":[
+             {
+                "id":5,
+                "tipo":1,
+                "texto":"Personaliza tu enunciado",
+                "respuestas":[
+                   "Answer 1",
+                   "Answer 2",
+                   "New answer",
+                   "New answer"
+                ],
+                "votos":[
+                   0,
+                   0,
+                   1,
+                   0
+                ],
+                "resTotales":0,
+                "porcentajes":[
+ 
+                ]
+             },
+             {
+                "id":6,
+                "tipo":1,
+                "texto":"Personaliza tu enunciado",
+                "respuestas":[
+                   "Answer 1",
+                   "Answer 2"
+                ],
+                "votos":[
+                   1,
+                   0
+                ],
+                "resTotales":0,
+                "porcentajes":[
+ 
+                ]
+             },
+             {
+                "id":7,
+                "tipo":4,
+                "texto":"Personaliza tu enunciado",
+                "respuestas":[
+                   {
+                      "autor":"jegico93@gmail.com",
+                      "respuesta":"vvvcvc"
+                   }
+                ],
+                "votos":[
+ 
+                ],
+                "resTotales":0,
+                "porcentajes":[
+ 
+                ]
+             },
+             {
+                "id":8,
+                "tipo":1,
+                "texto":"Personaliza tu enunciado",
+                "respuestas":[
+                   "Answer 1",
+                   "Answer 2",
+                   "New answer"
+                ],
+                "votos":[
+                   1,
+                   0,
+                   0
+                ],
+                "resTotales":0,
+                "porcentajes":[
+ 
+                ]
+             }
+          ],
+          "_id":"5e1b020c77dac315bc6c4425",
+          "title":"Mi Encuesta Personalizada",
+          "buttonText":"Enviar resultados",
+          "autor":"jegico93@gmail.com",
+          "creationDate":"2015-03-25T00:00:00.000Z",
+          "votosTotales":1,
+          "__v":1
+       },
+       {
+          "config":[
+             0,
+             0,
+             30
+          ],
+          "fields":[
+             {
+                "id":0,
+                "tipo":1,
+                "texto":"primer plato",
+                "respuestas":[
+                   "sopa",
+                   "pasta"
+                ],
+                "votos":[
+                   2,
+                   1
+                ],
+                "resTotales":34,
+                "porcentajes":[
+                   41,
+                   59
+                ]
+             },
+             {
+                "id":5,
+                "tipo":1,
+                "texto":"segundo plato",
+                "respuestas":[
+                   "pescado",
+                   "carne"
+                ],
+                "votos":[
+                   1,
+                   2
+                ],
+                "resTotales":0,
+                "porcentajes":[
+ 
+                ]
+             },
+             {
+                "id":6,
+                "tipo":1,
+                "texto":"postre",
+                "respuestas":[
+                   "coulant",
+                   "helado"
+                ],
+                "votos":[
+                   2,
+                   1
+                ],
+                "resTotales":0,
+                "porcentajes":[
+ 
+                ]
+             },
+             {
+                "id":7,
+                "tipo":4,
+                "texto":"comentarios",
+                "respuestas":[
+                   {
+                      "autor":"jegico93@gmail.com",
+                      "respuesta":"alergica a la almendra"
+                   },
+                   {
+                      "autor":"jegico93@gmail.com",
+                      "respuesta":"mi comentario 2"
+                   },
+                   {
+                      "autor":"carlotika26@gmail.com",
+                      "respuesta":"gsdfgsdfg"
+                   }
+                ],
+                "votos":[
+ 
+                ],
+                "resTotales":0,
+                "porcentajes":[
+ 
+                ]
+             }
+          ],
+          "_id":"5e1cc40a045c3db48cc7f28e",
+          "title":"cena de navidad",
+          "buttonText":"Enviar resultados",
+          "autor":"jegico93@gmail.com",
+          "creationDate":"2015-03-25T00:00:00.000Z",
+          "votosTotales":3,
+          "__v":3
+       },
+       {
+          "config":[
+             0,
+             0,
+             30
+          ],
+          "fields":[
+             {
+                "id":0,
+                "tipo":1,
+                "texto":"Selección única",
+                "respuestas":[
+                   "Opción 1",
+                   "Opción 2"
+                ],
+                "votos":[
+                   0,
+                   0
+                ],
+                "resTotales":34,
+                "porcentajes":[
+                   41,
+                   59
+                ]
+             }
+          ],
+          "_id":"5e1e1a5cf90b6a271c5a6004",
+          "title":"Mi Encuesta Personalizada",
+          "buttonText":"Enviar resultados",
+          "autor":"jegico93@gmail.com",
+          "creationDate":"2015-03-25T00:00:00.000Z",
+          "votosTotales":0,
+          "__v":0
+       },
+       {
+          "config":[
+             "1",
+             0,
+             30
+          ],
+          "fields":[
+             {
+                "id":0,
+                "tipo":1,
+                "texto":"Selección única",
+                "respuestas":[
+                   "Opción 1",
+                   "Opción 2"
+                ],
+                "votos":[
+                   0,
+                   0
+                ],
+                "resTotales":34,
+                "porcentajes":[
+                   41,
+                   59
+                ]
+             }
+          ],
+          "_id":"5e1e1afff90b6a271c5a6005",
+          "title":"Mi Encuesta Personalizada",
+          "buttonText":"Enviar resultados",
+          "autor":"jegico93@gmail.com",
+          "creationDate":"2015-03-25T00:00:00.000Z",
+          "votosTotales":0,
+          "__v":0
+       },
+       {
+          "config":[
+             "0",
+             0,
+             30
+          ],
+          "fields":[
+             {
+                "id":0,
+                "tipo":1,
+                "texto":"Selección única",
+                "respuestas":[
+                   "Opción 1",
+                   "Opción 2"
+                ],
+                "votos":[
+                   0,
+                   0
+                ],
+                "resTotales":34,
+                "porcentajes":[
+                   41,
+                   59
+                ]
+             }
+          ],
+          "_id":"5e1e1b2cf90b6a271c5a6006",
+          "title":"Mi Encuesta Personalizada",
+          "buttonText":"Enviar resultados",
+          "autor":"jegico93@gmail.com",
+          "creationDate":"2015-03-25T00:00:00.000Z",
+          "votosTotales":0,
+          "__v":0
+       },
+       {
+          "config":[
+             "0",
+             "0",
+             "30"
+          ],
+          "fields":[
+             {
+                "id":0,
+                "tipo":1,
+                "texto":"Selección única",
+                "respuestas":[
+                   "Opción 1",
+                   "Opción 2"
+                ],
+                "votos":[
+                   0,
+                   0
+                ],
+                "resTotales":34,
+                "porcentajes":[
+                   41,
+                   59
+                ]
+             }
+          ],
+          "_id":"5e1e1b8ef90b6a271c5a6007",
+          "title":"Mi Encuesta Personalizada",
+          "buttonText":"Enviar resultados",
+          "autor":"jegico93@gmail.com",
+          "creationDate":"2015-03-25T00:00:00.000Z",
+          "votosTotales":1,
+          "__v":0
+       },
+       {
+          "config":[
+             "0",
+             "0",
+             "30"
+          ],
+          "fields":[
+             {
+                "id":5,
+                "tipo":1,
+                "texto":"Personaliza tu enunciado",
+                "respuestas":[
+                   "Answer 1",
+                   "Answer 2"
+                ],
+                "votos":[
+                   0,
+                   0
+                ],
+                "resTotales":0,
+                "porcentajes":[
+ 
+                ]
+             }
+          ],
+          "_id":"5e1e1bd0f90b6a271c5a6008",
+          "title":"Mi Encuesta Personalizada",
+          "buttonText":"Enviar resultados",
+          "autor":"jegico93@gmail.com",
+          "creationDate":"2015-03-25T00:00:00.000Z",
+          "votosTotales":1,
+          "__v":0
+       },
+       {
+          "config":[
+             "0",
+             "0",
+             "30"
+          ],
+          "fields":[
+             {
+                "id":0,
+                "tipo":1,
+                "texto":"Selección única",
+                "respuestas":[
+                   "Opción 1",
+                   "Opción 2"
+                ],
+                "votos":[
+                   0,
+                   2
+                ],
+                "resTotales":34,
+                "porcentajes":[
+                   41,
+                   59
+                ]
+             }
+          ],
+          "_id":"5e1e1c03f90b6a271c5a6009",
+          "title":"Mi Encuesta Personalizada",
+          "buttonText":"Enviar resultados",
+          "autor":"jegico93@gmail.com",
+          "creationDate":"2015-03-25T00:00:00.000Z",
+          "votosTotales":8,
+          "__v":2
+       }
+]
