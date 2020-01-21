@@ -18,6 +18,7 @@ export class VotarComponent implements OnInit {
   form: FormGroup;
   user: SocialUser;
   voted: boolean;
+  maxPeople: boolean;
 
   constructor(private route: ActivatedRoute,
               private es: EncuestasService,
@@ -34,18 +35,25 @@ export class VotarComponent implements OnInit {
     this.es.getEncuestaById(this.id).subscribe(
       (res: Encuesta) => {
         console.log('Encuesta recibida', res);
-        if (res.votosUsers.includes(this.user.email)) {
-          console.log('ya has votado');
-          this.voted = true;
-        } else {
-          this.encuesta = res;
-          this.construirEncuesta();
-        }
+        this.tratarResultados(res);
       },
       (err) => {
         console.log('error', err);
       }
     );
+  }
+
+  tratarResultados(res): void {
+    if (res.votosUsers.includes(this.user.email)) {
+      this.voted = true;
+    }
+    if (res.votosUsers.length >= parseInt(res.config[2], 10)) {
+      this.maxPeople = true;
+    }
+    if (!this.voted && !this.maxPeople) {
+      this.encuesta = res;
+      this.construirEncuesta();
+    }
   }
 
   construirEncuesta(): void {
