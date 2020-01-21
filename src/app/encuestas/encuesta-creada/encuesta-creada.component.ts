@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { EncuestasService } from '../encuestas.service';
 import { Encuesta } from 'src/app/interfaces/encuesta';
-import { Router, ActivatedRoute } from '@angular/router';
+import { ActivatedRoute } from '@angular/router';
+import { environment } from '../../../environments/environment';
 
 @Component({
   selector: 'app-encuesta-creada',
@@ -12,10 +12,12 @@ export class EncuestaCreadaComponent implements OnInit {
 
   id: string;
   encuesta: Encuesta;
+  urlRedirect: string;
 
-  constructor(private es: EncuestasService, private route: ActivatedRoute, private router: Router) { }
+  constructor(private route: ActivatedRoute) { }
 
   ngOnInit() {
+    this.urlRedirect = environment.clientUrl;
     this.id = this.route.snapshot.paramMap.get('id');
   }
 

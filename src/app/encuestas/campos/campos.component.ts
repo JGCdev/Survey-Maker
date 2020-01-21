@@ -45,17 +45,17 @@ export class CamposComponent implements OnInit {
     }
   }
 
-  openNewFieldsMenu() {
+  openNewFieldsMenu(): void {
     this.addFieldsMenu === false ? this.addFieldsMenu = true : this.addFieldsMenu = false;
   }
-  openTitleEditMenu() {
+  openTitleEditMenu(): void {
     this.editTitleMenu === false ? this.editTitleMenu = true : this.editTitleMenu = false;
   }
-  openEditBtnMenu() {
+  openEditBtnMenu(): void {
     this.editButtonMenu === false ? this.editButtonMenu = true : this.editButtonMenu = false;
   }
 
-  openEditFieldMenu(id?: number) {
+  openEditFieldMenu(id?: number): void {
     if (id !== null) {
       this.encuesta.fields.forEach(element => {
         if (element.id === id) {
@@ -73,7 +73,7 @@ export class CamposComponent implements OnInit {
     this.encuesta.fields = filtered;
   }
 
-  addField(num) {
+  addField(num): void {
     const field: Field =  {
       id: this.lastIdField + 1,
       tipo: num,
@@ -91,11 +91,11 @@ export class CamposComponent implements OnInit {
     this.lastIdField++;
   }
 
-  resetSurvey() {
+  resetSurvey(): void {
     this.encuesta.fields = [];
   }
 
-  saveSurvey() {
+  saveSurvey(): void {
     if (this.encuesta.fields.length > 0) {
       this.es.setEncuesta(this.encuesta);
       this.router.navigate(['encuestas/crear-encuesta/ajustes']);
@@ -104,24 +104,24 @@ export class CamposComponent implements OnInit {
     }
   }
 
-  saveMenuForm() {
+  saveMenuForm(): void {
     this.editFieldMenu = false;
   }
 
-  addFieldsToEditField() {
+  addFieldsToEditField(): void {
     const answer = 'New answer';
     this.editField.respuestas.push(answer);
   }
 
-  deleteFieldFromEditField(indice) {
+  deleteFieldFromEditField(indice): void {
     this.editField.respuestas.splice(indice, 1);
   }
 
-  trackByFn(index) {
+  trackByFn(index): number {
     return index;
   }
 
-  return() {
+  return(): void {
     this.router.navigate(['/encuestas/']);
   }
 }

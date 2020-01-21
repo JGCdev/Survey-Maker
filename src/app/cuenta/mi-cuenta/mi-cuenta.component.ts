@@ -47,7 +47,7 @@ export class MiCuentaComponent implements OnInit {
     );
   }
 
-  eliminarEncuesta() {
+  eliminarEncuesta(): void {
     this.es.deleteEncuesta(this.encuestaBorrarId).subscribe( (res) => {
       this.obtenerEncuestas();
       this.saveOverlayMenu = false;

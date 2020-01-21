@@ -8,7 +8,7 @@
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "build-prod": "ng build --prod --base-href https://JGCdev.github.io/Angular-Front-Survey-Maker/",
+    "build-prod": "ng build --prod --base-href https://jgcdev.github.io/Survey-Maker/",
     "publish": "ngh --dir=dist/surveymaker"
   },
   "private": true,
