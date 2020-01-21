@@ -3,12 +3,14 @@ import { Field } from '../interfaces/field';
 import { Encuesta } from '../interfaces/encuesta';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { services } from '../../environments/services';
-import {environment} from '../../environments/environment';
+import { environment } from '../../environments/environment';
+import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
 })
 export class EncuestasService {
+
   httpOptions = {
     headers: new HttpHeaders({
       'Content-Type':  'application/json'
@@ -19,13 +21,13 @@ export class EncuestasService {
 
   constructor(private http: HttpClient) { }
 
-  setPlantilla(item) {
+  setPlantilla(item): void {
     this.plantilla = item;
   }
-  getPlantilla() {
+  getPlantilla(): Array<Field> {
     return this.plantilla;
   }
-  setEncuesta(item) {
+  setEncuesta(item): void {
     this.encuesta = item;
     // Seteamos plantilla para poder recuperar formulario
     this.plantilla = item.fields;
@@ -33,19 +35,19 @@ export class EncuestasService {
   getEncuesta() {
     return this.encuesta;
   }
-  getEncuestaById(id) {
+  getEncuestaById(id): Observable<any> {
     return this.http.get(environment.apiEndpoint + services.ENCUESTAS + id);
   }
-  getEncuestasByEmail(email) {
+  getEncuestasByEmail(email): Observable<any> {
     return this.http.get(environment.apiEndpoint + services.GET_ENCUESTA_BY_EMAIL + email);
   }
-  updateEncuesta(encuesta: Encuesta) {
+  updateEncuesta(encuesta: Encuesta): Observable<any> {
     return this.http.put(environment.apiEndpoint + services.ENCUESTAS + encuesta._id, encuesta);
   }
-  deleteEncuesta(id: string) {
+  deleteEncuesta(id: string): Observable<any> {
     return this.http.delete(environment.apiEndpoint + services.ENCUESTAS + id);
   }
-  crearEncuesta(encuesta: Encuesta) {
+  crearEncuesta(encuesta: Encuesta): Observable<any> {
     return this.http.post(environment.apiEndpoint + services.ENCUESTAS, encuesta, this.httpOptions);
   }
 

@@ -14,7 +14,7 @@ export class StatsComponent implements OnInit {
   id: string;
   text: string;
 
-  constructor(private es: EncuestasService, private route: ActivatedRoute) { 
+  constructor(private es: EncuestasService, private route: ActivatedRoute) {
     this.route.queryParams.subscribe(params => {
       if (params.success) {
         this.text = '¡Has votado correctamente!';

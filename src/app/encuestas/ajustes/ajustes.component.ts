@@ -32,11 +32,11 @@ export class AjustesComponent implements OnInit {
     }
   }
 
-  openSaveOverlayMenu() {
+  openSaveOverlayMenu(): void {
     this.saveOverlayMenu === false ? this.saveOverlayMenu = true : this.saveOverlayMenu = false;
   }
 
-  saveSurvey() {
+  saveSurvey(): void {
 
     if (this.configForm.valid) {
       this.encuesta.config[0] = this.configForm.get('option1').value;
@@ -53,9 +53,6 @@ export class AjustesComponent implements OnInit {
         (res: any) => {
           console.log('Id generado: ', res._id);
           this.router.navigate(['encuestas/encuesta-creada/' + res._id]);
-        },
-        (err) => {
-
         }
       );
     } else {

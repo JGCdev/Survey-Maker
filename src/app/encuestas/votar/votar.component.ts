@@ -23,8 +23,8 @@ export class VotarComponent implements OnInit {
               private es: EncuestasService,
               private router: Router,
               private formBuilder: FormBuilder,
-              private ls: LoggedService
-  ) {
+              private ls: LoggedService )
+  {
     this.form = this.formBuilder.group({});
     this.user = JSON.parse(localStorage.getItem('user'));
   }
@@ -32,7 +32,7 @@ export class VotarComponent implements OnInit {
   ngOnInit() {
     this.id = this.route.snapshot.paramMap.get('id');
     this.es.getEncuestaById(this.id).subscribe(
-      (res: any) => {
+      (res: Encuesta) => {
         console.log('Encuesta recibida', res);
         if (res.votosUsers.includes(this.user.email)) {
           console.log('ya has votado');
@@ -48,7 +48,7 @@ export class VotarComponent implements OnInit {
     );
   }
 
-  construirEncuesta() {
+  construirEncuesta(): void {
     this.encuesta.fields.forEach( (elem, index) => {
       if (elem.tipo === 1) {
         const control = this.formBuilder.control('select' + index);
@@ -78,7 +78,7 @@ export class VotarComponent implements OnInit {
   }
 
 
-  onSubmit() {
+  onSubmit(): void {
     this.user = this.ls.getUser();
     this.encuesta.fields.forEach((element, index) => {
 
