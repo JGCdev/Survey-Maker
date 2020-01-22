@@ -14,8 +14,8 @@ export class PlantillaComponent implements OnInit {
       {
         id: 0,
         tipo: 1,
-        texto: 'Selección única',
-        respuestas: ['Opción 1', 'Opción 2'],
+        texto: 'Edita tu enunciado',
+        respuestas: ['Respuesta 1', 'Respuesta 2'],
         votos: [],
         resTotales: 34,
         porcentajes: [41, 59]
@@ -25,8 +25,8 @@ export class PlantillaComponent implements OnInit {
       {
         id: 0,
         tipo: 2,
-        texto: 'Opción de selección múltiple',
-        respuestas: ['Opción 1', 'Opción 2', 'Opción 3'],
+        texto: 'Edita tu enunciado',
+        respuestas: ['Respuesta 1', 'Respuesta 2', 'Respuesta 3'],
         votos: [],
         resTotales: 3,
         porcentajes: [67, 33, 0]
@@ -36,8 +36,8 @@ export class PlantillaComponent implements OnInit {
       {
         id: 0,
         tipo: 1,
-        texto: 'Plato principal',
-        respuestas: ['Solomillo', 'Rodaballo'],
+        texto: 'Edita tu enunciado',
+        respuestas: ['Respuesta 1', 'Respuesta 2'],
         votos: [],
         resTotales: 34,
         porcentajes: [41, 59]
@@ -45,8 +45,8 @@ export class PlantillaComponent implements OnInit {
       {
         id: 1,
         tipo: 2,
-        texto: 'Alérico a alguno de los elementos',
-        respuestas: ['Gluten', 'Lactosa', 'Otros'],
+        texto: 'Edita tu enunciado',
+        respuestas: ['Respuesta 1', 'Respuesta 2', 'Respuesta 3'],
         votos: [],
         resTotales: 3,
         porcentajes: [67, 33, 0]
@@ -54,7 +54,7 @@ export class PlantillaComponent implements OnInit {
       {
         id: 2,
         tipo: 3,
-        texto: 'Si es alérgico especificar a qué',
+        texto: 'Edita tu enunciado',
         votos: [],
         resTotales: 4,
         porcentajes: [],
@@ -63,7 +63,7 @@ export class PlantillaComponent implements OnInit {
       {
         id: 3,
         tipo: 4,
-        texto: 'Comentarios adicionales',
+        texto: 'Edita tu enunciado',
         votos: [],
         resTotales: 4,
         porcentajes: [],

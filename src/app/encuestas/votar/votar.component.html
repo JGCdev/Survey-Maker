@@ -7,7 +7,7 @@
         </div>
         <div class="content-form-wrapper" *ngIf="voted">Ya has votado en esta encuesta</div>
         <div class="content-form-wrapper" *ngIf="maxPeople">No se permiten mas votos en la encuesta seleccionada</div>
-        <div class="content-form-wrapper"  *ngIf="encuesta">
+        <div class="content-form-wrapper" *ngIf="encuesta">
             <form class="survey-form" (ngSubmit)="onSubmit()" [formGroup]="form">
         
                 <!-- Title -->
