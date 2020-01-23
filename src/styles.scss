@@ -4,6 +4,7 @@ html, body{
     margin:0;
     height:100%;
     font-family: 'Titillium Web', sans-serif;
+    background:#f2fffe;
 }
 ul{
     padding:0;
@@ -13,25 +14,7 @@ ul{
 .content-wrapper{
     display:flex;
     min-height: 95%;
-    .sidebar{
-        min-width: 200px;
-        background:#b5eae6;
-        border-right: 2px solid #60cdcb;
-        li{
-            border-bottom:1px solid white;
-            text-transform: uppercase;
-            text-align: center;
-            font-weight: bold;
-            a{
-                display: inline-block;
-                padding: 15px 0px;
-                text-decoration: none;
-                color:#333;
-                width:100%;
-            }
-            
-        }
-    }
+   
 }
 
 .content{
@@ -51,16 +34,16 @@ ul{
             margin: 0 auto;
             background-color:#b5eae6;
             border-radius: 2.5px;
-            border: 2px solid #60cdcb;
+            border: 2px solid #3f3d56;
             margin-top:15px;
             padding-bottom: 10px;
     
             .survey-header{
                 padding: 5px;
-    
+                background-color:#3f3d56;
                 .header-wrapper{
                     position:relative;
-                    border: 1px solid #60cdcb;
+                    border: 1px solid #3f3d56;
                     .edit-title-controls{
                         position: absolute;
                         top: 0;
@@ -82,7 +65,7 @@ ul{
                     margin:0;
                     color:white;
                 }
-                background-color:#60cdcb;
+                
             }
             .survey-header:hover{
                 .header-wrapper{
@@ -120,14 +103,14 @@ ul{
                     select{
                         width: 85%;
                         height: 30px;
-                        border: 1px solid #60cdcb;
+                        border: 1px solid #3f3d56;
                         background:#f2fffe;
                     }
                     input[type=text]{
                         width: 85%;
                         height: 25px;
                         border: 1px solid
-                        #60cdcb;
+                        #3f3d56;
                         background:
                         #f2fffe;
                     }
@@ -148,7 +131,7 @@ ul{
                 }
     
                 .form-group:hover {
-                    border: 1px solid #60cdcb;
+                    border: 1px solid #3f3d56;
                     .controls{
                         display:block;
                     }
@@ -167,10 +150,10 @@ ul{
                     text-transform:uppercase;
                     font-size: 17px;
                     font-weight: bold;
-                    border:2px solid #60cdcb;
+                    border:2px solid #3f3d56;
                     border-radius:20px;
                     padding:10px 20px;
-                    color:#60cdcb;
+                    color:#3f3d56;
                     background-color: #f2fffe;
                 }
                 .edit-btn-controls{
@@ -181,7 +164,7 @@ ul{
                 }
             }
             .button-edit-container:hover{
-                border: 1px solid #60cdcb;
+                border: 1px solid #3f3d56;
                 .edit-btn-controls{
                     display:block;
                 }
@@ -190,7 +173,7 @@ ul{
         
         }
         .round-btn{
-            background: #60cdcb;
+            background: #3f3d56;
             color:white;
             border:none;
             border-radius:100%;
@@ -201,7 +184,7 @@ ul{
             cursor:pointer;
         }
         .action-btn{
-            background-color:#60cdcb;
+            background-color:#3f3d56;
             color: white;
             padding:5px 15px;
             border-radius:20px;
@@ -210,6 +193,7 @@ ul{
             margin: 5px;
             cursor:pointer;
             font-family: "Titillium Web", sans-serif;
+            text-transform: uppercase;
         }
         
     
@@ -225,7 +209,7 @@ ul{
                 .fields-menu{
                     position: relative;
                     background-color:#fff;
-                    border: 2px solid#60cdcb;
+                    border: 5px solid#3f3d56;
                     top: 30%;
                     padding: 20px;
                     display: flex;
@@ -305,4 +289,14 @@ ul{
         margin-top: 20px !important;
         font-size: 17px;
     }
+}
+
+.row{
+    display:flex;
+    width: 80%;
+}
+
+.column{
+    display:flex;
+    flex-direction: column;
 }
