@@ -3,15 +3,16 @@
     .content-form-wrapper{
         color:#333;
         .plantillas-container{
-            width: 500px;
-            border: 2px solid
-            #3f3d56;
+            width: 650px;
             height: auto;
             margin: 0 auto;
             display: flex;
-            background-color: #b5eae6;
             flex-direction: column;
-            padding:20px;
+            padding: 20px;
+            color:
+            white;
+
+
             .fila{
                 display: flex;
                 flex-direction: row;
@@ -22,6 +23,9 @@
                     flex-direction: column;
                     flex-basis: 100%;
                     flex: 1;
+                    background-color:
+                    #3f3d56;
+                    margin: 10px;
                     .plantilla-wrapper{
                         display: flex;
                         flex-direction: column;
@@ -39,6 +43,7 @@
                         .action-btn{
                             margin-top:8px;
                             width:50%;
+                            border:2px solid #bbb5ff;
                         }
                     }
                 }

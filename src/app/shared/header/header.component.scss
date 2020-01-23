@@ -30,7 +30,7 @@
             display: flex;
             font-weight:bold;
             .router-link-active{
-                color:#b5eae6;
+                color:#bbb5ff;
                 cursor:context-menu;
             }
             a{
@@ -39,7 +39,7 @@
                 text-transform: uppercase;
             }
             a:hover{
-                color:#b5eae6;
+                color:#bbb5ff;
             }
             ul{
                 display: flex;
