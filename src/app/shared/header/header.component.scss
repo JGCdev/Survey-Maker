@@ -1,11 +1,10 @@
 .header-wrapper{
     font-family: 'Titillium Web', sans-serif;
-    background-color:#60cdcb;
+    background-color:#3f3d56;
     display: flex;
     align-items: stretch;
-
     .title{
-        background-color:#60cdcb;
+        background-color:#3f3d56;
         color:white;
         padding:5px 12.5px;
         width:180px;
@@ -15,6 +14,7 @@
         }
         h2{
             margin:0px;
+            color:white;
         }
         fa{
             font-size: 25px;
@@ -26,18 +26,21 @@
         flex: 3;
         justify-content: flex-end;
         margin-right:20px;
+        
         .main-menu{
             display: flex;
             font-weight:bold;
             .router-link-active{
-                text-decoration: underline;
+                color:#bbb5ff;
+                cursor:context-menu;
             }
             a{
                 text-decoration: none;
-                color:white;
+                color: white;
+                text-transform: uppercase;
             }
             a:hover{
-                text-decoration: underline;
+                color:#bbb5ff;
             }
             ul{
                 display: flex;

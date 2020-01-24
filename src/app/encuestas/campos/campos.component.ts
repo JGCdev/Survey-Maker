@@ -28,13 +28,14 @@ export class CamposComponent implements OnInit {
     title: 'Mi Encuesta Personalizada',
     buttonText: 'Enviar resultados',
     autor: '',
-    creationDate: new Date('2015-03-25'),
+    creationDate: new Date(),
     votosTotales: 0,
     fields: [],
     votosUsers: []
   };
 
-  constructor(private router: Router, private es: EncuestasService, private ls: LoggedService) { }
+  constructor(private router: Router, private es: EncuestasService, private ls: LoggedService) {
+  }
 
   ngOnInit() {
     if (this.es.getPlantilla() !== undefined && this.ls.user !== null ) {
@@ -77,8 +78,8 @@ export class CamposComponent implements OnInit {
     const field: Field =  {
       id: this.lastIdField + 1,
       tipo: num,
-      texto: 'Personaliza tu enunciado',
-      respuestas: ['Answer 1', 'Answer 2'],
+      texto: 'Edita tu enunciado',
+      respuestas: ['Respuesta 1', 'Respuesta 2'],
       votos: [],
       resTotales: 0,
       porcentajes: []
@@ -109,7 +110,7 @@ export class CamposComponent implements OnInit {
   }
 
   addFieldsToEditField(): void {
-    const answer = 'New answer';
+    const answer = 'Nueva respuesta';
     this.editField.respuestas.push(answer);
   }
 

@@ -1,6 +1,7 @@
 <div class="content-wrapper">
     <div class="content">
-        <div class="content-form-wrapper" *ngIf="!stats">
+        <div class="content-form-wrapper" *ngIf="privateSurvey">Los resultados de la encuesta solo pueden ser visualizados por su autor</div>
+        <div class="content-form-wrapper" *ngIf="!stats && !privateSurvey">
             <h3>Error al recuperar la encuesta</h3>
             <p>Por favor, revisa la URL o comprueba que no haya expirado.</p>
         </div>

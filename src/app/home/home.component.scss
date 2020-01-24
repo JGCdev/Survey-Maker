@@ -1,15 +1,92 @@
 .slider-container{
-    height:300px;
-    background-color: #b5eae6;
+    height: 330px;
+    background-color: #e7f0fe;
     display:flex;
     align-items: center;
     justify-content: center;
-    border-bottom: 5px solid #60cdcb;
+    .slider-container-wrapper{
+        width: 1100px;
+        margin: 0 auto;
+    }
     h1{
         margin:0;
+        color:#3f3d56;
+    }
+    h3{
+        margin-top:10px;
+        color:#3f3d56;
+    }
+
+    .column{
+        flex:1;
+        img{
+            width: 440px;
+        }
+    }
+    .headline{
+        max-width:550px;
+    }
+    .row{
+        align-items: center;
+    }
+    .right-aligned{
+       align-items: flex-end;
+    }
+    .action-btn{
+        background: #3f3d56;
+        border:none;
+        color:white;
+        font-size:18px;
+        width:200px;
+        height:40px;
+        border-radius:5px;
+        text-transform: uppercase;
+        font-family: 'Titillium Web', sans-serif;
+        cursor:pointer;
     }
 }
 .home-content{
     padding-top:50px;
-    text-align: center;
+
+    .home-content-wrapper{
+        width: 1145px;
+        margin: 0 auto;
+        text-align: center;
+        .col{
+            background: #3f3d56;
+            color: white!important;
+            border-radius: 10px;
+            margin: 0px 20px;
+            padding:20px;
+            .box-number{
+                font-size:50px;
+            }
+            h2,p{
+                margin:5px 0px;
+                color:White;
+            }
+        }
+    }
+    .border-purple{
+        margin-top:60px;
+        border-top:5px solid #3f3d56;
+        background-color:#e7f0fe;
+        padding:75px 0px;
+    }
+    .big{
+        width:250px;
+    }
+    .outline-btn{
+        border:2px solid #3f3d56;
+        color:#3f3d56;
+        background-color: transparent;
+        border-radius:20px;
+        font-size:18px;
+        font-weight: bold;
+        height:40px;
+        border-radius:5px;
+        text-transform: uppercase;
+        font-family: 'Titillium Web', sans-serif;
+        
+    }
 }

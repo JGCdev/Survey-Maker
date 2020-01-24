@@ -4,6 +4,10 @@ html, body{
     margin:0;
     height:100%;
     font-family: 'Titillium Web', sans-serif;
+    background:#f2fffe;
+}
+h1,h2,h3,h4,h5,h6{
+    color:#3f3d56;
 }
 ul{
     padding:0;
@@ -12,32 +16,14 @@ ul{
 
 .content-wrapper{
     display:flex;
-    min-height: 95%;
-    .sidebar{
-        min-width: 200px;
-        background:#b5eae6;
-        border-right: 2px solid #60cdcb;
-        li{
-            border-bottom:1px solid white;
-            text-transform: uppercase;
-            text-align: center;
-            font-weight: bold;
-            a{
-                display: inline-block;
-                padding: 15px 0px;
-                text-decoration: none;
-                color:#333;
-                width:100%;
-            }
-            
-        }
-    }
+    min-height: 88%;
 }
 
 .content{
     background-color: #f2fffe;
     width: 100%;
     position: relative;
+    padding-bottom:50px;
     .content-form-wrapper{
         color:#333;
         text-align:center;
@@ -49,26 +35,26 @@ ul{
         .survey-form{
             width: 500px;
             margin: 0 auto;
-            background-color:#b5eae6;
+            background-color:rgba(187, 181, 255, 0.2);
             border-radius: 2.5px;
-            border: 2px solid #60cdcb;
+            border: 2px solid #3f3d56;
             margin-top:15px;
             padding-bottom: 10px;
     
             .survey-header{
                 padding: 5px;
-    
+                background-color:#3f3d56;
                 .header-wrapper{
                     position:relative;
-                    border: 1px solid #60cdcb;
+                    border: 1px solid #3f3d56;
                     .edit-title-controls{
                         position: absolute;
                         top: 0;
                         right: 2px;
                         display:none;
                         .title-btn{
-                            background-color:#b5eae6;
-                            color:#60cdcb;
+                            background-color:#e7f0fe;
+                            color:#3f3d56;
                         }
                     }
                     
@@ -82,11 +68,11 @@ ul{
                     margin:0;
                     color:white;
                 }
-                background-color:#60cdcb;
+                
             }
             .survey-header:hover{
                 .header-wrapper{
-                    border: 1px solid #b5eae6;
+                    border: 1px solid #e7f0fe;
                     margin: 0px 10px;
                     
                 }
@@ -98,7 +84,7 @@ ul{
                     margin: 10px;
                     padding: 5px 0px 10px;
                     position:relative;
-                    border: 1px solid #b5eae6;
+                    border: 1px solid #e7f0fe;
                     ul{
                         width: 85%;
                         margin: 0 auto;
@@ -120,14 +106,14 @@ ul{
                     select{
                         width: 85%;
                         height: 30px;
-                        border: 1px solid #60cdcb;
+                        border: 1px solid #3f3d56;
                         background:#f2fffe;
                     }
                     input[type=text]{
                         width: 85%;
                         height: 25px;
                         border: 1px solid
-                        #60cdcb;
+                        #3f3d56;
                         background:
                         #f2fffe;
                     }
@@ -135,7 +121,7 @@ ul{
                         width: 85%;
                         height: 75px;
                         border: 1px solid
-                        #60cdcb;
+                        #3f3d56;
                         background:
                         #f2fffe;
                     }
@@ -148,7 +134,7 @@ ul{
                 }
     
                 .form-group:hover {
-                    border: 1px solid #60cdcb;
+                    border: 1px solid #3f3d56;
                     .controls{
                         display:block;
                     }
@@ -162,15 +148,15 @@ ul{
                 margin: 20px 10px 0px 10px;
                 padding: 7px 0px;
                 position: relative;
-                border: 1px solid #b5eae6;
+                border: 1px solid #e7f0fe;
                 .input-btn{
                     text-transform:uppercase;
                     font-size: 17px;
                     font-weight: bold;
-                    border:2px solid #60cdcb;
+                    border:2px solid #3f3d56;
                     border-radius:20px;
                     padding:10px 20px;
-                    color:#60cdcb;
+                    color:#3f3d56;
                     background-color: #f2fffe;
                 }
                 .edit-btn-controls{
@@ -181,7 +167,7 @@ ul{
                 }
             }
             .button-edit-container:hover{
-                border: 1px solid #60cdcb;
+                border: 1px solid #3f3d56;
                 .edit-btn-controls{
                     display:block;
                 }
@@ -190,7 +176,7 @@ ul{
         
         }
         .round-btn{
-            background: #60cdcb;
+            background: #3f3d56;
             color:white;
             border:none;
             border-radius:100%;
@@ -198,10 +184,11 @@ ul{
             height: 40px;
             font-size:20px;
             margin: 2.5px;
+            padding-top: 5px;
             cursor:pointer;
         }
         .action-btn{
-            background-color:#60cdcb;
+            background-color:#3f3d56;
             color: white;
             padding:5px 15px;
             border-radius:20px;
@@ -210,6 +197,11 @@ ul{
             margin: 5px;
             cursor:pointer;
             font-family: "Titillium Web", sans-serif;
+            text-transform: uppercase;
+            box-shadow: 5px 5px 6px 0px rgba(187, 181, 255,0.7);
+        }
+        .action-btn:hover{
+            box-shadow: 5px 4px 20px 5px rgba(187, 181, 255,0.7);
         }
         
     
@@ -225,13 +217,14 @@ ul{
                 .fields-menu{
                     position: relative;
                     background-color:#fff;
-                    border: 2px solid#60cdcb;
+                    border: 5px solid#3f3d56;
                     top: 30%;
                     padding: 20px;
                     display: flex;
                     flex-direction: column;
                     width: 250px;
                     margin: 0 auto;
+                    border-radius: 10px;
                     button{
                         display: block;
                         margin:5px 0px; 
@@ -243,6 +236,7 @@ ul{
                         width: 25px;
                         height: 25px;
                         font-size: 13px;      
+                        padding-bottom: 4.5px;
                     }
                     h2{
                         margin-top:15px;
@@ -258,7 +252,7 @@ ul{
                         }
                         .close-input-btn{
                             display: inline-block;
-                            background:#60cdcb;
+                            background:#3f3d56;
                             color:white;
                             border: none;
                             border-radius: 25%;
@@ -270,7 +264,7 @@ ul{
                     }
                     .add-btn-mini{
                         display: inline-block;
-                        background:#60cdcb;
+                        background:#3f3d56;
                         color:white;
                         border: none;
                         border-radius: 25%;
@@ -305,4 +299,13 @@ ul{
         margin-top: 20px !important;
         font-size: 17px;
     }
+}
+
+.row{
+    display:flex;
+}
+
+.column{
+    display:flex;
+    flex-direction: column;
 }

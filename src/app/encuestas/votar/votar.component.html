@@ -6,7 +6,9 @@
             <p>Por favor, revisa la URL o comprueba que no haya expirado.</p>
         </div>
         <div class="content-form-wrapper" *ngIf="voted">Ya has votado en esta encuesta</div>
-        <div class="content-form-wrapper"  *ngIf="encuesta">
+        <div class="content-form-wrapper" *ngIf="maxPeople">No se permiten mas votos en la encuesta seleccionada</div>
+        <div class="content-form-wrapper" *ngIf="encuesta">
+            <h3>Vota en la encuesta creada por {{encuesta.autor}}</h3>
             <form class="survey-form" (ngSubmit)="onSubmit()" [formGroup]="form">
         
                 <!-- Title -->
