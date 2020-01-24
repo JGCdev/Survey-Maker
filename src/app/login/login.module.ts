@@ -4,6 +4,7 @@ import { CommonModule } from '@angular/common';
 import { LoginRoutingModule } from './login-routing.module';
 import { AccesoComponent } from './acceso/acceso.component';
 import { LoginOkComponent } from './login-ok/login-ok.component';
+import { SharedModule } from '../shared/shared.module';
 
 
 
@@ -11,7 +12,8 @@ import { LoginOkComponent } from './login-ok/login-ok.component';
   declarations: [AccesoComponent, LoginOkComponent],
   imports: [
     CommonModule,
-    LoginRoutingModule
+    LoginRoutingModule,
+    SharedModule
   ]
 })
 export class LoginModule { }

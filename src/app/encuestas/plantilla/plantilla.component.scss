@@ -9,9 +9,7 @@
             display: flex;
             flex-direction: column;
             padding: 20px;
-            color:
-            white;
-
+            color:white;
 
             .fila{
                 display: flex;
@@ -26,17 +24,17 @@
                     background-color:
                     #3f3d56;
                     margin: 10px;
+                    border-radius: 5px;
                     .plantilla-wrapper{
                         display: flex;
                         flex-direction: column;
                         padding: 10px 20px;
                         align-items: center;
-                        h2{
+                        h2, h3{
                             margin:0;
+                            color:white;
                         }
-                        h3{
-                            margin:0;
-                        }
+
                         img{
                             max-width:200px;
                         }
@@ -44,6 +42,7 @@
                             margin-top:8px;
                             width:50%;
                             border:2px solid #bbb5ff;
+                            box-shadow: none;
                         }
                     }
                 }
@@ -55,7 +54,7 @@
             .survey-header{
     
                 .header-wrapper{
-                    border: 0px solid #60cdcb;
+                    border: 0px solid #3f3d56;
                 }
             }
             .survey-header:hover{
@@ -71,7 +70,7 @@
                   
                 }
                 .form-group:hover {
-                    border: 0px solid #60cdcb;
+                    border: 0px solid #3f3d56;
                   
                 }
             }
@@ -84,7 +83,7 @@
             
             }
             .button-edit-container:hover{
-                border: 0px solid #60cdcb;
+                border: 0px solid #3f3d56;
             }
         
         }

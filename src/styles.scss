@@ -6,6 +6,9 @@ html, body{
     font-family: 'Titillium Web', sans-serif;
     background:#f2fffe;
 }
+h1,h2,h3,h4,h5,h6{
+    color:#3f3d56;
+}
 ul{
     padding:0;
     margin:0;
@@ -13,14 +16,14 @@ ul{
 
 .content-wrapper{
     display:flex;
-    min-height: 95%;
-   
+    min-height: 88%;
 }
 
 .content{
     background-color: #f2fffe;
     width: 100%;
     position: relative;
+    padding-bottom:50px;
     .content-form-wrapper{
         color:#333;
         text-align:center;
@@ -50,8 +53,8 @@ ul{
                         right: 2px;
                         display:none;
                         .title-btn{
-                            background-color:#b5eae6;
-                            color:#60cdcb;
+                            background-color:#e7f0fe;
+                            color:#3f3d56;
                         }
                     }
                     
@@ -69,7 +72,7 @@ ul{
             }
             .survey-header:hover{
                 .header-wrapper{
-                    border: 1px solid #b5eae6;
+                    border: 1px solid #e7f0fe;
                     margin: 0px 10px;
                     
                 }
@@ -118,7 +121,7 @@ ul{
                         width: 85%;
                         height: 75px;
                         border: 1px solid
-                        #60cdcb;
+                        #3f3d56;
                         background:
                         #f2fffe;
                     }
@@ -181,6 +184,7 @@ ul{
             height: 40px;
             font-size:20px;
             margin: 2.5px;
+            padding-top: 5px;
             cursor:pointer;
         }
         .action-btn{
@@ -194,6 +198,10 @@ ul{
             cursor:pointer;
             font-family: "Titillium Web", sans-serif;
             text-transform: uppercase;
+            box-shadow: 5px 5px 6px 0px rgba(187, 181, 255,0.7);
+        }
+        .action-btn:hover{
+            box-shadow: 5px 4px 20px 5px rgba(187, 181, 255,0.7);
         }
         
     
@@ -216,6 +224,7 @@ ul{
                     flex-direction: column;
                     width: 250px;
                     margin: 0 auto;
+                    border-radius: 10px;
                     button{
                         display: block;
                         margin:5px 0px; 
@@ -227,6 +236,7 @@ ul{
                         width: 25px;
                         height: 25px;
                         font-size: 13px;      
+                        padding-bottom: 4.5px;
                     }
                     h2{
                         margin-top:15px;
@@ -242,7 +252,7 @@ ul{
                         }
                         .close-input-btn{
                             display: inline-block;
-                            background:#60cdcb;
+                            background:#3f3d56;
                             color:white;
                             border: none;
                             border-radius: 25%;
@@ -254,7 +264,7 @@ ul{
                     }
                     .add-btn-mini{
                         display: inline-block;
-                        background:#60cdcb;
+                        background:#3f3d56;
                         color:white;
                         border: none;
                         border-radius: 25%;
@@ -293,7 +303,6 @@ ul{
 
 .row{
     display:flex;
-    width: 80%;
 }
 
 .column{

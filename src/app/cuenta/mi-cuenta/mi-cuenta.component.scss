@@ -1,6 +1,8 @@
 .content{
     padding-top:10px;
     .content-form-wrapper{
+        width:1100px;
+        margin:0 auto;
         color:#333;
         padding-top:20px;
         h1{
@@ -15,7 +17,7 @@
         .enc-table{
             width: 100%;
             border:2px solid #3f3d56;
-            background-color: rgba(63, 61, 86, 0.3);
+            background-color: rgba(187, 181, 255, 0.2);
             .tr-header{
                 background-color: #3f3d56;
                 color:white;
@@ -29,7 +31,7 @@
             .survey-header{
     
                 .header-wrapper{
-                    border: 0px solid #60cdcb;
+                    border: 0px solid #3f3d56;
                 }
             }
             .survey-header:hover{
@@ -49,7 +51,7 @@
                 }
     
                 .form-group:hover {
-                    border: 0px solid #60cdcb;
+                    border: 0px solid #3f3d56;
                   
                 } 
             }
@@ -62,13 +64,13 @@
             
             }
             .button-edit-container:hover{
-                border: 0px solid #60cdcb;
+                border: 0px solid #3f3d56;
             }
     
         }
         
         .ajustes-container{
-            width: 80%;
+            width: 500px;
             border: 2px solid
             #3f3d56;
             height: auto;
@@ -78,11 +80,14 @@
             flex-direction: column;
             padding:20px;
             margin-top: 15px;
+            background: #3f3d56;
+            color: white;
+            border-radius:10px;
                 .fila{
                     display: flex;
                     flex-direction: row;
                     flex-wrap: wrap;
-                    width: 100%;
+
                     .columna{
                         display: flex;
                         flex-direction: column;
@@ -95,11 +100,14 @@
                             align-items: center;
                             h2{
                                 margin:0;
+                                color:white;
                             }
                             h3{
+                                color:white;
                                 margin:0;
                             }
                             h4{
+                                color:white;
                                 margin-bottom:0;
                             }
                             select{

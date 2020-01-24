@@ -1,0 +1,20 @@
+.acceso-container{
+    padding: 50px 0px;
+    min-height: 77%;
+    .acceso-container-wrapper{
+        max-width:1100px;
+        margin: 0 auto;
+        text-align:center;
+    }
+    .action-btn{
+        background: #3f3d56;
+        border:none;
+        color:white;
+        font-size:18px;
+        border-radius:5px;
+        text-transform: uppercase;
+        font-family: 'Titillium Web', sans-serif;
+        padding:10px;
+        cursor:pointer;
+    }
+}
