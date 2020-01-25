@@ -23,6 +23,23 @@
                         Mi cuenta
                     </li>
                 </a> 
+                <a (click)="fireMenu()">
+                    <li>
+                        <fa name="bars"></fa>
+                    </li>
+                </a> 
+            </ul>
+        </nav>
+    </div>
+</div>
+
+<div *ngIf="menuOpen" class="mobile-menu">
+    <div class="mobile-menu-wrapper">
+        <nav>
+            <ul>
+                <li>Inicio</li>
+                <li>Crear encuesta</li>
+                <li>Mi cuenta</li>
             </ul>
         </nav>
     </div>

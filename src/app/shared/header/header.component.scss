@@ -1,8 +1,9 @@
 .header-wrapper{
-    font-family: 'Titillium Web', sans-serif;
+    font-family: var(--main-font);
     background-color:#3f3d56;
     display: flex;
     align-items: stretch;
+    height: 48px;
     .title{
         background-color:#3f3d56;
         color:white;
@@ -31,7 +32,7 @@
             display: flex;
             font-weight:bold;
             .router-link-active{
-                color:#bbb5ff;
+                color:var(--secondary-color);
                 cursor:context-menu;
             }
             a{
@@ -40,7 +41,7 @@
                 text-transform: uppercase;
             }
             a:hover{
-                color:#bbb5ff;
+                color:var(--secondary-color);
             }
             ul{
                 display: flex;
@@ -53,4 +54,14 @@
         }
     }
 
+}
+
+.mobile-menu{
+    position: fixed;
+    top: 0;
+    background-color: rgba(0,0,0,0.4);
+    bottom: 0;
+    right: 0;
+    left: 20%;
+    z-index: 9999999;
 }

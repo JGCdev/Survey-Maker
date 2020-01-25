@@ -1,49 +1,51 @@
-
-<div class="content-wrapper">
-    <div class="content">
-        <div class="content-form-wrapper" *ngIf="!encuesta && voted === false">
-            <h3>Error al recuperar la encuesta</h3>
-            <p>Por favor, revisa la URL o comprueba que no haya expirado.</p>
-        </div>
-        <div class="content-form-wrapper" *ngIf="voted">Ya has votado en esta encuesta</div>
-        <div class="content-form-wrapper" *ngIf="maxPeople">No se permiten mas votos en la encuesta seleccionada</div>
-        <div class="content-form-wrapper" *ngIf="encuesta">
-            <h3>Vota en la encuesta creada por {{encuesta.autor}}</h3>
-            <form class="survey-form" (ngSubmit)="onSubmit()" [formGroup]="form">
-        
-                <!-- Title -->
-                <div class="survey-header">
-                    <div class="header-wrapper">
-                        <h1>{{encuesta.title}}</h1>
+<div class="page-content">
+    <div class="content-wrapper">
+        <div class="content">
+            <div class="content-form-wrapper" *ngIf="!encuesta && voted === false">
+                <h3>Error al recuperar la encuesta</h3>
+                <p>Por favor, revisa la URL o comprueba que no haya expirado.</p>
+            </div>
+            <div class="content-form-wrapper" *ngIf="voted">Ya has votado en esta encuesta</div>
+            <div class="content-form-wrapper" *ngIf="maxPeople">No se permiten mas votos en la encuesta seleccionada</div>
+            <div class="content-form-wrapper" *ngIf="encuesta">
+                <h3>Vota en la encuesta creada por {{encuesta.autor}}</h3>
+                <form class="survey-form" (ngSubmit)="onSubmit()" [formGroup]="form">
+            
+                    <!-- Title -->
+                    <div class="survey-header">
+                        <div class="header-wrapper">
+                            <h1>{{encuesta.title}}</h1>
+                        </div>
                     </div>
-                </div>
-        
-                <div class="form-fields">
-                    <div class="form-group" *ngFor="let field of encuesta.fields">
-                        <h3>{{field.texto}}</h3>
-                        <select *ngIf="field.tipo===1" formControlName="select{{field.id}}">
-                            <option *ngFor="let item of field.respuestas; let i = index;" value="{{i}}" >{{item}}</option>
-                        </select>
-        
-                        <ul *ngIf="field.tipo===2">
-                            <li *ngFor="let item of field.respuestas; let i = index;">
-                                <span>{{item}}
-                                <input type="checkbox" formControlName="checkbox{{i}}" value="false"></span>
-                            </li>
-                        </ul>
-        
-                        <input *ngIf="field.tipo===3" formControlName="text{{field.id}}" type="text">
-        
-                        <textarea *ngIf="field.tipo===4" formControlName="textarea{{field.id}}"></textarea>
+            
+                    <div class="form-fields">
+                        <div class="form-group" *ngFor="let field of encuesta.fields">
+                            <h3>{{field.texto}}</h3>
+                            <select *ngIf="field.tipo===1" formControlName="select{{field.id}}">
+                                <option *ngFor="let item of field.respuestas; let i = index;" value="{{i}}" >{{item}}</option>
+                            </select>
+            
+                            <ul *ngIf="field.tipo===2">
+                                <li *ngFor="let item of field.respuestas; let i = index;">
+                                    <span>{{item}}
+                                    <input type="checkbox" formControlName="checkbox{{i}}" value="false"></span>
+                                </li>
+                            </ul>
+            
+                            <input *ngIf="field.tipo===3" formControlName="text{{field.id}}" type="text">
+            
+                            <textarea *ngIf="field.tipo===4" formControlName="textarea{{field.id}}"></textarea>
+                        </div>
+                      
                     </div>
-                  
+                      
+                </form>
+                <div class="message-url">
+                    <button class="btn action-btn big-btn" (click)="onSubmit()"><fa name="save"></fa> {{encuesta.buttonText}}</button>
                 </div>
-                  
-            </form>
-            <div class="message-url">
-                <button class="action-btn big-btn" (click)="onSubmit()"><fa name="save"></fa> {{encuesta.buttonText}}</button>
             </div>
         </div>
     </div>
+    
+    
 </div>
-

@@ -31,7 +31,7 @@
                     margin-bottom: 10px;
                     margin: 0px 80px;
                     .multiples{
-                        border: 1px solid#3f3d56;
+                        border: 1px solid var(--main-color);
                         margin-bottom: 10px;
                         h4{
                             margin:0;
@@ -46,7 +46,7 @@
                         }
                     }
                     .resp {
-                        border: 1px solid#3f3d56;
+                        border: 1px solidvar(--main-color);
                         margin-bottom: 10px;
                         .content-text{
                             margin:0px 10px;
@@ -57,12 +57,12 @@
         
                     .title{
                         padding:0 10px;
-                        background-color:#3f3d56;
+                        background-color:var(--main-color);
                     }
                     .q-content{
                         width: 95%;
                         .percent{
-                            background-color:#BBB5FF;
+                            background-color:var(--secondary-color);
                             position: relative;
                             height:30px;
                         }
@@ -77,7 +77,7 @@
             }
     
             .section{
-                background:#3f3d56;
+                background:var(--main-color);
                 margin: 0;
                 margin-bottom: 0px;
                 padding: 10px 0px;

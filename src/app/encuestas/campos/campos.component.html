@@ -1,12 +1,12 @@
-<div class="content-wrapper">
+<div class="page-content">
 
     <div class="content">
         <div class="content-form-wrapper">
 
             <h1>2- Configura los campos</h1>
             <div class="survey-actions">
-                <button class="action-btn" (click)="return()" type="button"><fa name="arrow-left"></fa> Volver atrás</button>
-                <button class="action-btn" (click)="resetSurvey()" type="button"><fa name="refresh"></fa> Resetear campos</button>
+                <button class="btn action-btn" (click)="return()" type="button"><fa name="arrow-left"></fa> Volver atrás</button>
+                <button class="btn action-btn" (click)="resetSurvey()" type="button"><fa name="refresh"></fa> Resetear campos</button>
             </div>
             <p *ngIf="error">*{{error}}</p>
             <form class="survey-form">
@@ -16,7 +16,7 @@
                     <div class="header-wrapper">
                         <h1>{{encuesta.title}}</h1>
                         <div class="edit-title-controls">
-                            <button class="round-btn title-btn" type="button" (click)="openTitleEditMenu()"><fa name="edit"></fa></button>
+                            <button class="btn-round title-btn" type="button" (click)="openTitleEditMenu()"><fa name="edit"></fa></button>
                         </div>
                     </div>
                 </div>
@@ -40,80 +40,84 @@
                         <textarea *ngIf="field.tipo===4" disabled></textarea>
         
                         <div class="controls">
-                            <button class="round-btn" (click)="deleteField(field.id)" type="button"><fa name="trash"></fa></button>
-                            <button class="round-btn" (click)="openEditFieldMenu(field.id)" type="button"><fa name="edit"></fa></button>
+                            <button class="btn btn-round" (click)="deleteField(field.id)" type="button"><fa name="trash"></fa></button>
+                            <button class="btn btn-round" (click)="openEditFieldMenu(field.id)" type="button"><fa name="edit"></fa></button>
                         </div>
                     </div>
-                    <!-- Add section menu -->
-                    <div class="overlay-box" >
-                        <div class="fields-menu-container" *ngIf="addFieldsMenu">
-                            <div class="fields-menu ptop-35">
-                                <button class="round-btn overlay-btn" type="button" (click)="openNewFieldsMenu()"><fa name="close"></fa></button>
-                                <button class="action-btn" type="button" (click)="addField(1)">Opción única</button>
-                                <button class="action-btn" type="button" (click)="addField(2)">Opción múltiple</button>
-                                <button class="action-btn" type="button" (click)="addField(3)">Campo de texto corto</button>
-                                <button class="action-btn" type="button" (click)="addField(4)">Texto largo</button>
-                            </div>
-                        </div>
-                        <button class="round-btn mtop-15" type="button" (click)="openNewFieldsMenu()"><fa name="plus"></fa></button>
-                    </div>
-                    <!-- Title menu -->
-                    <div class="overlay-box">
-                        <div class="fields-menu-container" *ngIf="editTitleMenu">
-                            <div class="fields-menu">
-                                <h2>Nuevo título</h2>
-                                <input type="text" value="{{encuesta.title}}" name="title" [(ngModel)]="encuesta.title">
-                                <button class="action-btn mtop-20" type="button" (click)="openTitleEditMenu()">Guardar</button>
-                                <button class="round-btn overlay-btn" type="button" (click)="openTitleEditMenu()"><fa name="close"></fa></button>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- Edit field menu -->
-                    <div class="overlay-box">
-                        <div class="fields-menu-container" *ngIf="editFieldMenu">
-                            <div class="fields-menu">
-                                <form (submit)="saveMenuForm()">
-                                    <h2>Nuevo título</h2>
-                                    <input type="text" value="{{editField.texto}}" name="title" [(ngModel)]="editField.texto">
-                                    <div *ngIf="editField.tipo === 1 || editField.tipo === 2">
-                                        <h2>Posibles respuestas</h2>
-                                        <div *ngFor="let answer of editField.respuestas; let i = index; trackBy: trackByFn" class="controls-overlay-container">
-                                            <input  type="text"  name="answer{{i}}" [(ngModel)]="editField.respuestas[i]">
-                                            <button class="close-input-btn" type="button" (click)="deleteFieldFromEditField(i)"><fa name="trash"></fa></button>
-                                        </div>
-                                        <button class="add-btn-mini" (click)="addFieldsToEditField()" type="button"><fa name="plus"></fa></button>
-                                    </div>
-                                    
-                                    <button class="action-btn mtop-20 save-btn">Guardar</button>
-                                    <button class="round-btn overlay-btn" type="button" (click)="openEditFieldMenu()"><fa name="close"></fa></button>
-                                </form>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- Edit btn menu -->
-                    <div class="overlay-box">
-                        <div class="fields-menu-container" *ngIf="editButtonMenu">
-                            <div class="fields-menu">
-                                <h2>Nuevo título</h2>
-                                <input type="text" value="{{encuesta.buttonText}}" name="title" [(ngModel)]="encuesta.buttonText">
-                                <button class="action-btn mtop-20" type="button" (click)="openEditBtnMenu()">Guardar</button>
-                                <button class="round-btn overlay-btn" type="button" (click)="openEditBtnMenu()"><fa name="close"></fa></button>
-                            </div>
-                        </div>
-                    </div>
-
+                    <button class="btn btn-round" type="button" (click)="openNewFieldsMenu()"><fa name="plus"></fa></button>
+                   
                 </div>
                 <div class="button-edit-container">
                     <input class="input-btn" type="submit" value="{{encuesta.buttonText}}" [disabled]="true"> 
                     <div class="edit-btn-controls">
-                        <button class="round-btn" type="button" (click)="openEditBtnMenu()"><fa name="edit"></fa></button>
+                        <button class="btn btn-round" type="button" (click)="openEditBtnMenu()"><fa name="edit"></fa></button>
                     </div>
                 </div>
-        
+
+
             </form>
             <div class="message-url">
-                <button class="action-btn big-btn" (click)="saveSurvey()"><fa name="save"></fa> Ajustar y publicar</button>
+                <button class="btn action-btn big-btn" (click)="saveSurvey()"><fa name="save"></fa> Ajustar y publicar</button>
             </div>
         </div>
     </div>
+
+    <!-- Add section menu -->
+    <div class="popup" *ngIf="addFieldsMenu">
+        <div class="popup-box">
+            <div class="fields-menu">
+                <button class="btn-round overlay-btn" type="button" (click)="openNewFieldsMenu()"><fa name="close"></fa></button>
+                <button class="btn action-btn options" type="button" (click)="addField(1)">Opción única</button>
+                <button class="btn action-btn options" type="button" (click)="addField(2)">Opción múltiple</button>
+                <button class="btn action-btn options" type="button" (click)="addField(3)">Campo de texto corto</button>
+                <button class="btn action-btn options" type="button" (click)="addField(4)">Texto largo</button>
+            </div>
+        </div>
+        
+    </div>
+    <!-- Title menu -->
+    <div class="popup" *ngIf="editTitleMenu">
+        <div class="popup-box">
+            <div class="fields-menu">
+                <h2>Nuevo título</h2>
+                <input type="text" value="{{encuesta.title}}" name="title" [(ngModel)]="encuesta.title">
+                <button class="btn action-btn mtop-20" type="button" (click)="openTitleEditMenu()">Guardar</button>
+                <button class="btn btn-round overlay-btn" type="button" (click)="openTitleEditMenu()"><fa name="close"></fa></button>
+            </div>
+        </div>
+    </div>
+     <!-- Edit field menu -->
+     <div class="popup" *ngIf="editFieldMenu">
+        <div class="popup-box">
+            <div class="fields-menu">
+                <form (submit)="saveMenuForm()">
+                    <h2>Nuevo título</h2>
+                    <input type="text" value="{{editField.texto}}" name="title" [(ngModel)]="editField.texto">
+                    <div *ngIf="editField.tipo === 1 || editField.tipo === 2">
+                        <h2>Posibles respuestas</h2>
+                        <div *ngFor="let answer of editField.respuestas; let i = index; trackBy: trackByFn" class="controls-overlay-container">
+                            <input  type="text"  name="answer{{i}}" [(ngModel)]="editField.respuestas[i]">
+                            <button class="btn close-input-btn" type="button" (click)="deleteFieldFromEditField(i)"><fa name="trash"></fa></button>
+                        </div>
+                        <button class="btn add-btn-mini" (click)="addFieldsToEditField()" type="button"><fa name="plus"></fa></button>
+                    </div>
+                    
+                    <button class="btn action-btn save-btn">Guardar</button>
+                    <button class="btn btn-round overlay-btn" type="button" (click)="openEditFieldMenu()"><fa name="close"></fa></button>
+                </form>
+            </div>
+        </div>
+    </div>
+    <!-- Edit btn menu -->
+    <div class="popup" *ngIf="editButtonMenu">
+        <div class="popup-box">
+            <div class="fields-menu">
+                <h2>Nuevo título</h2>
+                <input type="text" value="{{encuesta.buttonText}}" name="title" [(ngModel)]="encuesta.buttonText">
+                <button class="btn action-btn" type="button" (click)="openEditBtnMenu()">Guardar</button>
+                <button class="btn btn-round overlay-btn" type="button" (click)="openEditBtnMenu()"><fa name="close"></fa></button>
+            </div>
+        </div>
+    </div>
+
 </div>

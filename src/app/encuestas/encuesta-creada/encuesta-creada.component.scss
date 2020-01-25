@@ -1,12 +1,11 @@
 .content{
-    min-height: 73%;
     padding: 70px 0px;
     .content-wrapper{
         width: 500px;
         margin: 0 auto;
         background-color: rgba(187, 181, 255, 0.2);
         border-radius: 2.5px;
-        border: 2px solid #3f3d56;
+        border: 2px solid var(--main-color);
         margin-top:35px;
         padding-bottom: 10px;
         display:flex;
@@ -18,7 +17,7 @@
                 margin:0;
                 color:white;
             }
-            background-color:#3f3d56;
+            background-color:var(--main-color);
         }
         .content-body{
             padding: 0px 20px;

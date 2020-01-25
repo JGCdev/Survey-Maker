@@ -5,21 +5,21 @@
             .survey-header{
     
                 .header-wrapper{
-                    border: 0px solid #3f3d56;
+                    border: 0px;
                 }
             }
             .survey-header:hover{
                 .header-wrapper{
-                    border: 0px solid #b5eae6;
+                    border: 0px;
                 }
             }
     
             .form-fields{
                 .form-group{
-                    border: 0px solid #b5eae6;
+                    border: 0px;
                 }
                 .form-group:hover {
-                    border: 0px solid #3f3d56;
+                    border: 0px;
                   
                 }
             }
@@ -28,11 +28,10 @@
                 margin: 20px 10px 0px 10px;
                 padding: 7px 0px;
                 position: relative;
-                border: 0px solid #b5eae6;
-            
+                border: 0px;
             }
             .button-edit-container:hover{
-                border: 0px solid #3f3d56;
+                border: 0px;
             }
     
         }

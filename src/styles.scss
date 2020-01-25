@@ -1,19 +1,142 @@
 /* Main styles */
+:root 
+{
+    --bgcolor-main: #f2fffe;
+    --main-color: #3f3d56;
+    --secondary-color: #BBB5FF;
+    --main-font: "Titillium Web", sans-serif;
+}
 
 html, body{
     margin:0;
     height:100%;
-    font-family: 'Titillium Web', sans-serif;
+    font-family: var(--main-font);
     background:#f2fffe;
 }
 h1,h2,h3,h4,h5,h6{
-    color:#3f3d56;
+    color:var(--main-color);
 }
 ul{
     padding:0;
     margin:0;
 }
 
+.page-content{
+    min-height: calc(100% - 113px);
+    position: relative;
+}
+
+/* POPUP */
+.popup{
+    position:absolute;
+    background:rgba(0, 0, 0, 0.4);
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    .popup-box{
+        position: relative;
+        background-color:#fff;
+        border: 5px solid var(--main-color);
+        top: 30%;
+        padding: 20px;
+        display: flex;
+        flex-direction: column;
+        width: 250px;
+        margin: 0 auto;
+        border-radius: 10px;
+        text-align: center;
+        .overlay-btn{
+            position: absolute;
+            right: 6px;
+            top: 3px;
+            width: 25px;
+            height: 25px;
+            font-size: 13px;
+
+        }
+    }
+}
+
+/* BUTTONS */
+.btn{
+    font-family: var(--main-font);
+    cursor:pointer;
+}
+.btn-round{
+    background: var(--main-color);
+    color: white;
+    border: none;
+    border-radius: 100%;
+    width: 40px;
+    height: 40px;
+    font-size: 20px;
+    margin: 2.5px;
+}
+.action-btn{
+    background-color:var(--main-color);
+    color: white;
+    padding:5px 15px;
+    border-radius:20px;
+    border:none;
+    font-weight: bold;
+    margin: 5px;
+    text-transform: uppercase;
+    box-shadow: 5px 5px 6px 0px rgba(187, 181, 255,0.7);
+}
+.action-btn:hover{
+    box-shadow: 5px 4px 20px 5px rgba(187, 181, 255,0.7);
+}
+.close-input-btn{
+    display: inline-block;
+    background:var(--main-color);
+    color:white;
+    border: none;
+    border-radius: 25%;
+    width: 33px;
+    height: 23px;
+    font-size: 15px;
+}
+.add-btn-mini{
+    display: inline-block;
+    background:var(--main-color);
+    color:white;
+    border: none;
+    border-radius: 25%;
+    width: 33px;
+    height: 23px;
+    font-size: 15px;
+}
+.big-btn {
+    padding: 15px 40px !important;
+    margin-top: 20px !important;
+    font-size: 17px;
+}
+.outline-btn{
+    margin-top: 8px;
+    width: 50%;
+    border: 2px solid var(--secondary-color);
+    box-shadow: none;
+    background-color: transparent;
+    color:white;
+    border-radius: 10px;
+    padding: 5px 10px;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+.input-btn {
+    text-transform: uppercase;
+    font-size: 17px;
+    font-weight: bold;
+    border: 2px solid var(--main-color);
+    border-radius: 20px;
+    padding: 10px 20px;
+    color: #3f3d56;
+    background-color: #f2fffe;
+}
+
+
+/* LAYOUT */ 
 .content-wrapper{
     display:flex;
     min-height: 88%;
@@ -37,16 +160,16 @@ ul{
             margin: 0 auto;
             background-color:rgba(187, 181, 255, 0.2);
             border-radius: 2.5px;
-            border: 2px solid #3f3d56;
+            border: 2px solid var(--main-color);
             margin-top:15px;
             padding-bottom: 10px;
     
             .survey-header{
                 padding: 5px;
-                background-color:#3f3d56;
+                background-color:var(--main-color);
                 .header-wrapper{
                     position:relative;
-                    border: 1px solid #3f3d56;
+                    border: 1px solid var(--main-color);
                     .edit-title-controls{
                         position: absolute;
                         top: 0;
@@ -54,7 +177,7 @@ ul{
                         display:none;
                         .title-btn{
                             background-color:#e7f0fe;
-                            color:#3f3d56;
+                            color:var(--main-color);
                         }
                     }
                     
@@ -106,24 +229,20 @@ ul{
                     select{
                         width: 85%;
                         height: 30px;
-                        border: 1px solid #3f3d56;
+                        border: 1px solid var(--main-color);
                         background:#f2fffe;
                     }
                     input[type=text]{
                         width: 85%;
                         height: 25px;
-                        border: 1px solid
-                        #3f3d56;
-                        background:
-                        #f2fffe;
+                        border: 1px solid var(--main-color);
+                        background:#f2fffe;
                     }
                     textarea{
                         width: 85%;
                         height: 75px;
-                        border: 1px solid
-                        #3f3d56;
-                        background:
-                        #f2fffe;
+                        border: 1px solid var(--main-color);
+                        background:#f2fffe;
                     }
                     .controls{
                         display: none;
@@ -134,7 +253,7 @@ ul{
                 }
     
                 .form-group:hover {
-                    border: 1px solid #3f3d56;
+                    border: 1px solid var(--main-color);
                     .controls{
                         display:block;
                     }
@@ -149,16 +268,7 @@ ul{
                 padding: 7px 0px;
                 position: relative;
                 border: 1px solid #e7f0fe;
-                .input-btn{
-                    text-transform:uppercase;
-                    font-size: 17px;
-                    font-weight: bold;
-                    border:2px solid #3f3d56;
-                    border-radius:20px;
-                    padding:10px 20px;
-                    color:#3f3d56;
-                    background-color: #f2fffe;
-                }
+
                 .edit-btn-controls{
                     position: absolute;
                     top: 7px;
@@ -167,7 +277,7 @@ ul{
                 }
             }
             .button-edit-container:hover{
-                border: 1px solid #3f3d56;
+                border: 1px solid var(--main-color);
                 .edit-btn-controls{
                     display:block;
                 }
@@ -176,7 +286,7 @@ ul{
         
         }
         .round-btn{
-            background: #3f3d56;
+            background: var(--main-color);
             color:white;
             border:none;
             border-radius:100%;
@@ -185,24 +295,8 @@ ul{
             font-size:20px;
             margin: 2.5px;
             padding-top: 5px;
-            cursor:pointer;
         }
-        .action-btn{
-            background-color:#3f3d56;
-            color: white;
-            padding:5px 15px;
-            border-radius:20px;
-            border:none;
-            font-weight: bold;
-            margin: 5px;
-            cursor:pointer;
-            font-family: "Titillium Web", sans-serif;
-            text-transform: uppercase;
-            box-shadow: 5px 5px 6px 0px rgba(187, 181, 255,0.7);
-        }
-        .action-btn:hover{
-            box-shadow: 5px 4px 20px 5px rgba(187, 181, 255,0.7);
-        }
+
         
     
         .overlay-box{
@@ -217,7 +311,7 @@ ul{
                 .fields-menu{
                     position: relative;
                     background-color:#fff;
-                    border: 5px solid#3f3d56;
+                    border: 5px solidvar(--main-color);
                     top: 30%;
                     padding: 20px;
                     display: flex;
@@ -229,15 +323,7 @@ ul{
                         display: block;
                         margin:5px 0px; 
                     }
-                    .overlay-btn{
-                        position: absolute;
-                        right: 6px;
-                        top: 3px;
-                        width: 25px;
-                        height: 25px;
-                        font-size: 13px;      
-                        padding-bottom: 4.5px;
-                    }
+
                     h2{
                         margin-top:15px;
                         margin-bottom:10px;
@@ -250,29 +336,8 @@ ul{
                             width: 80%;
                             margin-right: 11px;
                         }
-                        .close-input-btn{
-                            display: inline-block;
-                            background:#3f3d56;
-                            color:white;
-                            border: none;
-                            border-radius: 25%;
-                            width: 33px;
-                            height: 23px;
-                            font-size: 15px;
-                            cursor: pointer;
-                        }
                     }
-                    .add-btn-mini{
-                        display: inline-block;
-                        background:#3f3d56;
-                        color:white;
-                        border: none;
-                        border-radius: 25%;
-                        width: 33px;
-                        height: 23px;
-                        font-size: 15px;
-                        cursor: pointer;
-                    }
+
                 }
             }
         }
@@ -281,24 +346,7 @@ ul{
             margin: 25px 0px 20px;
         }
     }
-    .mtop-15{
-        margin-top: 15px!important;
-    }
-    .mtop-20{
-        margin-top:20px!important;
-    }
-    .ptop-35{
-        padding-top:35px!important;
-    }
-    .save-btn{
-        margin: 0 auto !important;
-        margin-top: 20px !important;
-    }
-    .big-btn{
-        padding: 15px 40px !important;
-        margin-top: 20px !important;
-        font-size: 17px;
-    }
+
 }
 
 .row{
@@ -309,3 +357,6 @@ ul{
     display:flex;
     flex-direction: column;
 }
+
+
+/* MEDIA QUERIES */

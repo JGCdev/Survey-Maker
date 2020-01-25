@@ -1,4 +1,4 @@
-<div class="content-wrapper">
+<div class="page-content">
     <div class="content">
         <div class="content-form-wrapper" *ngIf="user">
             <img src="{{user.photoUrl}}">
@@ -19,9 +19,9 @@
                                     </tr>
                                     <tr *ngFor="let encuesta of encuestas">
                                         <td>
-                                            <button title="Ver" class="actionbtn" [routerLink]="['/encuestas/seguimiento/' + encuesta._id]"><fa name="eye"></fa></button>
-                                            <button title="Votar" class="actionbtn" [routerLink]="['/encuestas/' + encuesta._id]"><fa name="arrow-up"></fa></button>
-                                            <button title="Eliminar" class="actionbtn" (click)="openSaveOverlayMenu(encuesta._id)"><fa name="trash"></fa></button>
+                                            <button title="Ver" class="btn action-btn" [routerLink]="['/encuestas/seguimiento/' + encuesta._id]"><fa name="eye"></fa></button>
+                                            <button title="Votar" class="btn action-btn" [routerLink]="['/encuestas/' + encuesta._id]"><fa name="arrow-up"></fa></button>
+                                            <button title="Eliminar" class="btn action-btn" (click)="openSaveOverlayMenu(encuesta._id)"><fa name="trash"></fa></button>
                                         </td>
                                         <td>{{encuesta.title}}</td>
                                         <td>{{encuesta.votosTotales}}</td>
@@ -37,21 +37,25 @@
 
                 </div>
             </div>
-            <!-- Save overlay menu -->
-            <div class="overlay-box">
-                <div class="fields-menu-container" *ngIf="saveOverlayMenu">
-                    <div class="fields-menu">
-                        <h4>¿Estás seguro de querer borrar la encuesta? <br>La encuesta ya no será accesible ni tampoco sus resultados.</h4>
-                        <button class="action-btn" type="button" (click)="openSaveOverlayMenu()"><fa name="arrow-left"></fa> Cancelar</button>
-                        <button class="action-btn" type="button" (click)="eliminarEncuesta()"><fa name="check"></fa> Borrar</button>
-                        
-                        <button class="round-btn overlay-btn" type="button" (click)="openSaveOverlayMenu()"><fa name="close"></fa></button>
-                    </div>
-                </div>
-            </div>
+
             <div class="message-url">
-                <button class="action-btn big-btn" (click)="signOut()"><fa name="power-off"></fa> Cerrar sesión</button>
+                <button class="btn action-btn big-btn" (click)="signOut()"><fa name="power-off"></fa> Cerrar sesión</button>
+            </div>
+        </div>
+    </div>
+
+
+     <!-- Save overlay menu -->
+    <div class="popup" *ngIf="saveOverlayMenu">
+        <div class="popup-box">
+            <div class="fields-menu">
+                <h4>¿Estás seguro de querer borrar la encuesta? <br>La encuesta ya no será accesible ni tampoco sus resultados.</h4>
+                <button class="btn action-btn" type="button" (click)="openSaveOverlayMenu()"><fa name="arrow-left"></fa> Cancelar</button>
+                <button class="btn action-btn" type="button" (click)="eliminarEncuesta()"><fa name="check"></fa> Borrar</button>
+                
+                <button class="btn overlay-btn btn-round" type="button" (click)="openSaveOverlayMenu()"><fa name="close"></fa></button>
             </div>
         </div>
     </div>
 </div>
+

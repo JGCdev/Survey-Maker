@@ -10,11 +10,9 @@
     }
     h1{
         margin:0;
-        color:#3f3d56;
     }
     h3{
         margin-top:10px;
-        color:#3f3d56;
     }
 
     .column{
@@ -33,16 +31,10 @@
        align-items: flex-end;
     }
     .action-btn{
-        background: #3f3d56;
-        border:none;
-        color:white;
         font-size:18px;
         width:200px;
         height:40px;
         border-radius:5px;
-        text-transform: uppercase;
-        font-family: 'Titillium Web', sans-serif;
-        cursor:pointer;
     }
 }
 .home-content{
@@ -53,7 +45,7 @@
         margin: 0 auto;
         text-align: center;
         .col{
-            background: #3f3d56;
+            background: var(--main-color);
             color: white!important;
             border-radius: 10px;
             margin: 0px 20px;
@@ -69,7 +61,7 @@
     }
     .border-purple{
         margin-top:60px;
-        border-top:5px solid #3f3d56;
+        border-top:5px solid var(--main-color);
         background-color:#e7f0fe;
         padding:75px 0px;
     }
@@ -77,16 +69,12 @@
         width:250px;
     }
     .outline-btn{
-        border:2px solid #3f3d56;
-        color:#3f3d56;
-        background-color: transparent;
+        border:2px solid var(--main-color);
+        color:var(--main-color);
         border-radius:20px;
         font-size:18px;
         font-weight: bold;
         height:40px;
         border-radius:5px;
-        text-transform: uppercase;
-        font-family: 'Titillium Web', sans-serif;
-        
     }
 }
