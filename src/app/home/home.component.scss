@@ -27,6 +27,10 @@
                     width:200px;
                     height:40px;
                     border-radius:5px;
+                    a{
+                        color:white;
+                        text-decoration: none;
+                    }
                 }
             }
             .headline{
@@ -81,6 +85,10 @@
         font-weight: bold;
         height:40px;
         border-radius:5px;
+        a{
+            color: var(--main-color);
+            text-decoration: none;
+        }
     }
 }
 
