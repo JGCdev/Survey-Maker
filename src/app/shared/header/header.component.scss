@@ -39,6 +39,7 @@
                 text-decoration: none;
                 color: white;
                 text-transform: uppercase;
+                cursor:pointer;
             }
             a:hover{
                 color:var(--secondary-color);
@@ -56,12 +57,53 @@
 
 }
 
+.menuopen{
+    left: 20%!important;
+}
 .mobile-menu{
     position: fixed;
     top: 0;
-    background-color: rgba(0,0,0,0.4);
+    background-color: #3f3d56;
     bottom: 0;
     right: 0;
-    left: 20%;
+    left: 120%;
     z-index: 9999999;
+    display: flex;
+    box-shadow: -5px 0px 15px 2px rgba(0,0,0,0.4);
+    transition: 1s;
+    .mobile-menu-wrapper{
+        display: flex;
+        flex-direction: column;
+        position:relative;
+        width:100%;
+        height:100%;
+        justify-content: center;
+
+        text-align:center;
+        a{
+            color: white;
+            text-transform: uppercase;
+            text-decoration: none;
+            font-size:25px;
+                margin:10px 0px;
+
+        }
+        .menu-box{
+            width:200px;
+            display: flex;
+            flex-direction: column;
+            margin: 0 auto;
+        }
+        .close-btn{
+            position: absolute;
+            top:10px;
+            right:15px;
+            color:white;
+            border:none;
+            background-color: transparent;
+            font-size:25px;
+            cursor:pointer;
+        }
+    }
 }
+

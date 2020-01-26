@@ -7,57 +7,62 @@
     .slider-container-wrapper{
         width: 1100px;
         margin: 0 auto;
-    }
-    h1{
-        margin:0;
-    }
-    h3{
-        margin-top:10px;
-    }
-
-    .column{
-        flex:1;
-        img{
-            width: 440px;
+        .row{
+            align-items: center;
+           
+            .column{
+                flex:1;
+                width: 18%;
+                img{
+                    width: 440px;
+                }
+                h1{
+                    margin:0;
+                }
+                h3{
+                    margin-top:10px;
+                }
+                .action-btn{
+                    font-size:18px;
+                    width:200px;
+                    height:40px;
+                    border-radius:5px;
+                }
+            }
+            .headline{
+                max-width:550px;
+            }
+            .right-aligned{
+               align-items: flex-end;
+            }
         }
-    }
-    .headline{
-        max-width:550px;
-    }
-    .row{
-        align-items: center;
-    }
-    .right-aligned{
-       align-items: flex-end;
-    }
-    .action-btn{
-        font-size:18px;
-        width:200px;
-        height:40px;
-        border-radius:5px;
     }
 }
 .home-content{
     padding-top:50px;
-
     .home-content-wrapper{
         width: 1145px;
         margin: 0 auto;
         text-align: center;
-        .col{
-            background: var(--main-color);
-            color: white!important;
-            border-radius: 10px;
-            margin: 0px 20px;
-            padding:20px;
-            .box-number{
-                font-size:50px;
-            }
-            h2,p{
-                margin:5px 0px;
-                color:White;
+        .row{
+            flex-flow: row wrap;
+            .col{
+                width: 18%;
+                background: var(--main-color);
+                color: white!important;
+                border-radius: 10px;
+                margin: 0px 20px;
+                padding:20px;
+                .box-number{
+                    font-size:50px;
+                }
+                h2, p{
+                    margin:5px 0px;
+                    color:White;
+                }
             }
         }
+        
     }
     .border-purple{
         margin-top:60px;
@@ -77,4 +82,8 @@
         height:40px;
         border-radius:5px;
     }
+}
+
+.action-btn{
+    margin-left:0px;
 }

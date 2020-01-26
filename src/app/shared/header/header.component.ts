@@ -15,6 +15,6 @@ export class HeaderComponent implements OnInit {
   }
 
   fireMenu() {
-    this.menuOpen = true;
+    this.menuOpen === true ? this.menuOpen = false : this.menuOpen = true;
   }
 }
