@@ -8,22 +8,45 @@
     <div class="menu-container">
         <nav class="main-menu">
             <ul>
-                <a [routerLink]="['home']" routerLinkActive="router-link-active">
+                <a [routerLink]="['home']" class="only-desktop" routerLinkActive="router-link-active">
                     <li>
                         Inicio
                     </li>
                 </a> 
-                <a [routerLink]="['encuestas/crear-encuesta/']" routerLinkActive="router-link-active">
+                <a [routerLink]="['encuestas/crear-encuesta/']" class="only-desktop" routerLinkActive="router-link-active">
                     <li>
                         Crear Encuesta
                     </li>
                 </a> 
-                <a [routerLink]="['mi-cuenta']" routerLinkActive="router-link-active">
+                <a [routerLink]="['mi-cuenta']" class="only-desktop" routerLinkActive="router-link-active">
                     <li>
                         Mi cuenta
+                    </li>
+                </a> 
+                <a (click)="fireMenu()" class="mobile-icon">
+                    <li>
+                        <fa name="bars"></fa>
                     </li>
                 </a> 
             </ul>
         </nav>
     </div>
+</div>
+
+<div class="mobile-menu" [ngClass]="{ menuopen: menuOpen}">
+    <div class="mobile-menu-wrapper">
+        <div class="menu-box">
+            <a [routerLink]="['home']" (click)="fireMenu()" routerLinkActive="router-link-active">
+                Inicio
+            </a> 
+            <a [routerLink]="['encuestas/crear-encuesta/']" (click)="fireMenu()" routerLinkActive="router-link-active">
+                    Crear Encuesta
+            </a> 
+            <a [routerLink]="['mi-cuenta']" (click)="fireMenu()" routerLinkActive="router-link-active">
+                    Mi cuenta
+            </a> 
+        </div>
+        <button *ngIf="menuOpen" (click)="fireMenu()" class="close-btn"><fa name="close"></fa></button>
+    </div>
+
 </div>

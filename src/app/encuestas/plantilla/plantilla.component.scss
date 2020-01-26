@@ -1,7 +1,7 @@
+
 .content{
     padding-top:10px;
     .content-form-wrapper{
-        color:#333;
         .plantillas-container{
             width: 650px;
             height: auto;
@@ -21,10 +21,11 @@
                     flex-direction: column;
                     flex-basis: 100%;
                     flex: 1;
-                    background-color:
-                    #3f3d56;
+                    background-color:var(--main-color);
                     margin: 10px;
                     border-radius: 5px;
+                    min-height: 164px;
+                    justify-content: center;
                     .plantilla-wrapper{
                         display: flex;
                         flex-direction: column;
@@ -38,10 +39,13 @@
                         img{
                             max-width:200px;
                         }
+                        .outline-btn{
+                            margin-top: 15px;
+                        }
                         .action-btn{
                             margin-top:8px;
                             width:50%;
-                            border:2px solid #bbb5ff;
+                            border:2px solid var(--secondary-color);
                             box-shadow: none;
                         }
                     }
@@ -50,44 +54,7 @@
             
         }
 
-        .survey-form{
-            .survey-header{
-    
-                .header-wrapper{
-                    border: 0px solid #3f3d56;
-                }
-            }
-            .survey-header:hover{
-                .header-wrapper{
-                    border: 0px solid #b5eae6;
-                }
-            }
-    
-            .form-fields{
-                .form-group{
-              
-                    border: 0px solid #b5eae6;
-                  
-                }
-                .form-group:hover {
-                    border: 0px solid #3f3d56;
-                  
-                }
-            }
-    
-            .button-edit-container{
-                margin: 20px 10px 0px 10px;
-                padding: 7px 0px;
-                position: relative;
-                border: 0px solid #b5eae6;
-            
-            }
-            .button-edit-container:hover{
-                border: 0px solid #3f3d56;
-            }
-        
-        }
-           
+      
     }
 }
 

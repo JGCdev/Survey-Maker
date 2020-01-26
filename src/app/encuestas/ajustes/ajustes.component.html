@@ -1,10 +1,10 @@
 
-<div class="content-wrapper">
+<div class="page-content">
     <div class="content">
         <div class="content-form-wrapper">
             <h1>3- Ajusta y publica</h1>
             <div class="survey-actions">
-                <button class="action-btn" (click)="return()" type="button"><fa name="arrow-left"></fa> Volver atrás</button>
+                <button class="btn action-btn" (click)="return()" type="button"><fa name="arrow-left"></fa> Volver atrás</button>
             </div>
             <div class="ajustes-container">
                 <div class="fila">
@@ -78,20 +78,21 @@
                     </div>
                 </div>
             </div>
-            <!-- Save overlay menu -->
-            <div class="overlay-box">
-                <div class="fields-menu-container" *ngIf="saveOverlayMenu">
-                    <div class="fields-menu">
-                        <h4>¿Estás seguro de querer publicar tu encuesta? <br>No podrás volver atrás después de publicar.</h4>
-                        <button class="action-btn" type="button" (click)="openSaveOverlayMenu()"><fa name="arrow-left"></fa> Volver</button>
-                        <button class="action-btn" type="button" (click)="saveSurvey()"><fa name="check"></fa> Publicar</button>
-                        
-                        <button class="round-btn overlay-btn" type="button" (click)="openSaveOverlayMenu()"><fa name="close"></fa></button>
-                    </div>
-                </div>
-            </div>
             <div class="message-url">
-                <button class="action-btn big-btn" (click)="openSaveOverlayMenu()"><fa name="save"></fa> Publicar</button>
+                <button class="btn action-btn big-btn" (click)="openSaveOverlayMenu()"><fa name="save"></fa> Publicar</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Save overlay menu -->
+    <div class="popup" *ngIf="saveOverlayMenu">
+        <div class="popup-box">
+            <div class="fields-menu">
+                <h4>¿Estás seguro de querer publicar tu encuesta? <br>No podrás volver atrás después de publicar.</h4>
+                <button class="btn action-btn" type="button" (click)="openSaveOverlayMenu()"><fa name="arrow-left"></fa> Volver</button>
+                <button class="btn action-btn" type="button" (click)="saveSurvey()"><fa name="check"></fa> Publicar</button>
+                
+                <button class="btn overlay-btn btn-round" type="button" (click)="openSaveOverlayMenu()"><fa name="close"></fa></button>
             </div>
         </div>
     </div>

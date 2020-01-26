@@ -1,71 +1,74 @@
-<div class="content-wrapper">
-    <div class="content">
-        <div class="content-form-wrapper" *ngIf="privateSurvey">Los resultados de la encuesta solo pueden ser visualizados por su autor</div>
-        <div class="content-form-wrapper" *ngIf="!stats && !privateSurvey">
-            <h3>Error al recuperar la encuesta</h3>
-            <p>Por favor, revisa la URL o comprueba que no haya expirado.</p>
-        </div>
-        <div class="content-form-wrapper" *ngIf="stats">
-            <h3 *ngIf="text!==null">{{text}}</h3>
-            <h2>{{stats.title}}</h2>
-            <h5>Votos totales: {{stats.votosTotales}}</h5>
-            <h5>Fecha de creación: {{stats.creationDate | date}}</h5>
-            <div class="respuestas-container">
-                <p *ngIf="stats.votosTotales === 0">Aún no hay ningún voto para la encuesta</p>
-                <div class="row" *ngIf="stats.votosTotales > 0">
-
-                    <div class="section-container" *ngFor="let pregunta of stats.fields; let i = index;">
-                        <div class="section">
-                            <h3>{{i+1}} - {{pregunta.texto}}</h3>
-                        </div>
-                        <article *ngIf="pregunta.tipo === 1" class="text-result">
-                            <div class="multiples" *ngFor="let respuesta of pregunta.respuestas; let i = index;">
-                                <div class="title">
-                                    <h4>{{respuesta}} - Votos: {{pregunta.votos[i]}}</h4>
-                                </div>
-                                <div class="q-content">
-                                    <div class="percent" [style.width.%]="pregunta.votos[i] / stats.votosTotales * 100"></div>
-                                    <span>{{pregunta.votos[i] / stats.votosTotales * 100 | number: '1.0-0'}}%</span>
-                                </div>
-                            </div>
-                        </article>
-                        <article *ngIf="pregunta.tipo === 2" class="text-result">
-                            <div class="multiples" *ngFor="let respuesta of pregunta.respuestas; let i = index;">
-                                <div class="title">
-                                    <h4>{{respuesta}} - Votos: {{pregunta.votos[i]}}</h4>
-                                </div>
-                                <div class="q-content">
-                                    <div class="percent" [style.width.%]="pregunta.votos[i] / stats.votosTotales * 100"></div>
-                                    <span>{{pregunta.votos[i] / stats.votosTotales * 100 | number: '1.0-0'}}%</span>
-                                </div>
-                            </div>
-                        </article>
-                        <article *ngIf="pregunta.tipo === 3" class="text-result">
-                            <div class="resp" *ngFor="let respuesta of pregunta.respuestas; let i = index;">
-                                <div class="title" *ngIf="stats.config[1] === '0'">
-                                    <fa name="user" ></fa> {{respuesta.autor}}
-                                </div>
-                                <div class="content-text">
-                                    {{respuesta.respuesta}}
-                                </div>
-                            </div>
-                        </article>
-                        <article *ngIf="pregunta.tipo === 4" class="text-result">
-                            <div class="resp" *ngFor="let respuesta of pregunta.respuestas; let i = index;">
-                                <div class="title" *ngIf="stats.config[1] === '0'">
-                                    <fa name="user" ></fa> {{respuesta.autor}}
-                                </div>
-                                <div class="content-text">
-                                    {{respuesta.respuesta}}
-                                </div>
-                            </div>
-                        </article>
-                    </div>
-
-                </div>
+<div class="page-content">
+    <div class="content-wrapper">
+        <div class="content">
+            <div class="content-form-wrapper" *ngIf="privateSurvey">Los resultados de la encuesta solo pueden ser visualizados por su autor</div>
+            <div class="content-form-wrapper" *ngIf="!stats && !privateSurvey">
+                <h3>Error al recuperar la encuesta</h3>
+                <p>Por favor, revisa la URL o comprueba que no haya expirado.</p>
             </div>
-
+            <div class="content-form-wrapper" *ngIf="stats">
+                <h3 *ngIf="text!==null">{{text}}</h3>
+                <h2>{{stats.title}}</h2>
+                <h5>Votos totales: {{stats.votosTotales}}</h5>
+                <h5>Fecha de creación: {{stats.creationDate | date}}</h5>
+                <div class="respuestas-container">
+                    <p *ngIf="stats.votosTotales === 0">Aún no hay ningún voto para la encuesta</p>
+                    <div class="row" *ngIf="stats.votosTotales > 0">
+    
+                        <div class="section-container" *ngFor="let pregunta of stats.fields; let i = index;">
+                            <div class="section">
+                                <h3>{{i+1}} - {{pregunta.texto}}</h3>
+                            </div>
+                            <article *ngIf="pregunta.tipo === 1" class="text-result">
+                                <div class="multiples" *ngFor="let respuesta of pregunta.respuestas; let i = index;">
+                                    <div class="title">
+                                        <h4>{{respuesta}} - Votos: {{pregunta.votos[i]}}</h4>
+                                    </div>
+                                    <div class="q-content">
+                                        <div class="percent" [style.width.%]="pregunta.votos[i] / stats.votosTotales * 100"></div>
+                                        <span>{{pregunta.votos[i] / stats.votosTotales * 100 | number: '1.0-0'}}%</span>
+                                    </div>
+                                </div>
+                            </article>
+                            <article *ngIf="pregunta.tipo === 2" class="text-result">
+                                <div class="multiples" *ngFor="let respuesta of pregunta.respuestas; let i = index;">
+                                    <div class="title">
+                                        <h4>{{respuesta}} - Votos: {{pregunta.votos[i]}}</h4>
+                                    </div>
+                                    <div class="q-content">
+                                        <div class="percent" [style.width.%]="pregunta.votos[i] / stats.votosTotales * 100"></div>
+                                        <span>{{pregunta.votos[i] / stats.votosTotales * 100 | number: '1.0-0'}}%</span>
+                                    </div>
+                                </div>
+                            </article>
+                            <article *ngIf="pregunta.tipo === 3" class="text-result">
+                                <div class="resp" *ngFor="let respuesta of pregunta.respuestas; let i = index;">
+                                    <div class="title" *ngIf="stats.config[1] === '0'">
+                                        <fa name="user" ></fa> {{respuesta.autor}}
+                                    </div>
+                                    <div class="content-text">
+                                        {{respuesta.respuesta}}
+                                    </div>
+                                </div>
+                            </article>
+                            <article *ngIf="pregunta.tipo === 4" class="text-result">
+                                <div class="resp" *ngFor="let respuesta of pregunta.respuestas; let i = index;">
+                                    <div class="title" *ngIf="stats.config[1] === '0'">
+                                        <fa name="user" ></fa> {{respuesta.autor}}
+                                    </div>
+                                    <div class="content-text">
+                                        {{respuesta.respuesta}}
+                                    </div>
+                                </div>
+                            </article>
+                        </div>
+    
+                    </div>
+                </div>
+    
+            </div>
         </div>
     </div>
+    
+    
 </div>
-
