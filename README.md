@@ -10,11 +10,11 @@ Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app w
 
 ![Preview inicio](https://github.com/JGCdev/Survey-Maker/tree/master/src/assets/img/readme/home.jpg)
 
-![Preview google auth](https://github.com/JGCdev/Java-MVC-Print-Budgets/blob/master/src/imagenes/readme/gestion-menu.png)
+![Preview google auth](https://github.com/JGCdev/Survey-Maker/tree/master/src/assets/img/readme/auth.jpg)
 
-![Preview app](https://github.com/JGCdev/Java-MVC-Print-Budgets/blob/master/src/imagenes/readme/gestion-menu.png)
+![Preview app](https://github.com/JGCdev/Survey-Maker/tree/master/src/assets/img/readme/app.jpg)
 
-![Preview stats](https://github.com/JGCdev/Java-MVC-Print-Budgets/blob/master/src/imagenes/readme/gestion-menu.png)
+![Preview stats](https://github.com/JGCdev/Survey-Maker/tree/master/src/assets/img/readme/stats.jpg)
 
 ## Further help
 

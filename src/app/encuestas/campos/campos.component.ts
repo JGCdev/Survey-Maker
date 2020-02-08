@@ -19,7 +19,6 @@ export class CamposComponent implements OnInit {
 
   editField: Field;
   lastIdField = 4;
-
   error: string;
 
   encuesta: Encuesta = {
