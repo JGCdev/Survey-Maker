@@ -5,11 +5,15 @@
             <h1>Bienvenid@ {{user.name}}</h1>
 
             <div class="ajustes-container">
-                <div class="fila">
+                <div *ngIf="!encuestas">
+                    <app-spinner></app-spinner>
+                </div>
+                <div class="fila" *ngIf="encuestas">
                     <div class="columna">
                         <div class="columna-wrapper">
-                            <h2>Encuestas Activas: <span *ngIf="encuestas">{{encuestas.length}}</span></h2>
-                            <table class="enc-table" *ngIf="encuestas && encuestas.length > 0">
+                            
+                            <h2>Encuestas Activas: <span>{{encuestas.length}}</span></h2>
+                            <table class="enc-table" *ngIf="encuestas.length > 0">
                                 <tr class="tr-header">
                                     <th>Acciones</th>
                                     <th>Título</th>
