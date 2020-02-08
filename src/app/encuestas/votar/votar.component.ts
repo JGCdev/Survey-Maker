@@ -34,11 +34,10 @@ export class VotarComponent implements OnInit {
     this.id = this.route.snapshot.paramMap.get('id');
     this.es.getEncuestaById(this.id).subscribe(
       (res: Encuesta) => {
-        console.log('Encuesta recibida', res);
         this.tratarResultados(res);
       },
       (err) => {
-        console.log('error', err);
+        this.encuesta = null;
       }
     );
   }
@@ -92,7 +91,6 @@ export class VotarComponent implements OnInit {
 
       if (element.tipo === 1) {
         const resp: string = this.form.get('select' + element.id).value;
-        console.log('resp', resp);
         // Utilizar si queremos validar campos
         // if (resp !== 'select' + element.id) {
         //   console.log('esta seteado');
@@ -104,7 +102,6 @@ export class VotarComponent implements OnInit {
       if (element.tipo === 2) {
         element.respuestas.forEach( (ele, ind) => {
           const resp: boolean = this.form.get('checkbox' + ind).value;
-          console.log('resp' + ind, resp);
           if (resp === true) {
             element.votos[ind]++;
           }
@@ -117,7 +114,6 @@ export class VotarComponent implements OnInit {
           respuesta: resp
         };
         element.respuestas.push(obj);
-        console.log('resp', resp);
       }
       if (element.tipo === 4) {
         const resp: number = this.form.get('textarea' + element.id).value;
@@ -126,12 +122,10 @@ export class VotarComponent implements OnInit {
           respuesta: resp
         };
         element.respuestas.push(obj);
-        console.log('resp', resp);
       }
     });
     this.encuesta.votosTotales++;
     this.encuesta.votosUsers.push(this.user.email);
-    console.log(this.encuesta);
     this.es.updateEncuesta(this.encuesta).subscribe( res => {
       if (res !== null) {
         this.router.navigate(['/encuestas/seguimiento/' + this.id] , { queryParams: { success: '1' } });

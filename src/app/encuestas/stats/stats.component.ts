@@ -16,6 +16,7 @@ export class StatsComponent implements OnInit {
   id: string;
   text: string;
   privateSurvey: boolean;
+  error: boolean;
 
   constructor(private es: EncuestasService, private route: ActivatedRoute) {
     this.route.queryParams.subscribe(params => {
@@ -33,8 +34,9 @@ export class StatsComponent implements OnInit {
         this.privateSurvey = true;
       } else {
         this.stats = res;
-        console.log(this.stats);
       }
+    }, (err) => {
+      this.error = true;
     });
   }
 

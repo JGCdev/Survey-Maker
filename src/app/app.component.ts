@@ -8,8 +8,10 @@ import { LoggedService } from './login/logged.service';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent implements OnInit {
+
   title = 'surveymaker';
   constructor(private authService: AuthService, private logged: LoggedService) { }
+
   ngOnInit() {
     this.authService.authState.subscribe((user) => {
       this.logged.setLoggedUser(user);

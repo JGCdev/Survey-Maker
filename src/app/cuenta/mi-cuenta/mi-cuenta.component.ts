@@ -42,7 +42,7 @@ export class MiCuentaComponent implements OnInit {
         this.encuestas = res;
       },
       (err) => {
-        console.log(err);
+        this.encuestas = null;
       }
     );
   }
@@ -53,7 +53,7 @@ export class MiCuentaComponent implements OnInit {
       this.saveOverlayMenu = false;
     },
     (err) => {
-      console.log(err);
+      this.encuestas = null;
     });
   }
 

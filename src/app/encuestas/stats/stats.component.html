@@ -1,13 +1,18 @@
 <div class="page-content">
     <div class="content-wrapper">
         <div class="content">
-            <div class="content-form-wrapper" *ngIf="privateSurvey">Los resultados de la encuesta solo pueden ser visualizados por su autor</div>
-            <div class="content-form-wrapper" *ngIf="!stats && !privateSurvey">
-                <h3>Error al recuperar la encuesta</h3>
-                <p>Por favor, revisa la URL o comprueba que no haya expirado.</p>
+            <div class="content-form-wrapper">
+                <span *ngIf="privateSurvey">Los resultados de la encuesta solo pueden ser visualizados por su autor</span>
+                <div *ngIf="error">
+                    <h3>Error al recuperar la encuesta</h3>
+                    <p>Por favor, revisa la URL.</p>
+                </div>
+                <div *ngIf="!stats" class="ptop-50">
+                        <app-spinner></app-spinner>
+                </div>
             </div>
             <div class="content-form-wrapper" *ngIf="stats">
-                <h3 *ngIf="text!==null">{{text}}</h3>
+                <h3 *ngIf="text !== null">{{text}}</h3>
                 <h2>{{stats.title}}</h2>
                 <h5>Votos totales: {{stats.votosTotales}}</h5>
                 <h5>Fecha de creación: {{stats.creationDate | date}}</h5>
@@ -62,13 +67,9 @@
                                 </div>
                             </article>
                         </div>
-    
                     </div>
                 </div>
-    
             </div>
         </div>
     </div>
-    
-    
 </div>

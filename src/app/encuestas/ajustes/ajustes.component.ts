@@ -50,10 +50,8 @@ export class AjustesComponent implements OnInit {
           elem.votos.push(0);
         }
       });
-      console.log('Guardar encuesta en BD:', this.encuesta);
       this.es.crearEncuesta(this.encuesta).subscribe(
         (res: any) => {
-          console.log('Id generado: ', res._id);
           this.router.navigate(['encuestas/encuesta-creada/' + res._id]);
         }
       );

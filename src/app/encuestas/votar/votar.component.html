@@ -1,9 +1,12 @@
 <div class="page-content">
     <div class="content-wrapper">
         <div class="content">
+            <div *ngIf="!encuesta">
+                <app-spinner></app-spinner>
+            </div>
             <div class="content-form-wrapper" *ngIf="!encuesta && voted === false">
                 <h3>Error al recuperar la encuesta</h3>
-                <p>Por favor, revisa la URL o comprueba que no haya expirado.</p>
+                <p>Por favor, revisa la URL.</p>
             </div>
             <div class="content-form-wrapper" *ngIf="voted">Ya has votado en esta encuesta</div>
             <div class="content-form-wrapper" *ngIf="maxPeople">No se permiten mas votos en la encuesta seleccionada</div>
