@@ -8,13 +8,13 @@ Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app w
 
 ## Preview
 
-![Preview inicio](https://github.com/JGCdev/Survey-Maker/tree/master/src/assets/img/readme/home.jpg)
+![Preview inicio](https://github.com/JGCdev/Survey-Maker/blob/master/src/assets/img/readme/home.JPG)
 
-![Preview google auth](https://github.com/JGCdev/Survey-Maker/tree/master/src/assets/img/readme/auth.jpg)
+![Preview google auth](https://github.com/JGCdev/Survey-Maker/blob/master/src/assets/img/readme/auth.JPG)
 
-![Preview app](https://github.com/JGCdev/Survey-Maker/tree/master/src/assets/img/readme/app.jpg)
+![Preview app](https://github.com/JGCdev/Survey-Maker/blob/master/src/assets/img/readme/app.JPG)
 
-![Preview stats](https://github.com/JGCdev/Survey-Maker/tree/master/src/assets/img/readme/stats.jpg)
+![Preview stats](https://github.com/JGCdev/Survey-Maker/blob/master/src/assets/img/readme/stats.JPG)
 
 ## Further help
 
