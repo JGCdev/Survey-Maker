@@ -8,6 +8,8 @@ Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app w
 
 ## Preview
 
+GitHub Pages URL: https://jgcdev.github.io/Survey-Maker
+
 ![Preview inicio](https://github.com/JGCdev/Survey-Maker/blob/master/src/assets/img/readme/home.JPG)
 
 ![Preview google auth](https://github.com/JGCdev/Survey-Maker/blob/master/src/assets/img/readme/auth.JPG)
