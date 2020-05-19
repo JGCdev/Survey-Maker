@@ -12,6 +12,10 @@
         .title-wrapper{
             display:flex;
             align-items: center;
+            margin-top: -3px;
+            fa{
+                padding-top: 3px;
+            }
         }
         h2{
             margin:0px;
