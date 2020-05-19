@@ -1,10 +1,11 @@
 .acceso-container{
     padding: 50px 0px;
-    min-height: 77%;
+    min-height: calc(100% - 213px);
     .acceso-container-wrapper{
         max-width:1100px;
         margin: 0 auto;
         text-align:center;
+
     }
     .action-btn{
         background: var(--main-color);
